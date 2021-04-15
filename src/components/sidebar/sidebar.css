@@ -1,0 +1,70 @@
+/*sidebar styling*/
+.sidebar{
+    font-family: sans-serif;
+    height: 100%;
+    min-width: 384px;
+    max-width: 400px;
+    background: #fff;
+    overflow-x:hidden ;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+.sidebar-user-wrapper{
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #B0A7A7;
+}
+.sidebar-user-info h4{
+    font-size: 22px;
+}
+.sidebar-avatar-wrapper{
+    height: 60px;
+    width: 60px;
+    background: green;
+    margin: 10px;
+    border-radius: 50%;
+}
+.sidebar-link{
+    padding: 10px;
+    background: #EFEFEF;
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: .3s;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #595959;
+}
+.sidebar-link-active{
+    padding: 10px;
+    background: #7B66FF;
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: .3s;
+    border-radius: 10px;
+    cursor: pointer;
+    color:#FFFFFF;
+}
+.sidebar-link-icon{
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar-link-title{
+    font-weight: bold;
+    font-size: 20px;
+}
+.sidebar-link:hover{
+    background: #b2a8f5;
+}
+.sidebar a{
+    text-decoration: none;
+}

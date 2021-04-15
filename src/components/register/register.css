@@ -1,0 +1,222 @@
+.main-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+  }
+  .container {
+    background: #E9E3F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 90vh;
+  }
+  .main-container {
+    width: 70%;
+    height: 86vh;
+    padding: 10px;
+    /* background-color: white; */
+    position: relative;
+  }
+.form-avatar-wrapper {
+    background: green;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar-upload-btn {
+    position: absolute;
+    margin: 7px;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    transition: .3s;
+  }
+  .avatar-upload-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .avatar-upload-btn:active {
+    transform: scale(0.95);
+  }
+  #upload {
+    display: none;
+  }
+  .submit-btn {
+    width: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: #30009b;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 17px;
+  }
+  .cancel_btn {
+    width: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: #a0a0a0;
+    color: #000;
+    cursor: pointer;
+    border-radius: 7px;
+  }
+  .cancel_btn:hover{
+    background: #918f8f;
+  }
+  .submit-btn:hover {
+    background: #210361;
+  }
+  .form-avatar-preview{
+    width: 100%;
+    height: 100%;
+  }
+  .form-inline{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-inline-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .form-inline-label {
+    font-size: 17px;
+    font-weight: bold;
+   
+  }
+  .form-inline-input {
+    margin-top: 5px;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 18px;
+  }
+  .form-inline-option {
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  .form-inline-input:focus,
+  .form-inline-option:focus {
+    border: 1px solid #30009b;
+  }
+  .form-group-flex {
+    display: flex;
+    flex-direction: row;
+  }
+  .profile-details {
+    padding: 10px;
+    margin: 10px;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+  }
+  .profile-info {
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-info-title {
+    font-size: 30px;
+    color: #30009b;
+  }
+  .profile-info-title-secondary {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  @media screen and (max-width: 1360px) {
+    .main-container {
+      width: 80%;
+      
+    }
+    .profile-info {
+        width: 100%;
+      }
+  }
+  @media screen and (max-width: 1250px) {
+    .main-container {
+      width: 92%;
+      
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .profile-info {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    .profile-info {
+      width: 100%;
+    }
+    .profile-details {
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .main-container {
+      padding: 0;
+    }
+    .profile-details {
+      margin: 0;
+      padding: 0;
+    }
+    .profile-title-nav{
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .profile-info-title {
+      font-size: 24px;
+    }
+    .profile-info-title-secondary {
+      font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 500px){
+    /* .profile-title{
+      display: none;
+    } */
+  }
+  @media screen and (max-width: 350px) {
+    .form-group-flex {
+      flex-direction: column;
+    }
+    .form-inline-option {
+      margin: 0;
+      margin-bottom: 5px;
+    }
+  }
+  
+  @media screen and (max-width: 300px){
+    .form-avatar-wrapper{
+      height: 150px;
+      width: 150px;
+    }
+  }

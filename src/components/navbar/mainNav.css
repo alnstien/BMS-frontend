@@ -1,0 +1,42 @@
+.main-nav{
+    height: 7vh;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 30px;
+}
+.main-nav a{
+    text-decoration: none;
+    height: 80%;
+    position: relative;
+}
+.nav-link{
+    height: 100%;
+    padding: 10px;
+    min-width: 140px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-link-p{
+    font-size: 20px;
+    margin: 20px;
+    font-weight: bold;
+}
+.nav-link:hover{
+    background: #f5f4f7;
+}
+.nav-link-active{
+    height: 100%;
+    padding: 10px;
+    background: #E9E3F9;
+    min-width: 140px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
