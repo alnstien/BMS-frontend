@@ -102,7 +102,7 @@
     margin-bottom: 10px;
   }
   .form-inline-label {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
    
   }
@@ -112,7 +112,7 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid gray;
-    font-size: 18px;
+    font-size: 16px;
   }
   .form-inline-option {
     outline: none;

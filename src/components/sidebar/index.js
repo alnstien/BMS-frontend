@@ -24,10 +24,10 @@ function SidebarLink({name,icon,active,route}){
 
 
 export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive}) {
-    const dashIcon = <MdDashboard size={30} />;
-    const schedIcon = <AiOutlineSchedule size={30} />
-    const recIcon = <BsFiles size={30} />
-    const transIcon = <GrTransaction size={30} />
+    const dashIcon = <MdDashboard size={24} color={'#000'} />;
+    const schedIcon = <AiOutlineSchedule size={24} color={'#000'} />
+    const recIcon = <BsFiles size={24} color={'#000'} />
+    const transIcon = <GrTransaction size={24} color={'#000'} />
     return (
     <div className="sidebar">
         <Logo />

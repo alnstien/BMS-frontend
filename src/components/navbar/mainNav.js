@@ -16,7 +16,7 @@ function NavLink({path,name,active}){
     )
 }
 
-export default function MainNav({activeDashboard}) {
+export default function MainNav({activeDashboard,activeTransact}) {
     return (
         <div className="main-nav">
             <NavLink 
@@ -25,7 +25,7 @@ export default function MainNav({activeDashboard}) {
                 active={activeDashboard}
             />
             <NavLink 
-                name="Overview"
+                name="Overview of the statement"
                 path={'/myAdmin'}
                 active={false}
             />

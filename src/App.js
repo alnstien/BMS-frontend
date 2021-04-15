@@ -4,6 +4,8 @@ import {Route,BrowserRouter,Switch} from 'react-router-dom'
 import Login from './components/login/login';
 import Registration from './components/register/userRegistration';
 import Dashboard from './components/dashboard/index';
+import Transaction from './components/transaction'
+import Record from './components/record'
 
 function App() {
   return (
@@ -16,8 +18,18 @@ function App() {
         />
         <Route 
           exact
+          path="/records"
+          component={Record}
+        />
+        <Route 
+          exact
           path="/login"
           component={Login}
+        />
+        <Route 
+          exact
+          path="/transaction"
+          component={Transaction}
         />
         <Route 
           exact
