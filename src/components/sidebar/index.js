@@ -5,6 +5,7 @@ import { MdDashboard } from "react-icons/md";
 import { AiOutlineSchedule} from "react-icons/ai";
 import { BsFiles } from "react-icons/bs";
 import { GrTransaction } from "react-icons/gr";
+import { FaMoneyBillWaveAlt} from "react-icons/fa";
 import './sidebar.css'
 
 
@@ -23,11 +24,12 @@ function SidebarLink({name,icon,active,route}){
 }
 
 
-export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive}) {
+export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive,billsActive}) {
     const dashIcon = <MdDashboard size={24} color={'#000'} />;
     const schedIcon = <AiOutlineSchedule size={24} color={'#000'} />
     const recIcon = <BsFiles size={24} color={'#000'} />
     const transIcon = <GrTransaction size={24} color={'#000'} />
+    const billIcon = <FaMoneyBillWaveAlt size={24} color={'#000'}  />
     return (
     <div className="sidebar">
         <Logo />
@@ -60,10 +62,16 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
             active={recordsActive}
         />
          <SidebarLink 
-            route={'/myAdmin'}
+            route={'/events'}
             icon={schedIcon}
             name="Events and Schedules"
             active={eventActive}
+        />
+        <SidebarLink 
+            route={'/billing'}
+            icon={billIcon}
+            name="Water Bills"
+            active={billsActive}
         />
     </div>
     )

@@ -16,24 +16,18 @@ function NavLink({path,name,active}){
     )
 }
 
-export default function MainNav({activeDashboard,activeTransact}) {
+export default function MainNav({activeDashboard,items}) {
     return (
         <div className="main-nav">
-            <NavLink 
-                name="Overview"
-                path={'/myAdmin'}
-                active={activeDashboard}
-            />
-            <NavLink 
-                name="Overview of the statement"
-                path={'/myAdmin'}
-                active={false}
-            />
-            <NavLink 
-                name="Overview"
-                path={'/myAdmin'}
-                active={false}
-            />
+            {
+                items.map(item=>{
+                    return <NavLink
+                        path={item.path}
+                        name={item.name}
+                        active={item.status}
+                    />
+                })
+            }
         </div>
     )
 }
