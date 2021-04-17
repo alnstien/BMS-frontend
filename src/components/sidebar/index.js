@@ -3,9 +3,10 @@ import {Link} from 'react-router-dom'
 import Logo from '../logo'
 import { MdDashboard } from "react-icons/md";
 import { AiOutlineSchedule} from "react-icons/ai";
-import { BsFiles } from "react-icons/bs";
+import { BsFiles,BsPersonFill } from "react-icons/bs";
 import { GrTransaction } from "react-icons/gr";
 import { FaMoneyBillWaveAlt} from "react-icons/fa";
+import { CgLogOut } from "react-icons/cg";
 import './sidebar.css'
 
 
@@ -13,10 +14,13 @@ function SidebarLink({name,icon,active,route}){
 
     return(
         <>
-        <Link to={route}>
+        <Link 
+            to={route}
+            className={active ? 'sidebar-link-wrapper-active':'sidebar-link-wrapper'}
+        >
             <div className={active ? 'sidebar-link-active' : 'sidebar-link'}>
-                <span className="sidebar-link-icon">{icon}</span>
-                <p className="sidebar-link-title">{name}</p>
+                <span className={active ?"sidebar-link-icon-active": "sidebar-link-icon" }>{icon}</span>
+                <p className={active ? "sidebar-link-title-active": "sidebar-link-title"}>{name}</p>
             </div>
         </Link>
         </>
@@ -24,16 +28,20 @@ function SidebarLink({name,icon,active,route}){
 }
 
 
-export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive,billsActive}) {
-    const dashIcon = <MdDashboard size={24} color={'#000'} />;
-    const schedIcon = <AiOutlineSchedule size={24} color={'#000'} />
-    const recIcon = <BsFiles size={24} color={'#000'} />
-    const transIcon = <GrTransaction size={24} color={'#000'} />
-    const billIcon = <FaMoneyBillWaveAlt size={24} color={'#000'}  />
+export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive,billsActive,isOpen}) {
+    
+    const dashIcon = <MdDashboard size={22} />;
+    const schedIcon = <AiOutlineSchedule size={22}  />
+    const recIcon = <BsFiles size={22}  />
+    const transIcon = <GrTransaction size={22}  />
+    const billIcon = <FaMoneyBillWaveAlt size={22}  />
+    const profileIcon = <BsPersonFill size={22} />
     return (
-    <div className="sidebar">
+        <>
+        <div className="sidebar-wrapper">
+    <div className="sidebar" >
         <Logo />
-        <div className="sidebar-user-wrapper">
+        {/* <div className="sidebar-user-wrapper">
             <div className="sidebar-avatar-wrapper">
 
             </div>
@@ -42,7 +50,7 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
                     <h4>Al Jimson A. Megrino</h4>
                 </div>
            </Link>
-        </div>
+        </div> */}
         <SidebarLink 
             route={'/myAdmin'}
             icon={dashIcon}
@@ -52,7 +60,7 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
          <SidebarLink 
             route={'/transaction'}
             icon={transIcon}
-            name="Transactions"
+            name="Requests"
             active={transactionActive}
         />
          <SidebarLink 
@@ -61,18 +69,35 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
             name="Records"
             active={recordsActive}
         />
-         <SidebarLink 
+        <SidebarLink 
+            route={'/me'}
+            icon={profileIcon}
+            name="My Profile"
+            active={eventActive}
+        />
+         {/* <SidebarLink 
             route={'/events'}
             icon={schedIcon}
             name="Events and Schedules"
             active={eventActive}
-        />
-        <SidebarLink 
+        /> */}
+        {/* <SidebarLink 
             route={'/billing'}
             icon={billIcon}
             name="Water Bills"
             active={billsActive}
-        />
+        /> */}
+        
     </div>
+    <div className="signout-btn-wrapper">
+    <button className="signout-btn">
+        <span>
+            <CgLogOut size={22} />
+        </span>
+        Signout
+    </button>
+    </div>
+    </div>
+    </>
     )
 }

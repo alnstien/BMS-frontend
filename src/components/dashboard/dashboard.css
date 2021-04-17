@@ -1,7 +1,7 @@
 .con-container{
     height: 100vh;
     width: 100vw;
-    background: #E9E3F9;
+    background: #8277A3;
     position: relative;
     display: flex;
 }
@@ -9,18 +9,22 @@
 .content-wrapper{
     flex:1;
     height: 100%;
-    margin-left: 20px;
     position: relative;
 }
 .main-content-wrapper{
     /* background: #fff; */
     flex:1;
-    height: 93vh;
+    height: 100vh;
     width: 100%;
     position: relative;
 }
 .content-main-holder{
     height: 100%;
     width: 100%;
-    background: #fff;
+    background: #EFEFEF;
+}
+@media screen and (max-width:800px){
+    .content-wrapper{
+        margin-left: 0;
+    }
 }
