@@ -185,4 +185,7 @@
         max-height: unset;
         min-height: unset;
     }
+    .signout-btn-text{
+        display: none;
+    }
 }

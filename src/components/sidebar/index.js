@@ -3,13 +3,11 @@ import {Link} from 'react-router-dom'
 import Logo from '../logo'
 import { MdDashboard } from "react-icons/md";
 import { AiOutlineSchedule} from "react-icons/ai";
-import { BsFiles,BsPersonFill } from "react-icons/bs";
-import { GrTransaction } from "react-icons/gr";
+import { BsFolderFill,BsPersonFill } from "react-icons/bs";
 import { FaMoneyBillWaveAlt} from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
 import './sidebar.css'
-
-
+import { BiTransfer } from "react-icons/bi";
 function SidebarLink({name,icon,active,route}){
 
     return(
@@ -32,8 +30,8 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
     
     const dashIcon = <MdDashboard size={22} />;
     const schedIcon = <AiOutlineSchedule size={22}  />
-    const recIcon = <BsFiles size={22}  />
-    const transIcon = <GrTransaction size={22}  />
+    const recIcon = <BsFolderFill size={22}  />
+    const transIcon = <BiTransfer size={22}  />
     const billIcon = <FaMoneyBillWaveAlt size={22}  />
     const profileIcon = <BsPersonFill size={22} />
     return (
@@ -94,7 +92,7 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
         <span>
             <CgLogOut size={22} />
         </span>
-        Signout
+        <p className="signout-btn-text">Signout</p>
     </button>
     </div>
     </div>
