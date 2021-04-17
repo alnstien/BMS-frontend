@@ -178,6 +178,8 @@
     .sidebar-link, .sidebar-link-active{
         min-width: unset;
         max-width: unset;
+        max-height: unset;
+        min-height: unset;
     }
     .sidebar-link-wrapper, 
     .sidebar-link-wrapper-active{
