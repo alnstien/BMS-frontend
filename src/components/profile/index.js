@@ -11,7 +11,9 @@ export default function Profile(props) {
           
             <div className="main-content-wrapper">
                 <div className="content-main-holder">
-
+                    <div className="wrapper-main">
+                        
+                    </div>
                 </div>
             </div>
         </div>

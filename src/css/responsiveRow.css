@@ -8,6 +8,12 @@
     background: red;
     margin: 10px;
 }
+.wrapper-main{
+    height: 100%;
+    flex: 1;
+    padding:10px;
+    background: #fff;
+}
 
 @media screen and (max-width: 800px){
     .row{
