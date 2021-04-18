@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import './user.css';
 import Sidebar from '../sidebar' 
 
-
-export default function Transaction(props) {
-
+export default function User(props) {
     return (
         <div className="con-container"> 
             <Sidebar transactionActive={true}/>

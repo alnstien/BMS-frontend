@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './dashboard.css'
 import Sidebar from '../sidebar';
-import MainNav from '../navbar/mainNav';
+
 
 
 export default function Dashboard(props) {
@@ -14,16 +14,31 @@ export default function Dashboard(props) {
         <div className="con-container"> 
             <Sidebar dashActive={true} isOpen={isOpen}/>
             <div className="content-wrapper">
-                {/* <MainNav
-                    activeDashboard={true}
-                    items={items}
-                    setOpen={setOpen}
-                    isOpen={isOpen}
-                /> */}
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">
-                        <div>
-                            
+                        <div className="row">
+                            <div className="col">
+                               
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                               
+                            </div>
+                            <div className="col">
+
+                            </div>
+                            <div className="col">
+
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+
+                            </div>
+                            <div className="col">
+
+                            </div>
                         </div>
                     </div>
                 </div>

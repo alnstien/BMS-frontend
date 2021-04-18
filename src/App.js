@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route,BrowserRouter,Switch} from 'react-router-dom'
-
+import './css/responsiveRow.css';
 import Login from './components/login/login';
 import Registration from './components/register/userRegistration';
 import Dashboard from './components/dashboard/index';
@@ -8,15 +8,27 @@ import Transaction from './components/transaction'
 import Record from './components/record'
 import Events from './components/events'
 import Billing from './components/bills'
+import User from './components/user'
+import Profile from './components/profile'
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-      <Route 
+        <Route 
           exact
           path="/myAdmin"
           component={Dashboard}
+        />
+        <Route 
+          exact
+          path="/me"
+          component={Profile}
+        />
+        <Route 
+          exact
+          path="/"
+          component={User}
         />
         <Route 
           exact

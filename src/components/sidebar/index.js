@@ -26,7 +26,7 @@ function SidebarLink({name,icon,active,route}){
 }
 
 
-export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive,billsActive,isOpen}) {
+export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive,billsActive,profileActive}) {
     
     const dashIcon = <MdDashboard size={22} />;
     const schedIcon = <AiOutlineSchedule size={22}  />
@@ -71,7 +71,7 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
             route={'/me'}
             icon={profileIcon}
             name="My Profile"
-            active={eventActive}
+            active={profileActive}
         />
          {/* <SidebarLink 
             route={'/events'}

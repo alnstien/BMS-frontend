@@ -178,8 +178,8 @@
     .sidebar-link, .sidebar-link-active{
         min-width: unset;
         max-width: unset;
-        max-height: unset;
-        min-height: unset;
+        max-height: 60px;
+        min-height: 60px;
     }
     .sidebar-link-wrapper, 
     .sidebar-link-wrapper-active{
@@ -190,5 +190,9 @@
     }
     .signout-btn-text{
         display: none;
+    }
+    .signout-btn{
+        max-height: 60px;
+        min-height: 60px;
     }
 }
