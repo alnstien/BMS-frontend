@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route,BrowserRouter,Switch} from 'react-router-dom'
 import './css/responsiveRow.css';
+import './css/custom.css';
 import Login from './components/login/login';
 import Registration from './components/register/userRegistration';
 import Dashboard from './components/dashboard/index';

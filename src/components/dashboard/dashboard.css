@@ -12,6 +12,7 @@
     position: relative;
 }
 .main-content-wrapper{
+    overflow: auto;
     /* background: #fff; */
     flex:1;
     height: 100vh;
@@ -19,13 +20,19 @@
     position: relative;
 }
 .content-main-holder{
-    height: 100%;
     width: 100%;
+    position: relative;
     background: #EFEFEF;
-    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
 }
 @media screen and (max-width:800px){
     .content-wrapper{
         margin-left: 0;
+    }
+    .content-main-wrapper{
+        padding:10px;
     }
 }

@@ -1,0 +1,16 @@
+.mr-5{
+    margin-right: 5px;
+}
+.ml-5{
+    margin-left: 5px;
+}
+
+@media screen and (max-width:800px) {
+    .mr-5{
+        margin-right: 0px;
+    }
+    .ml-5{
+        margin-left: 0px;
+    }
+    
+}

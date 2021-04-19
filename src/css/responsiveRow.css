@@ -9,14 +9,19 @@
     margin: 10px;
 }
 .wrapper-main{
-    height: 100%;
-    flex: 1;
-    padding:10px;
-    background: #fff;
+    width: 70%;
+    position: relative;
+    padding: 10px 0 0 0 ;
 }
+
 
 @media screen and (max-width: 800px){
     .row{
         flex-direction: column;
+    }
+    .wrapper-main{
+        width: 100%;
+        padding-top: unset;
+        padding:10px;
     }
 }
