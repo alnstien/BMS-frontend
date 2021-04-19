@@ -13,13 +13,13 @@ export default function Profile(props) {
                 <div className="content-main-holder">
                     <div className="wrapper-main">
                         <div className="profile-wrapper">
-                            <div className="form-group">
+                            <div className="form-group-profile">
                                 <div className="profile-picture">
                                     <button className="edit-profile-picture-btn"><AiFillCamera size={24} /></button>
                                 </div>
-                                <div className="profile-info">
+                                <div className="profile-info-me">
                                     <h4 className="profile-intro">PERSONAL INFORMATION</h4>
-                                    <div>
+                                    <div style={{paddingBottom:'10px'}}>
                                         <h3>Al Jimson A. Megrino</h3>
                                         <p>email@email.com</p>
                                         <div className="profile-role">
@@ -46,7 +46,7 @@ export default function Profile(props) {
                                     />
                                     <button className="fieldset-btn"><MdEdit size={24} /></button>
                                 </fieldset>
-                                <div className="form-inline-group">
+                                <div className="form-inline-group-profile">
                                 <fieldset className="fieldset mr-5">
                                     <legend className="form-label">Address</legend>
                                     <input 
@@ -64,7 +64,7 @@ export default function Profile(props) {
                                     <button className="fieldset-btn"><MdEdit size={24} /></button>
                                 </fieldset>
                                 </div>
-                                <div className="form-inline-group">
+                                <div className="form-inline-group-profile">
                                 <fieldset className="fieldset mr-5">
                                     <legend className="form-label">Address</legend>
                                     <input 
@@ -82,7 +82,7 @@ export default function Profile(props) {
                                     <button className="fieldset-btn"><MdEdit size={24} /></button>
                                 </fieldset>
                                 </div>
-                                <div className="form-inline-group">
+                                <div className="form-inline-group-profile">
                                 <fieldset className="fieldset mr-5">
                                     <legend className="form-label">Address</legend>
                                     <input 
@@ -100,7 +100,7 @@ export default function Profile(props) {
                                     <button className="fieldset-btn"><MdEdit size={24} /></button>
                                 </fieldset>
                                 </div>
-                                <div className="form-inline-group">
+                                <div className="form-inline-group-profile">
                                 <fieldset className="fieldset mr-5">
                                     <legend className="form-label">Address</legend>
                                     <input 
@@ -118,6 +118,8 @@ export default function Profile(props) {
                                     <button className="fieldset-btn"><MdEdit size={24} /></button>
                                 </fieldset>
                                 </div>
+                                
+                                
                             </form>
                         </div>
                     </div>

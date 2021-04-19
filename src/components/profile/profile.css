@@ -1,16 +1,15 @@
 .profile-wrapper{
-    /* height: 100vh; */
-    overflow: auto;
     width: 100%;
+    min-height: 100vh;
     background: #fff;
     position: relative;
     padding: 20px;
 }
-.profile-info h4{
+.profile-info-me h4{
     font-size: 30px;
     color: #52389A;
 }
-.form-group{
+.form-group-profile{
     display: flex;
     position: relative;
     margin-top: 10px;
@@ -64,16 +63,17 @@
 .edit-profile-picture-btn:hover{
     background: rgba(0,0,0,0.3);
 }
-.profile-info{
+.profile-info-me{
     margin-left: 20px;
     height: 200px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: flex-start;
     border-bottom: 1px solid gray;
 }
-.profile-info h3{
+.profile-info-me h3{
     color: #545353;
 }
 .profile-role{
@@ -94,6 +94,7 @@
 .form-input{
     font-size: 17px;
     flex:1;
+    min-width: 200px;
     border: none;
     outline: none;
     height: 100%;
@@ -109,6 +110,7 @@
     padding-left: 10px;
     border-radius: 5px;
     border: 1.6px solid gray;
+    min-width: 200px;
 }
 .fieldset-btn{
     border: none;
@@ -122,7 +124,7 @@
 .fieldset-btn:hover{
     background: rgba(0,0,0,0.1);
 }
-.form-inline-group{
+.form-inline-group-profile{
     display: flex;
     flex-direction: row;
 }
@@ -133,13 +135,16 @@
     .profile-info{
         margin-left: 0;
     }
-    .form-group{
+    .form-group-profile{
         flex-direction: column;
     }
     .edit-btn{
         top:0;
     }
-    .form-inline-group{
+    .form-inline-group-profile{
         flex-direction: column;
+    }
+    .profile-info-me{
+        margin-left: 0;
     }
 }
