@@ -179,6 +179,7 @@ export default function Registration(props) {
                                                         id: 'outlined-age-native-simple',
                                                     }}
                                                 >
+                                                <option value="">Gender</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                             </Select>
