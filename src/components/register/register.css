@@ -10,7 +10,7 @@
     overflow-x: hidden;
   }
   .container {
-    background: #E9E3F9;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,7 +64,7 @@
     padding: 10px;
     border: none;
     outline: none;
-    background: #30009b;
+    background: #52389A;
     color: #fff;
     cursor: pointer;
     border-radius: 7px;
@@ -85,7 +85,7 @@
     background: #918f8f;
   }
   .submit-btn:hover {
-    background: #210361;
+    background: #482c94;
   }
   .form-avatar-preview{
     width: 100%;
@@ -144,7 +144,7 @@
   }
   .profile-info-title {
     font-size: 30px;
-    color: #30009b;
+    color: #52389A;
   }
   .profile-info-title-secondary {
     font-size: 18px;

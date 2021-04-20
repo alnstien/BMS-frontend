@@ -42,19 +42,13 @@
     justify-content: center;
   }
   .login-form div input{
-    width: 80%;
-    height: 40px;
-    margin-top: 20px;
-    padding-left: 10px;
-    font-size: 16px;
-    outline: none;
-    border: 1px solid black;
+    width: 100%;
   }
   .login-form div input:focus{
-    border: 3px solid #3608B8;
+    border-color: #52389A;
   }
   .login-form div button{
-    width: 80%;
+    width: 100%;
     height: 50px;
     cursor: pointer;
     border-radius: 10px;
@@ -66,6 +60,9 @@
     color: #fff;
     font-size: 20px;
     transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .login-form div button:hover{
     background: #654ef7;

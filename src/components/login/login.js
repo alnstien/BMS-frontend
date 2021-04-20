@@ -1,7 +1,7 @@
 import React,{ useState,useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import './login.css';
-
+import {TextField,Button} from '@material-ui/core'
 
 
 export default function Login(props){
@@ -13,23 +13,31 @@ export default function Login(props){
                     <div className="logo-holder">
 
                     </div>
-                    <form className="login-form">
+                    <form className="login-form" autoComplete={false}>
                         <div>
-                            <input
-                                placeholder="Username"
-                            />
+                                <TextField 
+                                    id="outlined-basic" 
+                                    label="Username" 
+                                    variant="outlined" 
+                                    style={{marginTop:20,flex:1,width:'80%'}}
+                                />
                         </div>
                         <div>
-                            <input
-                                placeholder="Password"
-                                type="password"
-                            />
+                                <TextField 
+                                    id="outlined-basic" 
+                                    label="Password"
+                                    type="password" 
+                                    variant="outlined" 
+                                    style={{marginTop:20,flex:1,width:'80%'}}
+                                />
                         </div>
                         <div>
-                            <button>Login</button>
+                            <Button 
+                                variant="contained" color="primary"
+                            >Login</Button>
                         </div>
                         <div className="login-link">
-                            <Link>Create an Account</Link>
+                            <Link to="/register">Create an Account</Link>
                         </div>
                     </form>
                 </div>

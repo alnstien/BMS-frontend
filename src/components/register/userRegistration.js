@@ -5,6 +5,8 @@ import axios from 'axios'
 import validateFormat from '../../config/validateFormat';
 import './register.css';
 import ENavbar from '../navbar/emptyNavbar';
+import {TextField,Select,InputLabel,FormControl} from '@material-ui/core'
+
 
 export default function Registration(props) {
     const [fname,setFname]=useState("");
@@ -27,12 +29,13 @@ export default function Registration(props) {
     const [show,setShow] = useState(false);
     const [valid,setValid] = useState(null);
     const server = 'https://e-learning-db.herokuapp.com/'; 
+
     const handleChangeMonth=()=>{
 
     }
 
-    const handleChange =()=>{
-
+    const handleChange =(e,fn)=>{
+        return fn(e.target.value)
     }
     const handleSubmit=(e)=>{
         /**
@@ -127,56 +130,59 @@ export default function Registration(props) {
                                         </div> :null
                                     }
                                     <div className="form-inline-group">
-                                        <label className="form-inline-label">First name:</label>
-                                        <input 
-                                            placeholder="Enter your first name..."  
-                                            className="form-inline-input" 
+                                        <TextField 
+                                            variant="outlined"
+                                            label="First Name"
                                             onChange={e=>handleChange(e,setFname)}
                                         />
                                     </div>
                                     <div className="form-inline-group">
-                                        <label className="form-inline-label">Last name:</label>
-                                        <input 
-                                            placeholder="Enter your last name..." 
-                                            className="form-inline-input" 
+                                        <TextField 
+                                            variant="outlined"
+                                            label="Last Name"
                                             onChange={e=>handleChange(e,setLname)}
                                         />
                                     </div>
                                     <div className="form-inline-group">
-                                        <label className="form-inline-label">Email:</label>
-                                        <input 
-                                            placeholder="ex. email@email.com"  
-                                            className="form-inline-input" 
+                                        <TextField 
+                                            variant="outlined"
+                                            label="Email Address"
+                                            type="email"
                                             onChange={e=>handleChange(e,setEmail)}
                                         />
                                     </div>
                                     <div className="form-inline-group">
-                                        <label className="form-inline-label">Address:</label>
-                                        <input 
-                                            placeholder="street,barangay city/municipality province"  
-                                            className="form-inline-input" 
+                                        <TextField 
+                                            variant="outlined"
+                                            label="Full Address"
                                             onChange={e=>handleChange(e,setAddress)}
                                         />
                                     </div>
                                     <div className="form-inline-group">
-                                        <label className="form-inline-label">Phone: </label>
-                                        <input 
-                                            placeholder="09********9"  
+                                        <TextField 
+                                            variant="outlined"
                                             type="number"
-                                            className="form-inline-input" 
+                                            label="Contact Number"
                                             onChange={e=>handleChange(e,setPhone)}
                                         />
                                     </div>
                                     <div className="form-inline-group">
-                                        <label className="form-inline-label">Gender:</label>
-                                        <select  
-                                            className="form-inline-input" 
-                                            onChange={e=>handleChange(e,setGender)}
-                                        >
-                                            <option defaultValue={"none"}>Gender</option>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                        </select>
+                                        <FormControl variant="outlined">
+                                            <InputLabel htmlFor="outlined-age-native-simple">Gender</InputLabel>
+                                                <Select
+                                                    native
+                                                    value={gender}
+                                                    onChange={e=>handleChange(e,setGender)}
+                                                    label="Gender"
+                                                    inputProps={{
+                                                     name: 'gender',
+                                                        id: 'outlined-age-native-simple',
+                                                    }}
+                                                >
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </Select>
+                                        </FormControl>
                                     </div>
                                     <div className="form-inline-group">
                                         <label className="form-inline-label">Birthdate: </label>
@@ -208,28 +214,25 @@ export default function Registration(props) {
                     <div className="profile-info">
                             <form encType="multipart/form-data">
                                 <div className="form-inline-group">
-                                    <label className="form-inline-label">Username:</label>
-                                    <input 
-                                        placeholder="Username"  
-                                        className="form-inline-input" 
+                                    <TextField 
+                                        variant="outlined"
+                                        label="Username"
                                         onChange={e=>handleChange(e,setUsername)}
                                     />
                                 </div>
                                 <div className="form-inline-group">
-                                    <label className="form-inline-label">Password:</label>
-                                    <input 
+                                     <TextField
                                         type="password" 
-                                        placeholder="Password"  
-                                        className="form-inline-input" 
+                                        variant="outlined"
+                                        label="Password"
                                         onChange={e=>handleChange(e,setPassword1)}
                                     />
                                 </div>
                                 <div className="form-inline-group">
-                                    <label className="form-inline-label">Confirm Password:</label>
-                                    <input 
+                                    <TextField 
                                         type="password" 
-                                        placeholder="Confirm Password"  
-                                        className="form-inline-input" 
+                                        variant="outlined"
+                                        label="Confirm Password"
                                         onChange={e=>handleChange(e,setPassword2)}
                                     />
                                     <button type="submit" className="submit-btn" onClick={e=>handleSubmit(e)}>Submit</button>
