@@ -1,0 +1,108 @@
+.post-wrapper{
+    width: 100%;
+    min-height: 200px;
+    background: #fff;
+    padding:10px;
+    margin-top: 10px;
+    position: relative;
+    border-radius: 10px;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+.post-profile-details{
+    display: flex;
+    /* border-bottom: 1px solid gray; */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.option-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    margin: 10px;
+    display: flex;
+    border: none;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: .3s;
+}
+.option-btn:hover{
+    background: rgba(0,0,0,.1);
+}
+.post-avatar-wrapper{
+    height: 45px;
+    width: 45px;
+    background: red;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.post-content-wrapper{
+    width: 100%;
+    position: relative;
+    padding: 10px;
+}
+.post-content-img{
+    margin-top: 10px;
+    height: 100vmin;
+    max-height: 450px;
+    width: 100%;
+}
+.post-card-footer{
+    padding: 10px;
+    display: flex;
+}
+.post-card-info{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.post-card-footer button{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   height: 40px;
+   width: 40px;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.post-reply-form{
+    padding: 0 10px ;
+    position: relative;
+}
+.post-reply-input{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    background: #e2dfdf;
+    border-radius: 10px;
+}
+.comment-wrapper{
+    padding: 10px;
+    border-radius: 10px;
+}
+.comment{
+    margin-bottom: 10px;
+    background: #F9F7F7;
+    padding: 5px;
+}
+.comment-header{
+    display: flex;
+}
+.comment-header h5{
+    margin-right: 10px;
+}
+.comment-body{
+ 
+}

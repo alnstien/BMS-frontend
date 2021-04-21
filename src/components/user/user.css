@@ -13,6 +13,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    background: #F9F7F7;
 }
 .user-root{
     width: 40vw;
@@ -27,31 +28,41 @@
     position: relative;
     display: block;
     overflow: auto;
+    background: #F9F7F7;
 
 }
-.post-wrapper{
-    width: 100%;
-    min-height: 200px;
-    background: #fff;
-    padding:10px;
-    margin-top: 10px;
+
+.user-create-post{
+    /* padding: 10px; */
+    /* background: red; */
+}
+.create-post-btn{
+    outline: none;
+    border: none;
     border-radius: 10px;
-    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-}
-.post-profile-details{
     display: flex;
-    border-bottom: 1px solid gray;
-    padding: 10px;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px ;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    background: rgba(0,0,0,0.2);
+    transition: .3s;
 }
-.post-avatar-wrapper{
-    height: 50px;
-    width: 50px;
-    background: red;
-    overflow: hidden;
+.create-post-btn:hover{
+    background: rgba(0,0,0,0.3);
+}
+.create-post-btn span{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(1, 207, 1);
     border-radius: 50%;
+    margin-right: 10px;
 }
-
 @media screen and (max-width:800px){
     .user-container{
         width: 100vw;
