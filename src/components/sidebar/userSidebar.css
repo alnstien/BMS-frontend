@@ -1,11 +1,13 @@
 .user-sidebar{
     height: 90vh;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 273.2px;
+    max-width:  273.2px;
     background: #fff;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    position: sticky;
+    top: 0;
+    bottom: 0;
 }
 .icon-span{
     height: 40px;

@@ -5,7 +5,8 @@ import Sidebar from '../sidebar/userSidebar';
 export default function Events(props) {
     return (
         <>
-            <Navbar />
+        <Navbar />
+        <div className="root-mod">
             <div className="user-container">
                 <Sidebar 
                     eventsActive={true}
@@ -14,6 +15,7 @@ export default function Events(props) {
 
                 </div>
             </div>
+        </div>
         </>
     )
 }
