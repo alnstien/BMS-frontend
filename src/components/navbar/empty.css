@@ -4,7 +4,13 @@
     display: flex;
     align-items: center;
 }
-
+.brgy-logo{
+    height: 50px;
+    width: 50px;
+    background: red;
+    border-radius: 50%;
+    margin: 20px;
+}
 
 @media screen and (max-width: 800px){
     .logo{

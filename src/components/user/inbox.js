@@ -1,16 +1,14 @@
-import React from 'react';
-import './user.css';
+import React from 'react'
 import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
 
-
-export default function User(props) {
+export default function Inbox(props) {
     return (
         <>
             <Navbar />
             <div className="user-container">
                 <Sidebar
-                    homeActive={true}
+                    inboxActive ={true}
                 />
                 <div className="user-wrapper">
 

@@ -6,7 +6,9 @@ import './empty.css';
 export default function EmptyNavbar() {
     return (
         <div className="navbar-dummy">
-            
+            <div className="brgy-logo">
+                
+            </div>
         </div>
     )
 }

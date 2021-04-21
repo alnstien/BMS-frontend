@@ -11,6 +11,8 @@ import Events from './components/events'
 import Billing from './components/bills'
 import User from './components/user'
 import Profile from './components/profile'
+import UserEvents from './components/user/events'
+import Inbox from './components/user/inbox';
 
 function App() {
   return (
@@ -20,6 +22,16 @@ function App() {
           exact
           path="/myAdmin"
           component={Dashboard}
+        />
+        <Route 
+          exact
+          path="/user/events"
+          component={UserEvents}
+        />
+        <Route 
+          exact
+          path="/user/inbox"
+          component={Inbox}
         />
         <Route 
           exact
