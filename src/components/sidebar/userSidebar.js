@@ -2,8 +2,9 @@ import React from 'react'
 import './userSidebar.css'
 import {Link} from 'react-router-dom'
 import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
-import {FaEnvelope} from 'react-icons/fa'
+import {FaEnvelope,FaCertificate} from 'react-icons/fa'
 import {MdEventNote} from 'react-icons/md'
+import {BiFile} from 'react-icons/bi'
 
 function NavLink({active,icon,name,path,count}){
     return(
@@ -28,8 +29,12 @@ export default function USidebar({homeActive,eventsActive,inboxActive}) {
     return (
         <div className="user-sidebar">
             <button className="user-sidebar-btn">
-                <span className="icon-span"><AiOutlinePlus color={"#E05304 "} size={24} /></span>
+                <span className="icon-span"><FaCertificate color={"#E05304 "} size={24} /></span>
                 Request a Certificate
+            </button>
+            <button className="user-sidebar-btn">
+                <span className="icon-span"><BiFile color={"green "} size={24} /></span>
+                File a Complaint
             </button>
             <NavLink 
                 active={homeActive}
