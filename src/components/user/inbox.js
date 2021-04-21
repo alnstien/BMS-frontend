@@ -7,9 +7,11 @@ export default function Inbox(props) {
         <>
         <Navbar />
         <div className="root-mod">
-            <Sidebar
-                inboxActive ={true}
-            />
+            <div className="col-mod">
+                <Sidebar
+                    inboxActive ={true}
+                />
+            </div>
             <div className="user-wrapper">
                 <div className="user-root">
                     <div className="post-wrapper">

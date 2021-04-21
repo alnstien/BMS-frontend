@@ -17,17 +17,31 @@ export default function User(props) {
 
     return (
         <>
-        <Navbar />
-          <div className="root-mod">
-            <div className="user-container">
+         <Navbar />
+        <div className="root-mod">
+            <div className="col-mod">
                 <Sidebar
-                    homeActive={true}
+                    homeActive ={true}
                 />
-                <div className="user-wrapper">
-                    
+            </div>
+            <div className="user-wrapper">
+                <div className="user-root">
+                    <div className="post-wrapper">
+                      <div className="post-profile-details">
+                        <div className="post-avatar-wrapper">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div className="post-wrapper">
+
+                    </div>
+                    <div className="post-wrapper">
+
+                    </div>
                 </div>
             </div>
-          </div>
+        </div>
       </>
     )
 }

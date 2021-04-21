@@ -7,12 +7,22 @@ export default function Events(props) {
         <>
         <Navbar />
         <div className="root-mod">
-            <div className="user-container">
-                <Sidebar 
-                    eventsActive={true}
+            <div className="col-mod">
+                <Sidebar
+                    eventsActive ={true}
                 />
-                <div className="user-wrapper">
+            </div>
+            <div className="user-wrapper">
+                <div className="user-root">
+                    <div className="post-wrapper">
+                        
+                    </div>
+                    <div className="post-wrapper">
 
+                    </div>
+                    <div className="post-wrapper">
+
+                    </div>
                 </div>
             </div>
         </div>

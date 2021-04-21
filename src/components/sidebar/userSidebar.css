@@ -1,13 +1,14 @@
 .user-sidebar{
     height: 90vh;
-    min-width: 273.2px;
-    max-width:  273.2px;
+    min-width: 20vw;
+    max-width:  20vw;
     background: #fff;
     display: flex;
     flex-direction: column;
     position: sticky;
     top: 0;
     bottom: 0;
+    overflow: auto;
 }
 .icon-span{
     height: 40px;
@@ -101,4 +102,17 @@
 }
 .user-sidebar-link:hover{
     background: #F2F0F0;
+}
+@media screen and (max-width: 100px){
+    .user-sidebar{
+        height: 90vh;
+        min-width: 273.2px;
+        max-width:  273.2px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        position: sticky;
+        top: 0;
+        bottom: 0;
+    }
 }
