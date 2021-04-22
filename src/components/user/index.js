@@ -4,7 +4,7 @@ import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
 import Card from '../card/post';
 import {AiOutlinePlus} from 'react-icons/ai'
-
+import RequestCertificateModal from '../modal/requestCertificate'
  
  
 export default function User(props) {
@@ -38,6 +38,7 @@ export default function User(props) {
                 </div>
             </div>
         </div>
+        <RequestCertificateModal />
       </>
     )
 }
