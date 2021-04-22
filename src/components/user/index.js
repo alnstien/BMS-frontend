@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './user.css';
 import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
@@ -8,6 +8,7 @@ import RequestCertificateModal from '../modal/requestCertificate'
  
  
 export default function User(props) {
+  const [certificateModal,setCertificateModal] = useState(false);
 
     return (
         <>
@@ -16,6 +17,8 @@ export default function User(props) {
             <div className="col-mod">
                 <Sidebar
                     homeActive ={true}
+                    setShow={setCertificateModal}
+                    show={certificateModal}
                 />
             </div>
             <div className="user-wrapper">
@@ -38,7 +41,10 @@ export default function User(props) {
                 </div>
             </div>
         </div>
-        <RequestCertificateModal />
+        <RequestCertificateModal 
+          show={certificateModal}
+          setShow={setCertificateModal}
+        />
       </>
     )
 }

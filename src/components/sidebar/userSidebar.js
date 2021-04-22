@@ -21,14 +21,21 @@ function NavLink({active,icon,name,path,count}){
     )
 }
 
-export default function USidebar({homeActive,eventsActive,inboxActive}) {
+export default function USidebar({homeActive,eventsActive,inboxActive,setShow}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
     const inboxIcon = <FaEnvelope size={22} />;
+
+    const handleShowCertificateModal=()=>{
+        setShow(true);
+    }
     return (
         <div className="user-sidebar">
-            <button className="user-sidebar-btn">
+            <button 
+                className="user-sidebar-btn"
+                onClick={handleShowCertificateModal}
+            >
                 <span className="icon-span"><FaCertificate color={"#E05304 "} size={24} /></span>
                 Request a Certificate
             </button>
