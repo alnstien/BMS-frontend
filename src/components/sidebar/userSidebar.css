@@ -9,6 +9,7 @@
     top: 0;
     bottom: 0;
     overflow: auto;
+    padding-top: 5px;
 }
 .icon-span{
     height: 40px;
@@ -58,16 +59,28 @@
     color:#fff;
     font-size: 15px;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 .user-sidebar-btn:hover{
     background: #c74b04;
 }
-.user-sidebar-btn:nth-child(2){
+.user-sidebar-btn:nth-child(1){
     background: green;
-    margin-top: 5px;
+}
+.user-sidebar-btn:nth-child(2){
+    background: #c74b04;
+}
+.user-sidebar-btn:nth-child(3){
+    background: #52389A;
+}
+.user-sidebar-btn:nth-child(1):hover{
+    background: rgb(2, 105, 2);
 }
 .user-sidebar-btn:nth-child(2):hover{
-    background: rgb(2, 105, 2);
+    background: #ac4306;
+}
+.user-sidebar-btn:nth-child(3):hover{
+    background: #442c86;
 }
 .user-sidebar-link{
     padding: 5px;

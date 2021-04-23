@@ -5,7 +5,6 @@ import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
 import {FaEnvelope,FaCertificate} from 'react-icons/fa'
 import {MdEventNote} from 'react-icons/md'
 import {BiFile} from 'react-icons/bi'
-
 function NavLink({active,icon,name,path,count}){
     return(
         <>
@@ -21,25 +20,35 @@ function NavLink({active,icon,name,path,count}){
     )
 }
 
-export default function USidebar({homeActive,eventsActive,inboxActive,setShow}) {
+export default function USidebar({homeActive,eventsActive,inboxActive,setShow,setShowComplain,setShowCreatePostModal}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
     const inboxIcon = <FaEnvelope size={22} />;
 
-    const handleShowCertificateModal=()=>{
-        setShow(true);
+    const handleShowModal=(fn)=>{
+        fn(true);
     }
     return (
         <div className="user-sidebar">
             <button 
                 className="user-sidebar-btn"
-                onClick={handleShowCertificateModal}
+                onClick={()=>handleShowModal(setShowCreatePostModal)}
+            >
+                <span className="icon-span"><AiOutlinePlus color={"green"} size={24} /></span>
+                Create Post
+            </button>
+            <button 
+                className="user-sidebar-btn"
+                onClick={()=>handleShowModal(setShow)}
             >
                 <span className="icon-span"><FaCertificate color={"#E05304 "} size={24} /></span>
                 Request a Certificate
             </button>
-            <button className="user-sidebar-btn">
+            <button 
+                className="user-sidebar-btn"
+                onClick={()=>handleShowModal(setShowComplain)}
+            >
                 <span className="icon-span"><BiFile color={"green "} size={24} /></span>
                 File a Complaint
             </button>

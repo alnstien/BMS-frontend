@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
+import RequestCertificateModal from '../modal/requestCertificate'
+import ComplainModal from '../modal/complainModal';
+import CreatePostModal from '../modal/createPost';
 
 export default function Inbox(props) {
+    const [certificateModal,setCertificateModal] = useState(false);
+    const [complainModal,setComplainModal] = useState(false);
+    const [createPostModal,setCreatePostModal] = useState(false);
     return (
         <>
         <Navbar />
@@ -10,6 +16,9 @@ export default function Inbox(props) {
             <div className="col-mod">
                 <Sidebar
                     inboxActive ={true}
+                    setShow={setCertificateModal}
+                    setShowComplain={setComplainModal}
+                    setShowCreatePostModal={setCreatePostModal}
                 />
             </div>
             <div className="user-wrapper">
@@ -26,6 +35,18 @@ export default function Inbox(props) {
                 </div>
             </div>
         </div>
+        <RequestCertificateModal 
+          show={certificateModal}
+          setShow={setCertificateModal}
+        />
+        <ComplainModal 
+          show={complainModal}
+          setShow={setComplainModal}
+        />
+        <CreatePostModal 
+          show={createPostModal}
+          setShow={setCreatePostModal}
+        />
         </>
     )
 }
