@@ -22,7 +22,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid gray ;
+    border-bottom: 1px solid lightgray ;
 }
 .modal-title{
     color: rgb(83, 83, 83);
@@ -112,11 +112,15 @@
     width: 100%;
 }
 .modal-certificate{
-    height: 100%;
-    width: 100%;
+    min-height: 300px;
+    max-height: 100%;
+    width: 50%;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .complain-modal-wrapper{
     background: #fff;
@@ -137,7 +141,9 @@
     padding: 10px;
     position: relative;
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    height: 100%;
 }
 @media screen and (max-width:800px){
     .create-post{
@@ -152,5 +158,8 @@
     }
     .modal-title{
         font-size: 18px;
+    }
+    .modal-certificate{
+        width: 100%;
     }
 }
