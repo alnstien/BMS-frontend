@@ -111,6 +111,13 @@
     justify-content: center;
     width: 100%;
 }
+.modal-certificate{
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
 .complain-modal-wrapper{
     background: #fff;
     width: 100%;

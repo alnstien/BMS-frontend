@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal'
 import './modal.css';
-import { TextareaAutosize,TextField } from '@material-ui/core';
+import { TextField,Button } from '@material-ui/core';
 
 
 
@@ -57,11 +57,15 @@ export default function ComplainModal({show,setShow}) {
                       label="Last Name"
                       // onChange={e=>handleChange(e,setLname)}
                   />
-                  <TextareaAutosize 
-                      rowsMin={8}
-                      rowsMax={8}
-                      placeholder="Write something..."
-                    />
+                  <TextField 
+                      variant="outlined"
+                      label="Last Name"
+                      multiline={true}
+                      rowsMax={10}
+                      rows={10}
+                      // onChange={e=>handleChange(e,setLname)}
+                  />
+                  <Button variant="contained" color="primary">Post</Button>
                   </form>
               </div>
               </div>
