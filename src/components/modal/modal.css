@@ -57,16 +57,50 @@
     display: flex;
     position: relative;
 }
+.simplebar-content{
+    display: flex;
+}
 .modal-photos-wrapper{
-    background: blue;
     flex: 1;
     overflow: auto;
     margin-left: 10px;
     min-height: 100px;
+    display: flex;
+    flex-direction: row;
 }
-.example::-webkit-scrollbar {
-    display: none;
-  }
+.posts-photo-holder{
+    min-width: 80px;
+    max-width: 80px;
+    height: 100px;
+    background: green;
+    border-radius: 10px;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.posts-photo-holder img{
+    height: 100%;
+    width: 100%;
+}
+.posts-photo-close{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    margin: 3px;
+    transition: .5s;
+    cursor: pointer;
+    color: rgb(223, 222, 222);
+    background: rgba(0,0,0,0.2);
+}
+.posts-photo-close:hover{
+    background: rgba(0,0,0,0.4);
+}
 #post-img{
     display: none;
 
