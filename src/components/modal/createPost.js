@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal'
 import './modal.css';
+import 'simplebar'
 import { TextareaAutosize } from '@material-ui/core';
 import {BiImageAdd} from 'react-icons/bi'
 import { Button } from '@material-ui/core';
@@ -50,12 +51,13 @@ export default function CreatePostModal({show,setShow}) {
                 <div className="modal-adons">
                     <input type="file" id="post-img" />
                     <label className="post-img-wrapper" for="post-img">
-                      <span>
                         <BiImageAdd size={25} color={'#fff'} />
-                      </span>
                     </label>
+                    <div data-simplebar className="modal-photos-wrapper">
+                            <p>wdwdwwdwdwwdwdwwdwdwwdwdwwdwdwwdwdwwdwdwwdwdwdwdwwdwdwwdwdwwdwdwwdwdwwdwdwwdwdwwdwddwdwwdwdwwdwdwwdwdwwdwdwwdwdwwdwdwwdwddwdwwdwdwwdwdwwdwdwwdwdwwdwdwwdwdwwdwd</p>
+                    </div>
                 </div>
-                  <form>
+                  <form style={{marginTop:10}}>
                     <TextareaAutosize 
                       rowsMin={8}
                       rowsMax={8}

@@ -7,7 +7,6 @@
     justify-content: center;
 }
 .create-post{
-    height: 500px;
     width: 600px;
     background: #fff;
     border-radius: 20px;
@@ -58,19 +57,29 @@
     display: flex;
     position: relative;
 }
+.modal-photos-wrapper{
+    background: blue;
+    flex: 1;
+    overflow: auto;
+    margin-left: 10px;
+    min-height: 100px;
+}
+.example::-webkit-scrollbar {
+    display: none;
+  }
 #post-img{
     display: none;
 
 }
 .post-img-wrapper{
-    height: 180px;
-    width: 120px;
-    border-radius: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: lightgray;
+    background: linear-gradient(blue,purple);
 }
 .post-img-wrapper span{
     height: 50px;
