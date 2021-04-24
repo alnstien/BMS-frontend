@@ -12,7 +12,7 @@ import Billing from './components/bills'
 import User from './components/user'
 import Profile from './components/profile'
 import UserEvents from './components/user/events'
-import Inbox from './components/user/inbox';
+import Notifications from './components/user/inbox';
 import UserProfile from './components/user/useProfile';
 
 
@@ -37,8 +37,8 @@ function App() {
         />
         <Route 
           exact
-          path="/user/inbox"
-          component={Inbox}
+          path="/user/notifications"
+          component={Notifications}
         />
         <Route 
           exact

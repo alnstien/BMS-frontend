@@ -3,7 +3,7 @@ import './userSidebar.css'
 import {Link} from 'react-router-dom'
 import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
 import {FaEnvelope,FaCertificate,FaUserAlt} from 'react-icons/fa'
-import {MdEventNote} from 'react-icons/md'
+import {MdEventNote,MdNotifications} from 'react-icons/md'
 import {BiFile} from 'react-icons/bi'
 
 
@@ -26,7 +26,7 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
-    const inboxIcon = <FaEnvelope size={22} />;
+    const inboxIcon = <MdNotifications size={22} />;
     const profileIcon = <FaUserAlt size={22} />;
     const handleShowModal=(fn)=>{
         fn(true);
@@ -71,8 +71,8 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
                 active={inboxActive}
                 count={true}
                 icon={inboxIcon}
-                path='/user/inbox'
-                name="Inbox"
+                path='/user/notifications'
+                name="Notifications"
             />
             <NavLink 
                 active={profileActive}

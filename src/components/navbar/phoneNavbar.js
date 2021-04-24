@@ -3,7 +3,7 @@ import './phoneNav.css';
 import {Link} from 'react-router-dom';
 import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
 import {FaEnvelope,FaCertificate,FaUserAlt} from 'react-icons/fa'
-import {MdEventNote} from 'react-icons/md'
+import {MdEventNote,MdNotifications} from 'react-icons/md'
 import {BiFile} from 'react-icons/bi'
 
 function NavLink({count,active,name,icon,path}){
@@ -43,7 +43,7 @@ export default function PhoneNavbar({profileActive,homeActive,eventsActive,inbox
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
-    const inboxIcon = <FaEnvelope size={22} />;
+    const inboxIcon = <MdNotifications size={22} />;
     const postIcon = <AiOutlinePlus size={22}  color={'#fff'} />;
     const certIcon = <FaCertificate size={22}  color={'#fff'}  />
     const fileIcon = <BiFile size={22}  color={'#fff'}  />
@@ -85,7 +85,7 @@ export default function PhoneNavbar({profileActive,homeActive,eventsActive,inbox
                 active={inboxActive}
                 count={true}
                 icon={inboxIcon}
-                path='/user/inbox'
+                path='/user/notifications'
             />
             <NavLink 
                 active={profileActive}
