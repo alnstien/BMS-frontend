@@ -8,6 +8,7 @@
 }
 .create-post{
     width: 600px;
+    min-height: 360px;
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
@@ -190,13 +191,11 @@
 }
 @media screen and (max-width:800px){
     .create-post{
-        height: 100%;
         width: 100%;
     }
 }
 @media screen and (max-width:500px){
     .create-post{
-        height: 100%;
         width: 100%;
     }
     .modal-title{

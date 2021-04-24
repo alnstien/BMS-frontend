@@ -4,11 +4,14 @@ import Sidebar from '../sidebar/userSidebar';
 import RequestCertificateModal from '../modal/requestCertificate'
 import ComplainModal from '../modal/complainModal';
 import CreatePostModal from '../modal/createPost';
+import PhoneNav from '../navbar/phoneNavbar';
+
 
 export default function Events(props) {
     const [certificateModal,setCertificateModal] = useState(false);
     const [complainModal,setComplainModal] = useState(false);
     const [createPostModal,setCreatePostModal] = useState(false);
+    const screenWidth = window.innerWidth;
 
     return (
         <>
@@ -23,6 +26,16 @@ export default function Events(props) {
                 />
             </div>
             <div className="user-wrapper">
+            {
+                screenWidth <= 700 ? 
+                <PhoneNav 
+                    eventsActive ={true}
+                    setShow={setCertificateModal}
+                    setShowComplain={setComplainModal}
+                    setShowCreatePostModal={setCreatePostModal}
+              />
+              :null
+            }
                 <div className="user-root">
                     <div className="post-wrapper">
                         

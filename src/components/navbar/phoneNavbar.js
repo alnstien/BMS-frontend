@@ -28,6 +28,7 @@ function PNButton({fnc,icon,color}){
         <button 
             style={{background:color}}
             className="icon-btn"
+            onClick={fnc}
         >
             {
                 icon
@@ -47,19 +48,26 @@ export default function PhoneNavbar({homeActive,eventsActive,inboxActive,setShow
     const certIcon = <FaCertificate size={22}  color={'#fff'}  />
     const fileIcon = <BiFile size={22}  color={'#fff'}  />
 
+    const handleShowModal=(fn)=>{
+        fn(true);
+    }
+
     return (
     <div className="phone-nav">
             <PNButton 
                 icon={postIcon}
                 color={'green'}
+                fnc={()=>handleShowModal(setShowCreatePostModal)}
             />
             <PNButton 
                 icon={certIcon}
                 color={'#E05304'}
+                fnc={()=>handleShowModal(setShow)}
             />
             <PNButton 
                 icon={fileIcon}
                 color={'#52389A'}
+                fnc={()=>handleShowModal(setShowComplain)}
             />
             <NavLink 
                 active={homeActive}

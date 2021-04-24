@@ -32,10 +32,10 @@ export default function User(props) {
               {
                 screenWidth <= 700 ? 
                 <PhoneNav 
-                homeActive ={true}
-                setShow={setCertificateModal}
-                setShowComplain={setComplainModal}
-                setShowCreatePostModal={setCreatePostModal}
+                  homeActive ={true}
+                  setShow={setCertificateModal}
+                  setShowComplain={setComplainModal}
+                  setShowCreatePostModal={setCreatePostModal}
               />
               :null
               }
