@@ -19,7 +19,7 @@ function Message(){
                  <small>Yesterday at 5:36 PM</small>
              </div>
              <div className="post-wrapper-body">
-                 <Typography>
+                 <Typography style={{fontSize:14}}>
                  Hello User, we are so thankful for having you in our online platform. 
  Feel free to let us know your concerns.
  Hello User, we are so thankful for having you in our online platform. 

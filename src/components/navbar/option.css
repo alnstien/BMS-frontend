@@ -18,15 +18,47 @@
     align-items: center;
 }
 .option-nav-btn{
-    height: 40px;
-    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
     border-radius: 50%;
     border: none;
     outline: none;
     background: rgba(0,0,0,0.1);
     cursor: pointer;
-    margin: 10px;
+    margin: 5px;
+    transition: .5s;
 }
 .option-nav-btn:hover{
     background: rgba(0,0,0,0.2);
+}
+.custom-search-wrapper{
+    height: 40px;
+    min-width: 300px;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 30px;
+    overflow: hidden;
+    padding-left: 10px;
+    transition: .1s;
+}
+.custom-search-input{
+    flex:1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 17px;
+}
+.custom-search-btn{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    border: none;
 }
