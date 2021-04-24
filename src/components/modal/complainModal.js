@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal'
 import './modal.css';
-import { TextField,Button } from '@material-ui/core';
+import { TextField,Button, FormGroup, FormControl } from '@material-ui/core';
 
 
 
@@ -52,20 +52,28 @@ export default function ComplainModal({show,setShow}) {
               </div>
               <div className="modal-content">
                   <form className="form-flex">
-                  <TextField 
-                      variant="outlined"
-                      label="Last Name"
-                      // onChange={e=>handleChange(e,setLname)}
-                  />
-                  <TextField 
-                      variant="outlined"
-                      label="Last Name"
-                      multiline={true}
-                      rowsMax={10}
-                      rows={10}
-                      // onChange={e=>handleChange(e,setLname)}
-                  />
-                  <Button variant="contained" color="primary">Post</Button>
+                  <FormGroup>
+                    <FormControl>
+                      <TextField 
+                          variant="outlined"
+                          label="Ngalan sa Ireklamo"
+                          // onChange={e=>handleChange(e,setLname)}
+                      />
+                    </FormControl>
+                        <FormControl style={{marginTop:10}}>
+                          <TextField 
+                            variant="outlined"
+                            label="Rason sa pagreklamo"
+                            multiline={true}
+                            rowsMax={10}
+                            rows={10}
+                            // onChange={e=>handleChange(e,setLname)}
+                        />
+                        </FormControl>
+                      <FormControl style={{marginTop:10}}>
+                        <Button variant="contained" color="primary">Confirm</Button>
+                      </FormControl>
+                  </FormGroup>
                   </form>
               </div>
               </div>

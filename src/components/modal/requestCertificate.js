@@ -95,9 +95,9 @@ export default function RequestCertificateModal({show,setShow}) {
                   color="primary" 
                   onChange={e=>handleCheckRequest(e)}
                 />}
-                label="I don't want to send my request as John Doe"
-                labelPlacement="end"
-            />
+                  label="I don't want to send my request as John Doe"
+                  labelPlacement="end"
+              />
               </FormControl>
                 <FormControl style={{marginTop:10}}>
                   <TextField
@@ -107,7 +107,7 @@ export default function RequestCertificateModal({show,setShow}) {
                 </FormControl>
             <FormControl>
             <Button variant="contained" color="primary" style={{marginTop:20}}>
-              Request
+              Send Request
             </Button>
             </FormControl>
             </FormGroup>

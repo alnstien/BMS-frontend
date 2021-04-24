@@ -2,7 +2,7 @@ import React from 'react';
 import './phoneNav.css';
 import {Link} from 'react-router-dom';
 import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
-import {FaEnvelope,FaCertificate} from 'react-icons/fa'
+import {FaEnvelope,FaCertificate,FaUserAlt} from 'react-icons/fa'
 import {MdEventNote} from 'react-icons/md'
 import {BiFile} from 'react-icons/bi'
 
@@ -39,7 +39,7 @@ function PNButton({fnc,icon,color}){
 }
 
 
-export default function PhoneNavbar({homeActive,eventsActive,inboxActive,setShow,setShowComplain,setShowCreatePostModal}) {
+export default function PhoneNavbar({profileActive,homeActive,eventsActive,inboxActive,setShow,setShowComplain,setShowCreatePostModal}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
@@ -47,6 +47,7 @@ export default function PhoneNavbar({homeActive,eventsActive,inboxActive,setShow
     const postIcon = <AiOutlinePlus size={22}  color={'#fff'} />;
     const certIcon = <FaCertificate size={22}  color={'#fff'}  />
     const fileIcon = <BiFile size={22}  color={'#fff'}  />
+    const profileIcon =  <FaUserAlt size={22} />
 
     const handleShowModal=(fn)=>{
         fn(true);
@@ -85,6 +86,11 @@ export default function PhoneNavbar({homeActive,eventsActive,inboxActive,setShow
                 count={true}
                 icon={inboxIcon}
                 path='/user/inbox'
+            />
+            <NavLink 
+                active={profileActive}
+                icon={profileIcon}
+                path='/user/me'
             />
     </div>
     )

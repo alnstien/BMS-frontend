@@ -5,7 +5,43 @@ import RequestCertificateModal from '../modal/requestCertificate'
 import ComplainModal from '../modal/complainModal';
 import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
+import {BsReply,BsTrash} from 'react-icons/bs'
+import { Typography } from '@material-ui/core';
+import Nav from '../navbar/optionNav';
 
+
+function Message(){
+    return(
+        <>
+         <div className="post-wrapper">
+             <div className="post-wrapper-header">
+                 <Typography>Jane Doe</Typography>
+                 <small>Yesterday at 5:36 PM</small>
+             </div>
+             <div className="post-wrapper-body">
+                 <Typography>
+                 Hello User, we are so thankful for having you in our online platform. 
+ Feel free to let us know your concerns.
+ Hello User, we are so thankful for having you in our online platform. 
+ Feel free to let us know your concerns.
+ Hello User, we are so thankful for having you in our online platform. 
+ Feel free to let us know your concerns.
+                 </Typography>
+             </div>
+             <div className="post-wrapper-footer">
+                <button className="post-wrapper-footer-btn">  
+                    <span><BsReply size={24} /></span>
+                    Reply
+                </button>
+                <button className="post-wrapper-footer-btn">  
+                    <span><BsTrash size={22} /></span>
+                    Delete
+                </button>
+             </div>
+         </div>
+        </>
+    ) 
+ }
 
 export default function Inbox(props) {
     const [certificateModal,setCertificateModal] = useState(false);
@@ -35,16 +71,9 @@ export default function Inbox(props) {
               />
               :null
               }
+                <Nav />
                 <div className="user-root">
-                    <div className="post-wrapper">
-
-                    </div>
-                    <div className="post-wrapper">
-
-                    </div>
-                    <div className="post-wrapper">
-
-                    </div>
+                    <Message />
                 </div>
             </div>
         </div>

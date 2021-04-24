@@ -31,7 +31,42 @@
     background: #F9F7F7;
 
 }
-
+.post-wrapper-header{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+.post-wrapper-footer{
+    flex: 1;
+    bottom: 0;
+    padding: 10px;
+    border-top: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.post-wrapper-footer-btn{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    background:rgba(0,0,0,.1);
+    border: none;
+    outline: none;
+}
+.post-wrapper-footer-btn span{
+    display: flex;
+    align-items: center;
+    margin-right:5px ;
+}
+.post-wrapper-header small{
+    margin-left: 5px;
+    color: gray;
+}
+.post-wrapper-body{
+    padding: 10px;
+}
 .user-create-post{
     /* padding: 10px; */
     /* background: red; */

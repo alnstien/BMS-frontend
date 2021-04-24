@@ -13,6 +13,8 @@ import User from './components/user'
 import Profile from './components/profile'
 import UserEvents from './components/user/events'
 import Inbox from './components/user/inbox';
+import UserProfile from './components/user/useProfile';
+
 
 function App() {
   return (
@@ -22,6 +24,11 @@ function App() {
           exact
           path="/myAdmin"
           component={Dashboard}
+        />
+        <Route 
+          exact
+          path="/user/me"
+          component={UserProfile}
         />
         <Route 
           exact

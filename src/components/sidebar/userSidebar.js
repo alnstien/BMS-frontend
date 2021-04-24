@@ -2,7 +2,7 @@ import React from 'react'
 import './userSidebar.css'
 import {Link} from 'react-router-dom'
 import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
-import {FaEnvelope,FaCertificate} from 'react-icons/fa'
+import {FaEnvelope,FaCertificate,FaUserAlt} from 'react-icons/fa'
 import {MdEventNote} from 'react-icons/md'
 import {BiFile} from 'react-icons/bi'
 
@@ -22,12 +22,12 @@ function NavLink({active,icon,name,path,count}){
     )
 }
 
-export default function USidebar({homeActive,eventsActive,inboxActive,setShow,setShowComplain,setShowCreatePostModal}) {
+export default function USidebar({homeActive,eventsActive,inboxActive,setShow,setShowComplain,setShowCreatePostModal,profileActive}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
     const inboxIcon = <FaEnvelope size={22} />;
-
+    const profileIcon = <FaUserAlt size={22} />;
     const handleShowModal=(fn)=>{
         fn(true);
     }
@@ -51,7 +51,7 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
                 className="user-sidebar-btn"
                 onClick={()=>handleShowModal(setShowComplain)}
             >
-                <span className="icon-span"><BiFile color={"green "} size={24} /></span>
+                <span className="icon-span"><BiFile color={"#52389A "} size={24} /></span>
                 File a Complaint
             </button>
             <NavLink 
@@ -74,11 +74,12 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
                 path='/user/inbox'
                 name="Inbox"
             />
-            
-            <a className="user-sidebar-link">
-                <span className="icon-span">L</span>
-                Inbox
-            </a>
+            <NavLink 
+                active={profileActive}
+                icon={profileIcon}
+                path='/user/me'
+                name="My Profile"
+            />
         </div>
     )
 }
