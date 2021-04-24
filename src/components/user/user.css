@@ -40,4 +40,25 @@
     .user-container{
         width: 100vw;
     }
+    .col-mod{
+        width: 20vw;
+    }
+    .user-root{
+        width: 80vh;
+    }
+    .root-mod{
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width:700px){
+    .col-mod{
+        display: none;
+    }
+    .user-wrapper{
+        width: 100%;
+    }
+    .user-root{
+        width: 100%;
+    }
 }

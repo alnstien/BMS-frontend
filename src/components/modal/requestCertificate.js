@@ -75,11 +75,9 @@ export default function RequestCertificateModal({show,setShow}) {
                 <MenuItem value={"Others"}>Others</MenuItem>
               </Select>
             </FormControl>
-            </FormGroup>
             {
               others ? 
-              <FormGroup style={{marginTop:10}}>
-                <FormControl>
+                <FormControl style={{marginTop:10}}>
                   <TextField
                     multiline={true}
                     label="Please Specify..."
@@ -87,11 +85,9 @@ export default function RequestCertificateModal({show,setShow}) {
                     rowsMax={15}
                   />
                 </FormControl>
-            </FormGroup>
               : null
             }
-            <FormGroup style={{marginTop:10}}>
-                <FormControl>
+              <FormControl style={{marginTop:10}}>
                 <FormControlLabel
                   value={issuedName}
                   control={<Checkbox 
@@ -102,20 +98,18 @@ export default function RequestCertificateModal({show,setShow}) {
                 label="I don't want to send my request as John Doe"
                 labelPlacement="end"
             />
-                </FormControl>
-            </FormGroup>
-            <FormGroup style={{marginTop:10}}>
-                <FormControl>
+              </FormControl>
+                <FormControl style={{marginTop:10}}>
                   <TextField
                     label="Enter Full Name"
                     disabled={issuedName ? false : true}
                   />
                 </FormControl>
-            </FormGroup>
-            <FormGroup>
+            <FormControl>
             <Button variant="contained" color="primary" style={{marginTop:20}}>
               Request
             </Button>
+            </FormControl>
             </FormGroup>
             </form>
           </div>
