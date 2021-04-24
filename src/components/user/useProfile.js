@@ -30,7 +30,7 @@ export default function Profile(props) {
             {
                 screenWidth <= 700 ? 
                 <PhoneNav 
-                    eventsActive ={true}
+                    profileActive ={true}
                     setShow={setCertificateModal}
                     setShowComplain={setComplainModal}
                     setShowCreatePostModal={setCreatePostModal}
