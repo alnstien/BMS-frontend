@@ -1,12 +1,14 @@
 .row{
-    flex:1;
+    flex: 1;
     display: flex;
 }
 .col{
-    flex:1;
+    width: 100%;
     padding:10px;
-    background: red;
-    margin: 10px;
+    background: #fff;
+    border-radius: 10px;
+    min-height: 100px;
+    margin: 5px;
 }
 .wrapper-main{
     width: 70%;
@@ -19,6 +21,19 @@
 @media screen and (max-width: 800px){
     .row{
         flex-direction: column;
+    }
+    .col{
+        width: 100%;
+    }
+    .wrapper-main{
+        width: 100%;
+        padding-top: unset;
+        /* padding:10px; */
+    }
+}
+@media screen and (max-width: 600px){
+    .col{
+        width: 90%;
     }
     .wrapper-main{
         width: 100%;
