@@ -28,13 +28,6 @@
     position: relative;
     overflow: auto;
 }
-.card-wrapper-main{
-    min-height: 2000px;
-    display: flex;
-    width: 100%;
-    padding: 10px;
-    position: relative;
-}
 @media screen and (max-width:1200px){
     .content-wrapper{
         margin-left: 0;

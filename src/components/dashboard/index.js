@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './dashboard.css'
 import Sidebar from '../sidebar';
 import Nav from '../navbar/optionNav'
-
+import Card from '../card/dashboardCard'
 
 export default function Dashboard(props) {
     
@@ -16,7 +16,16 @@ export default function Dashboard(props) {
                 <div className="main-content-wrapper">
                     <Nav />
                     <div className="card-wrapper-main">
-dwwdwd
+                       <div className="card-row">
+                       <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                       </div>
+                       <div className="card-row">
+                       <Card />
+                        <Card />
+                       </div>
                     </div>
                 </div>
             </div>
