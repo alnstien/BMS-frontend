@@ -1,10 +1,10 @@
 import React from 'react';
 import './phoneNav.css';
 import {Link} from 'react-router-dom';
-import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
-import {FaEnvelope,FaCertificate,FaUserAlt} from 'react-icons/fa'
+import {AiFillHome} from 'react-icons/ai'
+import {FaUserAlt} from 'react-icons/fa'
 import {MdEventNote,MdNotifications} from 'react-icons/md'
-import {BiFile} from 'react-icons/bi'
+import {HiOutlineLogout} from 'react-icons/hi'
 
 function NavLink({count,active,name,icon,path}){
     return(
@@ -21,7 +21,7 @@ function NavLink({count,active,name,icon,path}){
     )
 }
 
-function PNButton({fnc,icon,color}){
+export  function PNButton({fnc,icon,color}){
 
     return(
         <>
@@ -39,41 +39,25 @@ function PNButton({fnc,icon,color}){
 }
 
 
-export default function PhoneNavbar({profileActive,homeActive,eventsActive,inboxActive,setShow,setShowComplain,setShowCreatePostModal}) {
+export default function PhoneNavbar({profileActive,homeActive,eventsActive,inboxActive}) {
 
     const homeIcon = <AiFillHome size={24} />
-    const AnnouncementsIcon = <MdEventNote size={24} />
-    const inboxIcon = <MdNotifications size={22} />;
-    const postIcon = <AiOutlinePlus size={22}  color={'#fff'} />;
-    const certIcon = <FaCertificate size={22}  color={'#fff'}  />
-    const fileIcon = <BiFile size={22}  color={'#fff'}  />
+    const AnnouncementsIcon = <MdEventNote size={26} />
+    const inboxIcon = <MdNotifications size={25} />;
     const profileIcon =  <FaUserAlt size={22} />
-
-    const handleShowModal=(fn)=>{
-        fn(true);
-    }
+    const logoutIcon = <HiOutlineLogout size={24}  />
 
     return (
     <div className="phone-nav">
-            <PNButton 
-                icon={postIcon}
-                color={'green'}
-                fnc={()=>handleShowModal(setShowCreatePostModal)}
-            />
-            <PNButton 
-                icon={certIcon}
-                color={'#E05304'}
-                fnc={()=>handleShowModal(setShow)}
-            />
-            <PNButton 
-                icon={fileIcon}
-                color={'#52389A'}
-                fnc={()=>handleShowModal(setShowComplain)}
-            />
             <NavLink 
                 active={homeActive}
                 icon={homeIcon}
                 path='/'
+            />
+            <NavLink 
+                active={profileActive}
+                icon={profileIcon}
+                path='/user/me'
             />
             <NavLink 
                 active={eventsActive}
@@ -88,9 +72,8 @@ export default function PhoneNavbar({profileActive,homeActive,eventsActive,inbox
                 path='/user/notifications'
             />
             <NavLink 
-                active={profileActive}
-                icon={profileIcon}
-                path='/user/me'
+                icon={logoutIcon}
+                path='/user/notifications'
             />
     </div>
     )

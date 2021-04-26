@@ -135,6 +135,7 @@
     }
     .user-sidebar-link{
         border-left: 0;
+        border-bottom: 2px solid #fff;
     }
     .user-sidebar-link-active{
         border-left: 0;

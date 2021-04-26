@@ -6,7 +6,7 @@ import ComplainModal from '../modal/complainModal';
 import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
 import { Typography } from '@material-ui/core';
-
+import FloatingActions from '../navbar/floatingActions';
 
 function Event(){
    return(
@@ -62,6 +62,15 @@ export default function Events(props) {
                     <Event />
                     <Event />
                 </div>
+                {
+                screenWidth <= 700 ? 
+                <FloatingActions
+                  setShow={setCertificateModal}
+                  setShowComplain={setComplainModal}
+                  setShowCreatePostModal={setCreatePostModal}
+                />
+                :null
+              }
             </div>
         </div>
         <RequestCertificateModal 

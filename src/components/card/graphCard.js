@@ -5,8 +5,21 @@ import ChartComponent, {Bar,Line,Doughnut,PolarArea,Bubble} from 'react-chartjs-
 
 export default function GraphCard({type,title,data}) {
 
-    function generateGraph(){
-        
+    function generateGraph(type){
+        switch(type){
+            case 'bar':
+            return <Bar 
+                type={'bar'}
+                title={title}
+                data={data}
+            />
+            case 'line':
+               return <Line 
+                type={'bar'}
+                title={title}
+                data={data}
+            />
+        }
     }
 
     return (
@@ -14,7 +27,9 @@ export default function GraphCard({type,title,data}) {
             <Typography variant="subtitle1" >
                 {title}
             </Typography>
-            
+            {
+                generateGraph(type)
+            }
         </div>
     )
 }

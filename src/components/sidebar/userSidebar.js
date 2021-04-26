@@ -2,10 +2,10 @@ import React from 'react'
 import './userSidebar.css'
 import {Link} from 'react-router-dom'
 import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
-import {FaEnvelope,FaCertificate,FaUserAlt} from 'react-icons/fa'
+import {FaCertificate,FaUserAlt} from 'react-icons/fa'
 import {MdEventNote,MdNotifications} from 'react-icons/md'
 import {BiFile} from 'react-icons/bi'
-
+import {HiOutlineLogout} from 'react-icons/hi'
 
 function NavLink({active,icon,name,path,count}){
     return(
@@ -28,6 +28,8 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
     const AnnouncementsIcon = <MdEventNote size={24} />
     const inboxIcon = <MdNotifications size={22} />;
     const profileIcon = <FaUserAlt size={22} />;
+    const logoutIcon = <HiOutlineLogout size={22} />;
+
     const handleShowModal=(fn)=>{
         fn(true);
     }
@@ -60,6 +62,12 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
                 path='/'
                 name="Home"
             />
+             <NavLink 
+                active={profileActive}
+                icon={profileIcon}
+                path='/user/me'
+                name="My Profile"
+            />
             <NavLink 
                 active={eventsActive}
                 icon={AnnouncementsIcon}
@@ -74,11 +82,10 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
                 path='/user/notifications'
                 name="Notifications"
             />
-            <NavLink 
-                active={profileActive}
-                icon={profileIcon}
-                path='/user/me'
-                name="My Profile"
+             <NavLink 
+                icon={logoutIcon}
+                path='/user/notifications'
+                name="Signout"
             />
         </div>
     )

@@ -6,7 +6,8 @@ import Nav from '../navbar/optionNav'
 import Card from '../card/dashboardCard'
 import GraphCard from '../card/graphCard';
 import {BsPeopleFill} from 'react-icons/bs'
-
+import {BiMessageAltDetail,BiTransfer} from 'react-icons/bi'
+import {RiKakaoTalkLine} from 'react-icons/ri'
 
 export default function Dashboard(props) {
     
@@ -16,12 +17,17 @@ export default function Dashboard(props) {
     ]
 
 
-    const reqIcon = <BsPeopleFill size={24} color={'blue'} />
+    const reqIcon = <BsPeopleFill size={24} color={'rgb(29, 28, 28)'} />
+    const transIcon = <BiTransfer size={30} color={'blue'} />
+    const postsIcon = <BiMessageAltDetail size={30} color={'green'} />
+    const complaintIcon = <RiKakaoTalkLine size={30} color={'orange'} />
+
+
     const cardContent=[
         {icon:reqIcon, title:'Engagements',subtitle:'Visitors',count:'23,223'},
-        {icon:reqIcon, title:'Requests',subtitle:'Requests recently',count:'23,223'},
-        {icon:reqIcon, title:'Activity',subtitle:'Posts today',count:290},
-        {icon:reqIcon, title:'Service',subtitle:'Complaints recently',count:39}
+        {icon:transIcon, title:'Requests',subtitle:'Requests recently',count:'154'},
+        {icon:postsIcon, title:'Activity',subtitle:'Posts today',count:290},
+        {icon:complaintIcon, title:'Service',subtitle:'Complaints recently',count:39}
     ]
 
     let newData = {
@@ -75,7 +81,11 @@ export default function Dashboard(props) {
                                 title={'Requests Overview'}
                                 data={newData}
                             />
-                            <GraphCard />
+                            <GraphCard 
+                                type={'line'}
+                                title={'Total Visits'}
+                                data={newData}
+                            />
                        </div>
                     </div>
                 </div>

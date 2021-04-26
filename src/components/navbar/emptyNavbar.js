@@ -13,7 +13,7 @@ export default function EmptyNavbar() {
             <div className="brgy-logo">
                 
             </div>
-            <button className="logout-btn"><FiLogOut size={22} color={'#fff'} /></button>
+            {/* <button className="logout-btn"><FiLogOut size={22} color={'#fff'} /></button> */}
         </div>
     )
 }

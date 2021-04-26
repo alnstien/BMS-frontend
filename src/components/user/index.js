@@ -4,6 +4,7 @@ import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
 import Card from '../card/post';
 import PhoneNav from '../navbar/phoneNavbar';
+import FloatingActions from '../navbar/floatingActions';
 
 import RequestCertificateModal from '../modal/requestCertificate'
 import ComplainModal from '../modal/complainModal';
@@ -50,6 +51,15 @@ export default function User(props) {
 
                     </div>
                 </div>
+              {
+                screenWidth <= 700 ? 
+                <FloatingActions
+                  setShow={setCertificateModal}
+                  setShowComplain={setComplainModal}
+                  setShowCreatePostModal={setCreatePostModal}
+                />
+                :null
+              }
             </div>
         </div>
         <RequestCertificateModal 

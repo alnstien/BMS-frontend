@@ -8,7 +8,7 @@ import PhoneNav from '../navbar/phoneNavbar';
 import {BsReply,BsTrash} from 'react-icons/bs'
 import { Typography } from '@material-ui/core';
 import Nav from '../navbar/optionNav';
-
+import FloatingActions from '../navbar/floatingActions';
 
 function Message(){
     return(
@@ -75,6 +75,15 @@ export default function Inbox(props) {
                 <div className="user-root">
                     <Message />
                 </div>
+                {
+                screenWidth <= 700 ? 
+                <FloatingActions
+                  setShow={setCertificateModal}
+                  setShowComplain={setComplainModal}
+                  setShowCreatePostModal={setCreatePostModal}
+                />
+                :null
+              }
             </div>
         </div>
         <RequestCertificateModal 

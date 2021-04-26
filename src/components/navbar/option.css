@@ -60,3 +60,15 @@
     outline: none;
     border: none;
 }
+.floating-wrapper{
+    display: flex;
+    width: 100%;
+    background: #fff;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 1px solid lightgray;
+    position: sticky;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+}

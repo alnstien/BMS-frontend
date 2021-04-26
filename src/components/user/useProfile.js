@@ -5,7 +5,7 @@ import RequestCertificateModal from '../modal/requestCertificate'
 import ComplainModal from '../modal/complainModal';
 import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
-
+import FloatingActions from '../navbar/floatingActions';
 
 export default function Profile(props) {
 
@@ -48,6 +48,15 @@ export default function Profile(props) {
 
                     </div>
                 </div>
+                {
+                screenWidth <= 700 ? 
+                <FloatingActions
+                  setShow={setCertificateModal}
+                  setShowComplain={setComplainModal}
+                  setShowCreatePostModal={setCreatePostModal}
+                />
+                :null
+              }
             </div>
         </div>
         <RequestCertificateModal 
