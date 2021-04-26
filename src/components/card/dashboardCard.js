@@ -1,10 +1,10 @@
 import React from 'react'
 import './card.css'
 import {Typography} from '@material-ui/core'
-import {BsPeopleFill} from 'react-icons/bs'
 
 
-export default function Card(props) {
+
+export default function Card({title,icon,subtitle,count}) {
     return (
         <div className="d-card-wrapper">
             <Typography 
@@ -12,25 +12,31 @@ export default function Card(props) {
                 color="textSecondary" 
                 component="p"
             >
-                Engagements
+                {title}
         </Typography>
         <div className="d-card-wrapper-body">
             <span>
-               <BsPeopleFill size={24} color={'blue'} />
+               {
+                   icon
+               }
             </span>
             <Typography 
                 variant="caption" 
                 color="textSecondary" 
                 component="p"
             >
-                Visitors
+                {
+                    subtitle
+                }
             </Typography>
             <Typography 
                 variant="h4" 
                 color="textPrimary" 
                 component="p"   
             >
-                34,566
+               {
+                   count
+               }
             </Typography>
         </div>
         </div>
