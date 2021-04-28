@@ -7,9 +7,33 @@ import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
 import {MdLocationOn,MdPhotoCamera} from 'react-icons/md'
-import {FormControl,TextField , Typography,InputLabel,Input,FormHelperText} from '@material-ui/core'
+import {FormControl,TextField , Typography,InputLabel,Input,FormHelperText, AccordionDetails} from '@material-ui/core'
 import DefaultImg from '../../assets/default.jpg'
+import {BiMessageSquareEdit,BiTransfer} from 'react-icons/bi'
+import {BsPeople} from 'react-icons/bs'
 
+function Details({icon,details}){
+
+  return(
+    <>
+    <div className="me-row mt-5">
+      <span>{icon}</span>
+        <Typography
+          variant="subtitle1"
+          color="textSecondary"
+        >
+          {details}
+        </Typography>
+        <Typography 
+          variant="p"
+          color="textSecondary"
+        >
+                                   
+        </Typography>
+      </div>
+    </>
+  )
+}
 
 export default function Profile(props) {
 
@@ -17,7 +41,10 @@ export default function Profile(props) {
         const [complainModal,setComplainModal] = useState(false);
         const [createPostModal,setCreatePostModal] = useState(false);
         const screenWidth = window.innerWidth;
-
+    
+        const postIcon = <BiMessageSquareEdit size={24} color={'blue'} />
+        const transactIcon = <BiTransfer size={24} color={'blue'} />
+        const unityIcon = <BsPeople size={24} color={'blue'} />
     return (
         <>
         <Navbar />
@@ -42,13 +69,11 @@ export default function Profile(props) {
               :null
             }
                 <div className="user-root">
-                    <div className="post-wrapper">
+                    <div style={{padding:10}}>
                        <div className="me-wrapper">
-                          <div className="me-profile-photo-wrapper">
+                          <div className="me-profile-wrapper">
                             <img src={DefaultImg} alt="" />
-                          </div>
-                          <div className="me-information-wrapper">
-                            <form>
+                            <div className="me-profile-intro">
                               <div className="me-row">
                                 <Typography
                                   variant="h6"
@@ -72,49 +97,25 @@ export default function Profile(props) {
                                   Zamboanga, Philippines
                                 </Typography>
                               </div>
-                              <div className="me-row">
-                                <input type="file" id="pp" />
-                                <label htmlFor="pp">
-                                  <span><MdPhotoCamera size={24} /></span>
-                                  Change Photo
-                                </label>
-                              </div>
-                              <div className="me-form-group">
-                              <TextField 
-                                    id="outlined-basic"
-                                    label="Outlined" 
-                                    variant="outlined" 
-                                  />
-                              </div>
-                              <div className="me-form-group">
-                              <TextField 
-                                    id="outlined-basic"
-                                    label="Outlined" 
-                                    variant="outlined" 
-                                  />
-                              </div>
-                              <div className="me-form-group">
-                              <TextField 
-                                    id="outlined-basic"
-                                    label="Outlined" 
-                                    variant="outlined" 
-                                  />
-                              </div>
-                              <div className="me-form-group">
-                              <TextField 
-                                    id="outlined-basic"
-                                    label="Outlined" 
-                                    variant="outlined" 
-                                  />
-                              </div>
-                              <div className="me-form-group">
-                              <TextField 
-                                    id="outlined-basic"
-                                    label="Outlined" 
-                                    variant="outlined" 
-                                  />
-                              </div>
-                              </form>
+                              
+                              {/* details begins here*/}
+                              <Details 
+                                icon={postIcon}
+                                details={'24 posts created so far'}
+                              />
+                              <Details 
+                                icon={transactIcon}
+                                details={'12 requests submitted'}
+                              />
+                              <Details 
+                                icon={unityIcon}
+                                details={'2 complaints settled'}
+                              />
+                              <button className="me-edit-profile">Edit Profile</button>
+                            </div>
+                          </div>
+                          <div className="me-information-wrapper">
+                              
                           </div>
                        </div>
                     </div>
@@ -145,3 +146,16 @@ export default function Profile(props) {
     </>
     )
 }
+{/* <form className="form-flex">
+                              
+<div className="me-row">
+  <input type="file" id="pp" />
+  <label htmlFor="pp">
+    <span><MdPhotoCamera size={24} /></span>
+    Change Photo
+  </label>
+</div>
+<div className="me-form-group">
+
+</div>
+</form> */}

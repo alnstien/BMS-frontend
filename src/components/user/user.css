@@ -73,6 +73,7 @@
 }
 .me-wrapper{
     display: flex;
+    flex-direction: column;
 }
 .me-information-wrapper{
     display: flex;
@@ -83,6 +84,13 @@
     align-items: flex-start;
     flex-direction: column;
 }
+.me-profile-intro{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+
+}
 .me-information-wrapper form{
     display: flex;
     flex: 1;
@@ -92,28 +100,51 @@
     align-items: flex-start;
     flex-direction: column;
 }
+.me-edit-profile{
+    position: absolute;
+    padding: 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    right: 0;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    width: 100px;
+    border-radius: 20px;
+    color: #fff;
+    background: #52389A;
+}
 .me-row{
     display: flex;
     align-items: center;
 }
-.me-profile-photo-wrapper{
-    height: 150px;
-    width: 140px;
-    background: red;
+.me-row span{
+    margin-right: 10px;
+}
+.me-profile-wrapper{
+    display: flex;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
 }
-.me-profile-photo-wrapper img{
+.me-profile-wrapper img{
     height: 150px;
-    width: 140px;
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 .me-form-group{
-    display: flex;
+
     background: red;
     width: 100%;
     margin-top: 10px;
     position: relative;
-}.me-form-group input{
+    display: flex;
+    flex: 1;
+}
+.me-form-group input{
     width: 100%;
 }
 #pp{
@@ -156,12 +187,16 @@
         justify-content: center;
         align-items: center;
     }
-    .me-profile-photo-wrapper{
+    .me-profile-wrapper{
         width: 100%;
         height: unset;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    .me-edit-profile{
+        bottom: 0;
     }
     .me-profile-photo-wrapper img{
         height: 280px;
