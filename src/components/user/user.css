@@ -77,7 +77,18 @@
 .me-information-wrapper{
     display: flex;
     flex: 1;
+    width: 100%;
     padding: 10px;
+    position: relative;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.me-information-wrapper form{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    position: relative;
     align-items: flex-start;
     flex-direction: column;
 }
@@ -95,6 +106,15 @@
 .me-profile-photo-wrapper img{
     height: 150px;
     width: 140px;
+}
+.me-form-group{
+    display: flex;
+    background: red;
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+}.me-form-group input{
+    width: 100%;
 }
 #pp{
     display: none;

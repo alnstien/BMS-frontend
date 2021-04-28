@@ -7,7 +7,7 @@ import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
 import {MdLocationOn,MdPhotoCamera} from 'react-icons/md'
-import {FormControl,TextField , Typography} from '@material-ui/core'
+import {FormControl,TextField , Typography,InputLabel,Input,FormHelperText} from '@material-ui/core'
 import DefaultImg from '../../assets/default.jpg'
 
 
@@ -47,7 +47,8 @@ export default function Profile(props) {
                           <div className="me-profile-photo-wrapper">
                             <img src={DefaultImg} alt="" />
                           </div>
-                          <form className="me-information-wrapper">
+                          <div className="me-information-wrapper">
+                            <form>
                               <div className="me-row">
                                 <Typography
                                   variant="h6"
@@ -78,12 +79,43 @@ export default function Profile(props) {
                                   Change Photo
                                 </label>
                               </div>
-                              <FormControl>
-                                <TextField
-                                  
-                                />
-                              </FormControl>
-                          </form>
+                              <div className="me-form-group">
+                              <TextField 
+                                    id="outlined-basic"
+                                    label="Outlined" 
+                                    variant="outlined" 
+                                  />
+                              </div>
+                              <div className="me-form-group">
+                              <TextField 
+                                    id="outlined-basic"
+                                    label="Outlined" 
+                                    variant="outlined" 
+                                  />
+                              </div>
+                              <div className="me-form-group">
+                              <TextField 
+                                    id="outlined-basic"
+                                    label="Outlined" 
+                                    variant="outlined" 
+                                  />
+                              </div>
+                              <div className="me-form-group">
+                              <TextField 
+                                    id="outlined-basic"
+                                    label="Outlined" 
+                                    variant="outlined" 
+                                  />
+                              </div>
+                              <div className="me-form-group">
+                              <TextField 
+                                    id="outlined-basic"
+                                    label="Outlined" 
+                                    variant="outlined" 
+                                  />
+                              </div>
+                              </form>
+                          </div>
                        </div>
                     </div>
                 </div>
