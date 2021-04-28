@@ -6,6 +6,10 @@ import ComplainModal from '../modal/complainModal';
 import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
+import {MdLocationOn,MdPhotoCamera} from 'react-icons/md'
+import {FormControl,TextField , Typography} from '@material-ui/core'
+import DefaultImg from '../../assets/default.jpg'
+
 
 export default function Profile(props) {
 
@@ -39,13 +43,48 @@ export default function Profile(props) {
             }
                 <div className="user-root">
                     <div className="post-wrapper">
-                        
-                    </div>
-                    <div className="post-wrapper">
-
-                    </div>
-                    <div className="post-wrapper">
-
+                       <div className="me-wrapper">
+                          <div className="me-profile-photo-wrapper">
+                            <img src={DefaultImg} alt="" />
+                          </div>
+                          <form className="me-information-wrapper">
+                              <div className="me-row">
+                                <Typography
+                                  variant="h6"
+                                  color="textPrimary"
+                                >
+                                  Jane Doe
+                                </Typography>
+                                <Typography 
+                                  variant="p"
+                                  color="textSecondary"
+                                >
+                                  @janedoe12
+                                </Typography>
+                              </div>
+                              <div className='me-row'>
+                                <p><MdLocationOn size={24} color={'gray'} /></p>
+                                <Typography
+                                  variant="p"
+                                  color="textSecondary"
+                                >
+                                  Zamboanga, Philippines
+                                </Typography>
+                              </div>
+                              <div className="me-row">
+                                <input type="file" id="pp" />
+                                <label htmlFor="pp">
+                                  <span><MdPhotoCamera size={24} /></span>
+                                  Change Photo
+                                </label>
+                              </div>
+                              <FormControl>
+                                <TextField
+                                  
+                                />
+                              </FormControl>
+                          </form>
+                       </div>
                     </div>
                 </div>
                 {

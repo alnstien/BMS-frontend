@@ -71,6 +71,57 @@
     /* padding: 10px; */
     /* background: red; */
 }
+.me-wrapper{
+    display: flex;
+}
+.me-information-wrapper{
+    display: flex;
+    flex: 1;
+    padding: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.me-row{
+    display: flex;
+    align-items: center;
+}
+.me-profile-photo-wrapper{
+    height: 150px;
+    width: 140px;
+    background: red;
+    position: relative;
+    overflow: hidden;
+}
+.me-profile-photo-wrapper img{
+    height: 150px;
+    width: 140px;
+}
+#pp{
+    display: none;
+}
+.me-row label{
+    padding: 10px;
+    background: #52389A;
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    margin-top: 10px;
+    user-select: none;
+}
+.me-row label span{
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+
+
+}
 @media screen and (max-width:800px){
     .user-container{
         width: 100vw;
@@ -84,6 +135,20 @@
     .root-mod{
         justify-content: center;
         align-items: center;
+    }
+    .me-profile-photo-wrapper{
+        width: 100%;
+        height: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .me-profile-photo-wrapper img{
+        height: 280px;
+        width: 250px;
+    }
+    .me-wrapper{
+        flex-direction: column;
     }
 }
 @media screen and (max-width:700px){

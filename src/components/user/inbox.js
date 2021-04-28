@@ -28,16 +28,6 @@ function Message(){
  Feel free to let us know your concerns.
                  </Typography>
              </div>
-             <div className="post-wrapper-footer">
-                <button className="post-wrapper-footer-btn">  
-                    <span><BsReply size={24} /></span>
-                    Reply
-                </button>
-                <button className="post-wrapper-footer-btn">  
-                    <span><BsTrash size={22} /></span>
-                    Delete
-                </button>
-             </div>
          </div>
         </>
     ) 
@@ -71,7 +61,6 @@ export default function Inbox(props) {
               />
               :null
               }
-                <Nav />
                 <div className="user-root">
                     <Message />
                 </div>
