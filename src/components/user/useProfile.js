@@ -7,7 +7,7 @@ import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
 import {MdLocationOn,MdPhotoCamera} from 'react-icons/md'
-import {FormControl,TextField , Typography,InputLabel,Input,FormHelperText, AccordionDetails} from '@material-ui/core'
+import {FormControl,TextField , Typography,InputLabel,Input,FormHelperText, AccordionDetails, FormGroup} from '@material-ui/core'
 import DefaultImg from '../../assets/default.jpg'
 import {BiMessageSquareEdit,BiTransfer} from 'react-icons/bi'
 import {BsPeople} from 'react-icons/bs'
@@ -115,7 +115,42 @@ export default function Profile(props) {
                             </div>
                           </div>
                           <div className="me-information-wrapper">
-                              
+                            <div className="edit-form-field">
+                              <form >
+                                <FormGroup className="form-flex-mod">
+                                <FormControl>
+                                  <TextField
+                                    variant="outlined"
+                                    label="Address"
+                                  />
+                                </FormControl>
+                                <div className="edit-form-footer">
+                                  <button className="edit-form-cancel-btn">Cancel</button>
+                                  <button className="edit-form-submit-btn">Save</button>
+                                </div>
+                                </FormGroup>
+                              </form>
+                            </div>
+                              <div className="edit-content-wrapper">
+                                  <span className="icon-wrapper">
+                                    p
+                                  </span>
+                                  <div className="edit-content">
+                                  <Typography
+                                    variant="subtitle1"
+                                    color="textPrimary"
+                                  >
+                                    Malinao, Kabacsanan Iligan City
+                                </Typography>
+                                <Typography 
+                                  variant="p"
+                                  color="textSecondary"
+                                >
+                                   Address
+                                </Typography>        
+                                  </div>
+                                  <button className="edit-button">edit</button>
+                              </div>
                           </div>
                        </div>
                     </div>
