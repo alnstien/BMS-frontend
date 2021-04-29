@@ -1,6 +1,6 @@
 import React,{useState,useRef} from 'react';
 import './empty.css';
-import {FiLogOut} from 'react-icons/fi'
+import Logo from '../../assets/logo.png';
 
 
 export default function EmptyNavbar() {
@@ -11,7 +11,12 @@ export default function EmptyNavbar() {
     return (
         <div className="navbar-dummy">
             <div className="brgy-logo">
-                
+                <img src={Logo} alt="" />
+            </div>
+            <div className="navbar-location">
+                <h5>Barangay Ezperansa</h5>
+                <h6>Municipality of Ramon Magsaysay, Zamboanga del Sur</h6>
+                <small>Region IX</small>
             </div>
             {/* <button className="logout-btn"><FiLogOut size={22} color={'#fff'} /></button> */}
         </div>
