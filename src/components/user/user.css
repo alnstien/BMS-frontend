@@ -102,7 +102,8 @@
 }
 .me-edit-profile{
     position: absolute;
-    padding: 10px;
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -110,8 +111,7 @@
     cursor: pointer;
     outline: none;
     border: none;
-    width: 100px;
-    border-radius: 20px;
+    border-radius: 50%;
     color: #fff;
     background: #52389A;
 }
@@ -192,6 +192,11 @@
     cursor: pointer;
     border: none;
     outline: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.1);
+}    
+.edit-button:hover{
+    background: rgba(0,0,0,0.2);
 }
 .edit-form-field{
     background: #fff;
@@ -247,7 +252,6 @@
     height: 40px;
     width: 40px;
     display: flex;
-    background: red;
     align-items: center;
     justify-content: center;
 }
@@ -276,12 +280,12 @@
     .me-edit-profile{
         bottom: 0;
     }
-    .me-profile-photo-wrapper img{
-        height: 280px;
-        width: 250px;
-    }
     .me-wrapper{
         flex-direction: column;
+    }
+    .me-profile-wrapper img{
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }
 @media screen and (max-width:700px){

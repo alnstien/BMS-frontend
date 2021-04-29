@@ -6,11 +6,13 @@ import ComplainModal from '../modal/complainModal';
 import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
-import {MdLocationOn,MdPhotoCamera} from 'react-icons/md'
 import {FormControl,TextField , Typography,InputLabel,Input,FormHelperText, AccordionDetails, FormGroup} from '@material-ui/core'
-import DefaultImg from '../../assets/default.jpg'
+import DefaultImg from '../../assets/avatar.jpg'
 import {BiMessageSquareEdit,BiTransfer} from 'react-icons/bi'
 import {BsPeople} from 'react-icons/bs'
+import {FaBirthdayCake} from 'react-icons/fa'
+import {GoHome,GoPerson} from 'react-icons/go'
+import {MdModeEdit,MdPersonPinCircle,MdEmail,MdLocalPhone} from 'react-icons/md'
 
 function Details({icon,details}){
 
@@ -24,12 +26,78 @@ function Details({icon,details}){
         >
           {details}
         </Typography>
-        <Typography 
-          variant="p"
-          color="textSecondary"
-        >
-                                   
+      </div>
+    </>
+  )
+}
+
+function UserInfo({icon,content,label}){
+  const [edit,setEdit] = useState(false)
+
+  const handleClose=(e)=>{
+    e.preventDefault();
+    return setEdit(false);
+  }
+  const handleOpen=(e)=>{
+    e.preventDefault();
+    return setEdit(true);
+  }
+  return(
+    <>
+     <div className="me-information-wrapper">
+     {
+       edit ? 
+       <div className="edit-form-field">
+        <form >
+          <FormGroup className="form-flex-mod">
+          <FormControl>
+            <TextField
+              variant="outlined"
+              label={label}
+              value={content}
+            />
+          </FormControl>
+            <div className="edit-form-footer">
+              <button 
+                className="edit-form-cancel-btn"
+                onClick={handleClose}
+              >Cancel</button>
+              <button className="edit-form-submit-btn">Save</button>
+            </div>
+            </FormGroup>
+        </form>
+      </div>  
+       :
+       <div className="edit-content-wrapper">
+          <span className="icon-wrapper">
+            {
+              icon
+            }
+          </span>
+          <div className="edit-content">
+          <Typography
+            variant="subtitle1"
+            color="textPrimary"
+          >
+          {
+            content
+          }
         </Typography>
+          <Typography 
+            variant="caption"
+            color="textSecondary"
+          >
+                {
+                  label
+                }
+            </Typography>        
+              </div>
+              <button 
+                className="edit-button"
+                onClick={handleOpen}
+                ><MdModeEdit size={24} color={"#000"} /></button>
+          </div>
+        }                  
       </div>
     </>
   )
@@ -41,10 +109,21 @@ export default function Profile(props) {
         const [complainModal,setComplainModal] = useState(false);
         const [createPostModal,setCreatePostModal] = useState(false);
         const screenWidth = window.innerWidth;
-    
+        const [edit,setEdit]=useState(false);
+
+
+        const handleEdit=()=>{
+          setEdit(prevEdit=>!prevEdit);
+        }
+        //icons
         const postIcon = <BiMessageSquareEdit size={24} color={'blue'} />
         const transactIcon = <BiTransfer size={24} color={'blue'} />
         const unityIcon = <BsPeople size={24} color={'blue'} />
+        const addressIcon = <GoHome size={24} color={'#000'} />
+        const bdayIcon = <FaBirthdayCake size={24} color={'#000'} />
+        const genderIcon = <GoPerson size={24} color={'#000'} />
+        const emailIcon = <MdEmail size={24} color={'#000'} />
+        const phoneIcon = <MdLocalPhone size={24} color={'#000'} />
     return (
         <>
         <Navbar />
@@ -82,16 +161,16 @@ export default function Profile(props) {
                                   Jane Doe
                                 </Typography>
                                 <Typography 
-                                  variant="p"
+                                  variant="body2"
                                   color="textSecondary"
                                 >
                                   @janedoe12
                                 </Typography>
                               </div>
                               <div className='me-row'>
-                                <p><MdLocationOn size={24} color={'gray'} /></p>
+                                <p><MdPersonPinCircle size={24} color={'green'} /></p>
                                 <Typography
-                                  variant="p"
+                                  variant="body2"
                                   color="textSecondary"
                                 >
                                   Zamboanga, Philippines
@@ -111,47 +190,36 @@ export default function Profile(props) {
                                 icon={unityIcon}
                                 details={'2 complaints settled'}
                               />
-                              <button className="me-edit-profile">Edit Profile</button>
+                              <button className="me-edit-profile"><MdModeEdit size={24} color={'#fff'} /></button>
                             </div>
                           </div>
-                          <div className="me-information-wrapper">
-                            <div className="edit-form-field">
-                              <form >
-                                <FormGroup className="form-flex-mod">
-                                <FormControl>
-                                  <TextField
-                                    variant="outlined"
-                                    label="Address"
-                                  />
-                                </FormControl>
-                                <div className="edit-form-footer">
-                                  <button className="edit-form-cancel-btn">Cancel</button>
-                                  <button className="edit-form-submit-btn">Save</button>
-                                </div>
-                                </FormGroup>
-                              </form>
-                            </div>
-                              <div className="edit-content-wrapper">
-                                  <span className="icon-wrapper">
-                                    p
-                                  </span>
-                                  <div className="edit-content">
-                                  <Typography
-                                    variant="subtitle1"
-                                    color="textPrimary"
-                                  >
-                                    Malinao, Kabacsanan Iligan City
-                                </Typography>
-                                <Typography 
-                                  variant="p"
-                                  color="textSecondary"
-                                >
-                                   Address
-                                </Typography>        
-                                  </div>
-                                  <button className="edit-button">edit</button>
-                              </div>
-                          </div>
+                          <UserInfo 
+                            edit={edit}
+                            setEdit={setEdit}
+                            icon={emailIcon}
+                            content={"janedoe124@email.test"}
+                            label={"Email Address"}
+                          />
+                           <UserInfo 
+                            icon={phoneIcon}
+                            content={"+639478547347"}
+                            label={"Contact number"}
+                          />
+                           <UserInfo 
+                            icon={addressIcon}
+                            content={"Malinao, Kabacsanan Iligan City"}
+                            label={"Home Address"}
+                          />
+                          <UserInfo 
+                            icon={bdayIcon}
+                            content={"May 15, 1994"}
+                            label={"Birthdate"}
+                          />
+                          <UserInfo 
+                            icon={genderIcon}
+                            content={"Female"}
+                            label={"Gender"}
+                          />
                        </div>
                     </div>
                 </div>
