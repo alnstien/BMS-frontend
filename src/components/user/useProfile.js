@@ -6,7 +6,7 @@ import ComplainModal from '../modal/complainModal';
 import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
-import {FormControl,TextField , Typography,InputLabel,Input,FormHelperText, AccordionDetails, FormGroup} from '@material-ui/core'
+import {FormControl,TextField,MenuItem,Select,Typography,InputLabel, FormGroup} from '@material-ui/core'
 import DefaultImg from '../../assets/avatar.jpg'
 import {BiMessageSquareEdit,BiTransfer} from 'react-icons/bi'
 import {BsPeople} from 'react-icons/bs'
@@ -31,8 +31,9 @@ function Details({icon,details}){
   )
 }
 
-function UserInfo({icon,content,label}){
+function UserInfo({icon,content,label,variant,options}){
   const [edit,setEdit] = useState(false)
+  const [text,setText] = useState(content);
 
   const handleClose=(e)=>{
     e.preventDefault();
@@ -42,6 +43,12 @@ function UserInfo({icon,content,label}){
     e.preventDefault();
     return setEdit(true);
   }
+
+  const handleChange=(e)=>{
+    e.preventDefault();
+    setText(e.target.value)
+  }
+
   return(
     <>
      <div className="me-information-wrapper">
@@ -50,13 +57,47 @@ function UserInfo({icon,content,label}){
        <div className="edit-form-field">
         <form >
           <FormGroup className="form-flex-mod">
-          <FormControl>
-            <TextField
-              variant="outlined"
-              label={label}
-              value={content}
-            />
-          </FormControl>
+            {
+              variant ==='date' ? 
+            <FormControl>
+             <TextField
+                variant="outlined"
+                value={content}
+                label={label}
+                type="date"
+                value="2013-01-08"
+              />
+            </FormControl>
+              :
+              variant ==='select' ? 
+              <FormControl>
+              <InputLabel id="demo-simple-select-helper-label">Gender</InputLabel>
+              <Select
+                labelId="demo-simple-select-helper-label"
+                id="demo-simple-select-helper"
+                value={text}
+                onChange={e=>handleChange(e)}
+              >
+                <MenuItem value="">
+                  <em>{label}</em>
+                </MenuItem>
+                {
+                  options.map(item=>{
+                    return <MenuItem value={item}>{item}</MenuItem>
+                  })
+                }
+              </Select>
+            </FormControl>
+              :
+              <FormControl>
+              <TextField
+                variant="outlined"
+                label={label}
+                value={text}
+                onChange={(e)=>handleChange(e)}
+              />
+            </FormControl>
+            }
             <div className="edit-form-footer">
               <button 
                 className="edit-form-cancel-btn"
@@ -110,8 +151,7 @@ export default function Profile(props) {
         const [createPostModal,setCreatePostModal] = useState(false);
         const screenWidth = window.innerWidth;
         const [edit,setEdit]=useState(false);
-
-
+        const gender = ['Male','Female'];
         const handleEdit=()=>{
           setEdit(prevEdit=>!prevEdit);
         }
@@ -211,12 +251,15 @@ export default function Profile(props) {
                             label={"Home Address"}
                           />
                           <UserInfo 
+                            variant="date"
                             icon={bdayIcon}
                             content={"May 15, 1994"}
                             label={"Birthdate"}
                           />
                           <UserInfo 
                             icon={genderIcon}
+                            variant="select"
+                            options={gender}
                             content={"Female"}
                             label={"Gender"}
                           />
