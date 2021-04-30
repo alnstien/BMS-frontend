@@ -72,6 +72,7 @@ export default function RequestCertificateModal({show,setShow}) {
                 </MenuItem>
                 <MenuItem value={'Barangay Certificate'}>Barangay Certificate</MenuItem>
                 <MenuItem value={"Certificate of Indegency"}>Certificate of Indegency</MenuItem>
+                <MenuItem value={"Letter of Acceptance"}>Letter of Acceptance</MenuItem>
                 <MenuItem value={"Others"}>Others</MenuItem>
               </Select>
             </FormControl>
