@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import './modal.css';
 import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
 import { TextareaAutosize } from '@material-ui/core';
 import {BiImageAdd} from 'react-icons/bi'
 import { Button } from '@material-ui/core';

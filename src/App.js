@@ -3,6 +3,7 @@ import {Route,BrowserRouter,Switch} from 'react-router-dom'
 import './css/responsiveRow.css';
 import './css/custom.css';
 import './css/dropdown.css';
+import 'simplebar/dist/simplebar.min.css';
 import Login from './components/login/login';
 import Registration from './components/register/userRegistration';
 import Dashboard from './components/dashboard/index';
