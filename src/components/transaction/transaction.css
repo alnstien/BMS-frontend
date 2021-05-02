@@ -3,11 +3,13 @@
     flex: 1;
     position: relative;
     overflow: auto;
+    overflow-x: hidden;
 }
 .req-wrapper{
-    height: 200vh;
-    width: 75%;
+    height: 90vh;
+    flex: 1;
     position: relative;
+    background: #fff;
 }
 .mynav{
     height: 10vh;
@@ -24,6 +26,37 @@
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    position: relative;
+}
+.sort-button{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: rgba(0,0,0,0.1);
+    transition: .3s;
+    margin: 10px;
+}
+.sort-button:hover{
+    background: rgba(0,0,0,0.2);
+}
+.burger-menu{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 .req-overview{
     width: 25%;
@@ -73,4 +106,8 @@
     justify-content: center;
     cursor: pointer;
 
+}
+.req-overview-holder form select{
+    height: 40px;
+    font-size: 16px;
 }
