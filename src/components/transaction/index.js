@@ -4,9 +4,17 @@ import './transaction.css';
 import SimpleBar from 'simplebar-react';
 import {FcSearch} from 'react-icons/fc'
 import {BiSortAZ,BiSortZA} from 'react-icons/bi'
-import {CgMenuLeft} from 'react-icons/cg'
-import {MdClose} from 'react-icons/md'
+import {CgMenuLeft,CgTrash} from 'react-icons/cg'
+import {MdClose,MdCheckBox,MdIndeterminateCheckBox} from 'react-icons/md'
 
+    //icons
+    const ascIcon = <BiSortAZ size={24} />
+    const descIcon = <BiSortZA size={24} />
+    const openIcon = <CgMenuLeft size={24} />
+    const closeIcon = <MdClose size={24} />
+    const trashIcon = <CgTrash size={24}  />
+    const checkIcon = <MdCheckBox size={24}  />
+    const unCheckIcon = <MdIndeterminateCheckBox size={24} />
 
 function Button({status,fnc,icon1,icon2,style}){
 
@@ -33,32 +41,37 @@ function Button({status,fnc,icon1,icon2,style}){
 export default function Transaction(props) {
     const [sortAsc,setSortAsc] = useState(false)
     const [isOpen,setOpen] = useState(false)
-
+    const [check,setCheck] = useState(false)
+    const width = window.innerWidth;
     const toggleSidebar=(e)=>{
         e.preventDefault();
-        setOpen(!isOpen)
+        setOpen(prevOpen=>!prevOpen)
     }
     const handleSort=(e)=>{
         e.preventDefault();
-        setSortAsc(!sortAsc)
+        setSortAsc(prevSort=>!prevSort)
+
+    }
+    const handleCheck=(e)=>{
+        e.preventDefault();
+        setCheck(prevCheck=>!prevCheck)
 
     }
 
-    //icons
-    const ascIcon = <BiSortAZ size={24} />
-    const descIcon = <BiSortZA size={24} />
-    const openIcon = <CgMenuLeft size={24} />
-    const closeIcon = <MdClose size={24} />
+
+
     return (
         <div className="con-container"> 
             <Sidebar transactionActive={true}/>
             <div className="content-wrapper">
-              
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">
                         <div className="mynav">
                             <form>
-                                <Button
+                                {
+                                    width <= 700 
+                                ? 
+                                    <Button
                                     status={isOpen}
                                     fnc={e=>toggleSidebar(e)}
                                     icon1={openIcon}
@@ -68,11 +81,39 @@ export default function Transaction(props) {
                                         left:0
                                     }}
                                 />
+                                :
+                                    null
+                                }
+                                <div className="cat-search">
+                                    <input
+                                        placeholder="Search..."
+                                    />
+                                    <button><FcSearch size={24} /></button>
+                                </div>
+                                <div className="cat-selection">
+                                    <select>
+                                        <option>All</option>
+                                        <option>Barangay Certificate</option>
+                                            <option>Certificate of Indigency</option>
+                                            <option>Letter of Acceptance</option>
+                                    </select>
+                                </div>
                                 <Button 
                                     status={sortAsc}
                                     fnc={e=>handleSort(e)}
                                     icon1={ascIcon}
                                     icon2={descIcon}
+                                />
+                                <Button 
+                                    fnc={e=>alert("delete something")}
+                                    status={false}
+                                    icon1={trashIcon}
+                                />
+                                <Button 
+                                    fnc={e=>handleCheck(e)}
+                                    status={check}
+                                    icon1={checkIcon}
+                                    icon2={unCheckIcon}
                                 />
                             </form>
                         </div>
@@ -101,7 +142,7 @@ export default function Transaction(props) {
                                     </SimpleBar>
                             </div>
                             <div className="req-wrapper">
-                                    
+
                             </div>
                         </div>
                     </div>
