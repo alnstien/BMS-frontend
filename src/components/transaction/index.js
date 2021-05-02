@@ -2,7 +2,7 @@ import React from 'react'
 import Sidebar from '../sidebar' 
 import './transaction.css';
 import SimpleBar from 'simplebar-react';
-
+import {FcSearch} from 'react-icons/fc'
 
 export default function Transaction(props) {
 
@@ -13,26 +13,31 @@ export default function Transaction(props) {
               
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">
+                        <div className="mynav">
+                                   
+                        </div>
                         <div className="content-flex">
-                            <div className="req-wrapper">
-                                <div className="mynav">
+                            <div className="req-overview">
+                                <SimpleBar className="req-overview-holder">
                                     <form>
+                                    <div className="search-wrapper">
+                                        <input 
+                                            placeholder="Search..."
+                                        />
+                                        <button><FcSearch size={25} /></button>
+                                    </div>
                                         <select>
                                             <option>All</option>
                                             <option>Barangay Certificate</option>
                                             <option>Certificate of Indigency</option>
                                             <option>Letter of Acceptance</option>
                                         </select>
-                                        <input 
-                                                placeholder="Search..."
-                                        />
+                                        
                                     </form>
-                                </div>
-                            </div>
-                            <div className="req-overview">
-                                <SimpleBar className="req-overview-holder">
-                                    
                                 </SimpleBar>
+                            </div>
+                            <div className="req-wrapper">
+                                dwdwd
                             </div>
                         </div>
                     </div>
