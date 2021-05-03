@@ -57,12 +57,12 @@ function ListItem({status,request}){
                 <td>
                     <div className="request-status-cc">
                         <p
-                            style={{background: request.status==='Valid' ? 'green' :'red' }}
+                            style={{color: request.status==='Valid' ? 'green' :'rgb(231, 12, 12)' }}
                         >{request.status}</p>
                     </div>
                 </td>
                 <td>
-                    <button>Process</button>
+                    <button className="process-btn">Process</button>
                 </td>
             </tr>
         </>
@@ -224,6 +224,17 @@ export default function Transaction(props) {
                                     </table>
                                 </div>
                                 <div className="requests-footer">
+                                    <div>
+                                        <label>Rows per page:</label>
+                                        <select>
+                                            <option>10</option>
+                                            <option>50</option>
+                                            <option>100</option>
+                                            <option>200</option>
+                                            <option>500</option>
+                                            <option>1000</option>
+                                        </select>
+                                    </div>
                                     <Pagination count={10} variant="outlined" shape="rounded" />
                                 </div>
                             </div>

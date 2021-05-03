@@ -176,6 +176,23 @@
     /* background: red; */
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.process-btn{
+    padding: 8px 10px;
+    cursor: pointer;
+    background:orange;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+.requests-footer div select{
+    margin-left: 10px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background: lightgray;
 }
 .req-table{
     position: relative;
@@ -191,10 +208,7 @@
     justify-content: center;
 }
 .request-status-cc p{
-    background: green;
-    padding: 1px 7px;
-    color: #fff;
-    border-radius: 5px;
+    font-weight: bold;
 }
 .t-head{
     /* background:rgba(0,0,0,0.2); */
