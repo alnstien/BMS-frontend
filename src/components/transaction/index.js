@@ -37,7 +37,7 @@ function Button({status,fnc,icon1,icon2,style}){
     )
 }
 
-function ListItem({status,request,checked}){
+function ListItem({status,request,checked,handleCheck,handleProcess}){
     const [selected,setSelected] = useState(checked);
 
     const handleSelect=useCallback(()=>{
@@ -71,7 +71,10 @@ function ListItem({status,request,checked}){
                     </div>
                 </td>
                 <td>
-                    <button className="process-btn">Process</button>
+                    <button 
+                        className="process-btn"
+                        onClick={handleProcess}
+                    >Process</button>
                 </td>
             </tr>
         </>
@@ -107,7 +110,7 @@ export default function Transaction(props) {
     const [isOpen,setOpen] = useState(false)
     const [check,setCheck] = useState(false)
     const [checked,setChecked] = useState(false);
-
+    const [show,setShow] = useState(false)
 
     const width = window.innerWidth;
     const toggleSidebar=(e)=>{
@@ -127,7 +130,9 @@ export default function Transaction(props) {
     const handleCheckAll=()=>{
         setChecked(prevChecked=>!prevChecked)
     }
-
+    const handleProcess=()=>{
+        setShow(!show)
+    }
     return (
         <>
         <div className="con-container"> 
@@ -227,7 +232,7 @@ export default function Transaction(props) {
                                                 </th>
                                                 :null
                                             }
-                                                <th>Date</th>
+                                                <th>Date <button>Sort</button></th>
                                                 <th>Resident</th>
                                                 <th>Request</th>
                                                 <th>Status</th>
@@ -241,6 +246,7 @@ export default function Transaction(props) {
                                                     request={req}
                                                     status={check}
                                                     checked={checked}
+                                                    handleProcess={handleProcess}
                                               />
                                              })
                                          }
@@ -268,7 +274,8 @@ export default function Transaction(props) {
             </div>
         </div>
         <ProcessModal 
-            show={true}
+            show={show}
+            setShow={setShow}
         />
     </>
     )

@@ -38,7 +38,9 @@ export default function CreatePostModal({show,setShow}) {
         }}
      >
         <div className="flex-modal">
-            <button>Close</button>
+            <button
+                onClick={()=>setShow(!show)}
+            >Close</button>
         </div>
      </Modal>
     )
