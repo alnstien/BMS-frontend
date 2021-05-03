@@ -11,6 +11,7 @@
     position: relative;
     background: #fff;
 }
+
 .mynav{
     height: 10vh;
     width: 100%;
@@ -126,9 +127,9 @@
     color: gray;
     outline: none;
     font-size: 16px;
-    /* border: 1px solid lightgray; */
-    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    border: 1px solid lightgray;
+    /* --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) */
 }
 
 .cat-search{
@@ -139,8 +140,9 @@
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    /* --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) */
+    border: 1px solid lightgray;
 }
 
 .cat-search input{
@@ -161,7 +163,69 @@
     outline: none;
     cursor: pointer;
 }
-
+.requests{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow: auto;
+}
+.requests-footer{
+    height: 10%;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+}
+.req-table{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid lightgray;
+    overflow: auto;
+}
+.request-status-cc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.request-status-cc p{
+    background: green;
+    padding: 1px 7px;
+    color: #fff;
+    border-radius: 5px;
+}
+.t-head{
+    /* background:rgba(0,0,0,0.2); */
+    position: sticky;
+    border-bottom: 1px solid lightgray;
+    top: 0;
+    padding: 10px;
+    /* border: 1px solid lightgray; */
+}
+.t-head tr th{
+    padding: 10px;;
+}
+.t-body{
+    background:#fff;
+}
+.tb-tr{
+    border-bottom: 1px solid lightgray;
+}
+.tb-tr:nth-child(even){
+    background: rgba(0,0,0,0.05);
+}
+.tb-tr:hover{
+    background: rgba(0,0,0,0.02);
+}
+.req-check{
+    height: 20px;
+    width: 20px;
+}
+.t-body tr td{
+   padding: 10px;
+}
 @media screen and (max-width:700px){    
     .mynav{
         padding-right:10px ;

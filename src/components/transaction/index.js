@@ -6,7 +6,7 @@ import {FcSearch} from 'react-icons/fc'
 import {BiSortAZ,BiSortZA} from 'react-icons/bi'
 import {CgMenuLeft,CgTrash} from 'react-icons/cg'
 import {MdClose,MdCheckBox,MdIndeterminateCheckBox} from 'react-icons/md'
-
+import Pagination from '@material-ui/lab/Pagination';
     //icons
     const ascIcon = <BiSortAZ size={24} />
     const descIcon = <BiSortZA size={24} />
@@ -35,8 +35,57 @@ function Button({status,fnc,icon1,icon2,style}){
     )
 }
 
+function ListItem({status,request}){
+
+    return(
+        <>
+            <tr className="tb-tr">
+                {
+                     status ? 
+                        <td>
+                            <input 
+                                className="req-check"
+                                type="checkbox" 
+                                value={request.id}
+                            />
+                        </td>
+                    :null
+                }
+                <td>{request.date}</td>
+                <td>{request.name}</td>
+                <td>{request.request}</td>
+                <td>
+                    <div className="request-status-cc">
+                        <p
+                            style={{background: request.status==='Valid' ? 'green' :'red' }}
+                        >{request.status}</p>
+                    </div>
+                </td>
+                <td>
+                    <button>Process</button>
+                </td>
+            </tr>
+        </>
+    )
+}
 
 
+const data=[
+    {id:1,date: Date.now(),name: 'Al Ares', request:'Barangay Certificate',status:'Invalid'},
+    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Invalid'},
+    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Valid'},
+    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
+    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
+    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
+    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'},
+    {id:1,date: Date.now(),name: 'Al Ares', request:'Barangay Certificate',status:'Valid'},
+    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Valid'},
+    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Invalid'},
+    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
+    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
+    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
+    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'},
+]
 
 export default function Transaction(props) {
     const [sortAsc,setSortAsc] = useState(false)
@@ -57,7 +106,6 @@ export default function Transaction(props) {
         setCheck(prevCheck=>!prevCheck)
 
     }
-
 
 
     return (
@@ -142,7 +190,42 @@ export default function Transaction(props) {
                                     </SimpleBar>
                             </div>
                             <div className="req-wrapper">
-
+                                <div className="requests">
+                                    <table className="req-table">
+                                        <thead className="t-head">
+                                           <tr>
+                                            {
+                                                check ? 
+                                                <th>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        className="req-check"
+                                                    />
+                                                </th>
+                                                :null
+                                            }
+                                                <th>Date</th>
+                                                <th>Resident</th>
+                                                <th>Request</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="t-body">
+                                         {
+                                             data.map(req=>{
+                                                 return <ListItem 
+                                                    request={req}
+                                                    status={check}
+                                              />
+                                             })
+                                         }
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div className="requests-footer">
+                                    <Pagination count={10} variant="outlined" shape="rounded" />
+                                </div>
                             </div>
                         </div>
                     </div>
