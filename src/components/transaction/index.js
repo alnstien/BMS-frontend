@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
 import './transaction.css';
 import SimpleBar from 'simplebar-react';
@@ -7,6 +7,8 @@ import {BiSortAZ,BiSortZA} from 'react-icons/bi'
 import {CgMenuLeft,CgTrash} from 'react-icons/cg'
 import {MdClose,MdCheckBox,MdIndeterminateCheckBox} from 'react-icons/md'
 import Pagination from '@material-ui/lab/Pagination';
+import ProcessModal from '../modal/processModal'; 
+
     //icons
     const ascIcon = <BiSortAZ size={24} />
     const descIcon = <BiSortZA size={24} />
@@ -35,7 +37,12 @@ function Button({status,fnc,icon1,icon2,style}){
     )
 }
 
-function ListItem({status,request}){
+function ListItem({status,request,checked}){
+    const [selected,setSelected] = useState(checked);
+
+    const handleSelect=useCallback(()=>{
+        setSelected(prevSelect=>!prevSelect)
+    },[checked])
 
     return(
         <>
@@ -46,6 +53,8 @@ function ListItem({status,request}){
                             <input 
                                 className="req-check"
                                 type="checkbox" 
+                                checked={selected ? true : false}
+                                onChange={handleSelect}
                                 value={request.id}
                             />
                         </td>
@@ -72,25 +81,34 @@ function ListItem({status,request}){
 
 const data=[
     {id:1,date: Date.now(),name: 'Al Ares', request:'Barangay Certificate',status:'Invalid'},
-    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Invalid'},
-    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Valid'},
-    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'},
-    {id:1,date: Date.now(),name: 'Al Ares', request:'Barangay Certificate',status:'Valid'},
+    {id:2,date: Date.now(),name: 'Jane Doe', request:'Barangay Certificate',status:'Invalid'},
+    {id:3,date: Date.now(),name: 'Juan dela Cruz', request:'Barangay Certificate',status:'Valid'},
+    {id:4,date: Date.now(),name: 'Anthony Smith', request:'Barangay Certificate',status:'Valid'},
+    {id:5,date: Date.now(),name: 'Jason Derulo', request:'Barangay Certificate',status:'Valid'},
+    {id:6,date: Date.now(),name: 'Kristine Mae', request:'Barangay Certificate',status:'Valid'},
+    {id:7,date: Date.now(),name: 'Jia Lissa', request:'Barangay Certificate',status:'Valid'},
+    {id:1,date: Date.now(),name: 'Voilet Rain', request:'Barangay Certificate',status:'Valid'},
     {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Valid'},
     {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Invalid'},
     {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
     {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
     {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
     {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'},
+    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Valid'},
+    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Invalid'},
+    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
+    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
+    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
+    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'}
 ]
 
 export default function Transaction(props) {
     const [sortAsc,setSortAsc] = useState(false)
     const [isOpen,setOpen] = useState(false)
     const [check,setCheck] = useState(false)
+    const [checked,setChecked] = useState(false);
+
+
     const width = window.innerWidth;
     const toggleSidebar=(e)=>{
         e.preventDefault();
@@ -106,9 +124,12 @@ export default function Transaction(props) {
         setCheck(prevCheck=>!prevCheck)
 
     }
-
+    const handleCheckAll=()=>{
+        setChecked(prevChecked=>!prevChecked)
+    }
 
     return (
+        <>
         <div className="con-container"> 
             <Sidebar transactionActive={true}/>
             <div className="content-wrapper">
@@ -199,7 +220,9 @@ export default function Transaction(props) {
                                                 <th>
                                                     <input 
                                                         type="checkbox" 
+                                                        checked={checked ?true :false}
                                                         className="req-check"
+                                                        onChange={handleCheckAll}
                                                     />
                                                 </th>
                                                 :null
@@ -217,6 +240,7 @@ export default function Transaction(props) {
                                                  return <ListItem 
                                                     request={req}
                                                     status={check}
+                                                    checked={checked}
                                               />
                                              })
                                          }
@@ -243,5 +267,9 @@ export default function Transaction(props) {
                 </div>
             </div>
         </div>
+        <ProcessModal 
+            show={true}
+        />
+    </>
     )
 }
