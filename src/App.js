@@ -16,6 +16,8 @@ import Profile from './components/profile'
 import UserEvents from './components/user/events'
 import Notifications from './components/user/inbox';
 import UserProfile from './components/user/useProfile';
+import HoldTransaction from './components/transaction/onhold';
+import TransactionHistory from './components/transaction/history';
 
 
 function App() {
@@ -71,6 +73,16 @@ function App() {
           exact
           path="/transaction"
           component={Transaction}
+        />
+        <Route 
+          exact
+          path="/transaction/hold"
+          component={HoldTransaction}
+        />
+        <Route 
+          exact
+          path="/transaction/hold"
+          component={TransactionHistory}
         />
         <Route 
           exact

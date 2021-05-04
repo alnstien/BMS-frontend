@@ -19,6 +19,10 @@ export default function CreatePostModal({show,setShow}) {
             width:'100vw',
             zIndex:"4",
             backgroundColor: 'rgba(0, 0, 0, .6)',
+            display:'flex',
+            alignItems:'center',
+            justifyContent:'center'
+            
           },
           content: {
             position: 'relative',
@@ -28,12 +32,13 @@ export default function CreatePostModal({show,setShow}) {
             padding:0,
             display:'flex',
             background:'none',
-            height:'100vh',
-            width:'100vw',
+            height:'90%',
+            width:'90%',
             overflow: 'auto',
             WebkitOverflowScrolling: 'touch',
             outline: 'none',
-            alignItems:'flex-end'
+            alignItems:'center',
+            justifyContent:'center'
           }
         }}
      >

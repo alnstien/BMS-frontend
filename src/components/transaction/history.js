@@ -106,7 +106,7 @@ const data=[
     {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'}
 ]
 
-export default function Transaction(props) {
+export default function TransactionHistory(props) {
     const [sortAsc,setSortAsc] = useState(false)
     const [isOpen,setOpen] = useState(false)
     const [check,setCheck] = useState(false)
