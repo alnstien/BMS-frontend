@@ -81,7 +81,7 @@ function App() {
         />
         <Route 
           exact
-          path="/transaction/hold"
+          path="/transaction/history"
           component={TransactionHistory}
         />
         <Route 

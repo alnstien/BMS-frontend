@@ -2,85 +2,11 @@ import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
 import './transaction.css';
 import SimpleBar from 'simplebar-react';
-import {FcSearch} from 'react-icons/fc'
-import {BiSortAZ,BiSortZA} from 'react-icons/bi'
-import {CgMenuLeft,CgTrash} from 'react-icons/cg'
-import {MdClose,MdCheckBox,MdIndeterminateCheckBox} from 'react-icons/md'
 import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
 import TSidebar from '../sidebar/transactionSidebar'; 
-
-    //icons
-    const ascIcon = <BiSortAZ size={24} />
-    const descIcon = <BiSortZA size={24} />
-    const openIcon = <CgMenuLeft size={24} />
-    const closeIcon = <MdClose size={24} />
-    const trashIcon = <CgTrash size={24}  />
-    const checkIcon = <MdCheckBox size={24}  />
-    const unCheckIcon = <MdIndeterminateCheckBox size={24} />
-
-function Button({status,fnc,icon1,icon2,style}){
-
-    return(
-        <>
-        <button
-            style={style}
-            className="sort-button"
-            onClick={fnc}
-        >{
-            !status 
-            ?
-            icon1  
-            : 
-            icon2 
-        }</button>
-        </>
-    )
-}
-
-function ListItem({status,request,checked,handleCheck,handleProcess}){
-    const [selected,setSelected] = useState(checked);
-
-    const handleSelect=useCallback(()=>{
-        setSelected(prevSelect=>!prevSelect)
-    },[checked])
-
-    return(
-        <>
-            <tr className="tb-tr">
-                {
-                     status ? 
-                        <td>
-                            <input 
-                                className="req-check"
-                                type="checkbox" 
-                                checked={selected ? true : false}
-                                onChange={handleSelect}
-                                value={request.id}
-                            />
-                        </td>
-                    :null
-                }
-                <td>{request.date}</td>
-                <td>{request.name}</td>
-                <td>{request.request}</td>
-                <td>
-                    <div className="request-status-cc">
-                        <p
-                            style={{color: request.status==='Valid' ? 'green' :'rgb(231, 12, 12)' }}
-                        >{request.status}</p>
-                    </div>
-                </td>
-                <td>
-                    <button 
-                        className="process-btn"
-                        onClick={handleProcess}
-                    >Process</button>
-                </td>
-            </tr>
-        </>
-    )
-}
+import ListItem from './listItem';
+import TNavbar from '../navbar/tnav';
 
 
 const data=[
@@ -141,51 +67,15 @@ export default function HoldTransaction(props) {
             <div className="content-wrapper">
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">
-                        <div className="mynav">
-                            <form>
-                                <Button
-                                    status={isOpen}
-                                    fnc={e=>toggleSidebar(e)}
-                                    icon1={openIcon}
-                                    icon2={closeIcon}
-                                    style={{
-                                        position:'absolute',
-                                        left:0
-                                    }}
-                                />
-                                <div className="cat-search">
-                                    <input
-                                        placeholder="Search..."
-                                    />
-                                    <button><FcSearch size={24} /></button>
-                                </div>
-                                <div className="cat-selection">
-                                    <select>
-                                        <option>All</option>
-                                        <option>Barangay Certificate</option>
-                                            <option>Certificate of Indigency</option>
-                                            <option>Letter of Acceptance</option>
-                                    </select>
-                                </div>
-                                <Button 
-                                    status={sortAsc}
-                                    fnc={e=>handleSort(e)}
-                                    icon1={ascIcon}
-                                    icon2={descIcon}
-                                />
-                                <Button 
-                                    fnc={e=>alert("delete something")}
-                                    status={false}
-                                    icon1={trashIcon}
-                                />
-                                <Button 
-                                    fnc={e=>handleCheck(e)}
-                                    status={check}
-                                    icon1={checkIcon}
-                                    icon2={unCheckIcon}
-                                />
-                            </form>
-                        </div>
+                        <TNavbar 
+                            check={check}
+                            toggleSidebar={toggleSidebar}
+                            handleSort={handleSort}
+                            handleCheck={handleCheck}
+                            isOpen={isOpen}
+                            sortAsc={sortAsc}
+                            check={check}
+                        />
                         <div className="content-flex">
                             <div className="req-overview"
                                 style={{

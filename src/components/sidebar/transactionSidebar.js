@@ -4,7 +4,7 @@ import {FcSearch} from 'react-icons/fc'
 import {AiOutlineRight} from 'react-icons/ai'
 
 
-export default function TSidebar({width,active,holdActive}) {
+export default function TSidebar({width,active,holdActive,historyActive}) {
 
 
     return (
@@ -46,7 +46,7 @@ export default function TSidebar({width,active,holdActive}) {
             </span>
         </Link>
         <Link 
-            className={holdActive ? 'form-a-active':'form-a-default'}
+            className={historyActive ? 'form-a-active':'form-a-default'}
             to="/transaction/history">Transaction History 
             <span 
                 className="icon-wrapper-mod">
