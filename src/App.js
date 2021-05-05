@@ -18,7 +18,8 @@ import Notifications from './components/user/inbox';
 import UserProfile from './components/user/useProfile';
 import HoldTransaction from './components/transaction/onhold';
 import TransactionHistory from './components/transaction/history';
-
+import Settings from './components/settings/settings';
+import Setting from './components/settings/settings';
 
 function App() {
   return (
@@ -58,6 +59,11 @@ function App() {
           exact
           path="/events"
           component={Events}
+        />
+        <Route 
+          exact
+          path="/settings"
+          component={Setting}
         />
         <Route 
           exact

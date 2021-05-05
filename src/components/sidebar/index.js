@@ -6,10 +6,24 @@ import { AiOutlineSchedule} from "react-icons/ai";
 import { BsFolderFill,BsPersonFill } from "react-icons/bs";
 import { FaMoneyBillWaveAlt} from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
+import { RiSettings5Fill } from "react-icons/ri";
 import './sidebar.css'
 import { BiTransfer } from "react-icons/bi";
+
+
+    const dashIcon = <MdDashboard size={22} />;
+    const schedIcon = <AiOutlineSchedule size={22}  />
+    const recIcon = <BsFolderFill size={22}  />
+    const transIcon = <BiTransfer size={22}  />
+    const billIcon = <FaMoneyBillWaveAlt size={22}  />
+    const profileIcon = <BsPersonFill size={22} />
+    const settingsIcon = <RiSettings5Fill size={22} />
+
+
 function SidebarLink({name,icon,active,route}){
 
+
+    
     return(
         <>
         <Link 
@@ -26,14 +40,10 @@ function SidebarLink({name,icon,active,route}){
 }
 
 
-export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive,billsActive,profileActive}) {
+export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive,billsActive,profileActive,settingsActive}) {
     
-    const dashIcon = <MdDashboard size={22} />;
-    const schedIcon = <AiOutlineSchedule size={22}  />
-    const recIcon = <BsFolderFill size={22}  />
-    const transIcon = <BiTransfer size={22}  />
-    const billIcon = <FaMoneyBillWaveAlt size={22}  />
-    const profileIcon = <BsPersonFill size={22} />
+    
+
     return (
         <>
         <div className="sidebar-wrapper">
@@ -72,6 +82,12 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
             icon={profileIcon}
             name="My Profile"
             active={profileActive}
+        />
+        <SidebarLink 
+            route={'/settings'}
+            icon={settingsIcon}
+            name="Settings"
+            active={settingsActive}
         />
          {/* <SidebarLink 
             route={'/events'}
