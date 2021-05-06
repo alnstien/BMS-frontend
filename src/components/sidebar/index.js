@@ -66,7 +66,7 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
             active={dashActive}
         />
          <SidebarLink 
-            route={'/transaction'}
+            route={'/requests'}
             icon={transIcon}
             name="Requests"
             active={transactionActive}

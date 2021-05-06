@@ -4,7 +4,7 @@ import {FcSearch} from 'react-icons/fc'
 import {AiOutlineRight} from 'react-icons/ai'
 
 
-export default function TSidebar({width,active,holdActive,historyActive}) {
+export default function TSidebar({width,active,holdActive,historyActive,releaseActive}) {
 
 
     return (
@@ -31,7 +31,7 @@ export default function TSidebar({width,active,holdActive,historyActive}) {
         <Link 
             className={ active ? 
                 'form-a-active': 'form-a-default'}
-            to="/transaction">
+            to="/requests">
                 All Requests 
             <span className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />
@@ -39,7 +39,15 @@ export default function TSidebar({width,active,holdActive,historyActive}) {
         </Link>
         <Link 
             className={holdActive ? 'form-a-active':'form-a-default'}
-            to="/transaction/hold">Hold Requests 
+            to="/requests/hold">Hold Requests 
+            <span 
+                className="icon-wrapper-mod">
+                <AiOutlineRight size={20} />
+            </span>
+        </Link>
+        <Link 
+            className={releaseActive ? 'form-a-active':'form-a-default'}
+            to="/requests/release">Released Requests 
             <span 
                 className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />
@@ -47,7 +55,7 @@ export default function TSidebar({width,active,holdActive,historyActive}) {
         </Link>
         <Link 
             className={historyActive ? 'form-a-active':'form-a-default'}
-            to="/transaction/history">Transaction History 
+            to="/requests/history">Transaction History 
             <span 
                 className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />

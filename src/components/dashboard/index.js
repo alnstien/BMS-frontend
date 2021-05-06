@@ -27,7 +27,8 @@ export default function Dashboard(props) {
         {icon:reqIcon, title:'Engagements',subtitle:'Visitors',count:'23,223'},
         {icon:transIcon, title:'Requests',subtitle:'Requests recently',count:'154'},
         {icon:postsIcon, title:'Activity',subtitle:'Posts today',count:290},
-        {icon:complaintIcon, title:'Service',subtitle:'Complaints recently',count:39}
+        {icon:complaintIcon, title:'Service',subtitle:'Complaints recently',count:39},
+        {icon:complaintIcon, title:'Release',subtitle:'Total Certificates Released',count:39}
     ]
 
     let newData = {

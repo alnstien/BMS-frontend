@@ -20,6 +20,8 @@ import HoldTransaction from './components/transaction/onhold';
 import TransactionHistory from './components/transaction/history';
 import Settings from './components/settings/settings';
 import Setting from './components/settings/settings';
+import Release from './components/transaction/release'
+
 
 function App() {
   return (
@@ -77,17 +79,22 @@ function App() {
         />
         <Route 
           exact
-          path="/transaction"
+          path="/requests"
           component={Transaction}
         />
         <Route 
           exact
-          path="/transaction/hold"
+          path="/requests/hold"
           component={HoldTransaction}
+        />
+         <Route 
+          exact
+          path="/requests/release"
+          component={Release}
         />
         <Route 
           exact
-          path="/transaction/history"
+          path="/requests/history"
           component={TransactionHistory}
         />
         <Route 
