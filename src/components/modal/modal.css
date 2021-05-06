@@ -33,6 +33,7 @@
     width: 40px;
     top: 0;
     right: 0;
+    z-index: 10;
     margin: 10px;
     font-size: 30px;
     border-radius: 50%;

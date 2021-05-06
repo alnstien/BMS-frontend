@@ -5,7 +5,7 @@ import Sidebar from '../sidebar';
 import Nav from '../navbar/optionNav'
 import Card from '../card/dashboardCard'
 import GraphCard from '../card/graphCard';
-import {BsPeopleFill} from 'react-icons/bs'
+import {BsPeopleFill,BsCardChecklist} from 'react-icons/bs'
 import {BiMessageAltDetail,BiTransfer} from 'react-icons/bi'
 import {RiKakaoTalkLine} from 'react-icons/ri'
 
@@ -21,14 +21,14 @@ export default function Dashboard(props) {
     const transIcon = <BiTransfer size={30} color={'blue'} />
     const postsIcon = <BiMessageAltDetail size={30} color={'green'} />
     const complaintIcon = <RiKakaoTalkLine size={30} color={'orange'} />
-
+    const releaseIcon = <BsCardChecklist size={30} color={'red'} />
 
     const cardContent=[
         {icon:reqIcon, title:'Engagements',subtitle:'Visitors',count:'23,223'},
         {icon:transIcon, title:'Requests',subtitle:'Requests recently',count:'154'},
         {icon:postsIcon, title:'Activity',subtitle:'Posts today',count:290},
         {icon:complaintIcon, title:'Service',subtitle:'Complaints recently',count:39},
-        {icon:complaintIcon, title:'Release',subtitle:'Total Certificates Released',count:39}
+        {icon:releaseIcon, title:'Release',subtitle:'Total Certificates Released',count:39}
     ]
 
     let newData = {

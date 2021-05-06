@@ -4,4 +4,11 @@
     background: #fff;
     position: relative;
     padding: 10px;
+    display: flex;
+    border-radius: 10px;
+}
+.flex-modal-content{
+    flex: 1;
+    display: flex;
+    position: relative;
 }
