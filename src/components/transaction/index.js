@@ -7,7 +7,7 @@ import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
 import TSidebar from '../sidebar/transactionSidebar'; 
 import ListItem from './listItem';
-
+const width = window.innerWidth;
 
 
 const data=[
@@ -38,9 +38,17 @@ export default function Transaction(props) {
     const [isOpen,setOpen] = useState(false)
     const [check,setCheck] = useState(false)
     const [checked,setChecked] = useState(false);
-    const [show,setShow] = useState(false)
+    const [show,setShow] = useState(false);
+    const [page,setPage]= useState(1);
 
-    const width = window.innerWidth;
+
+    const limit = 5;
+    const startIndex = (page-1) * limit;
+    const endIndex = page * limit;
+    
+    const handleChange=(page)=>{
+        alert(page)
+    }
 
     const toggleSidebar=(e)=>{
         e.preventDefault();
@@ -62,6 +70,7 @@ export default function Transaction(props) {
     const handleProcess=()=>{
         setShow(!show)
     }
+
     return (
         <>
         <div className="con-container"> 
@@ -118,7 +127,7 @@ export default function Transaction(props) {
                                         </thead>
                                         <tbody className="t-body">
                                          {
-                                             data.map(req=>{
+                                             data.slice(startIndex,endIndex).map(req=>{
                                                  return <ListItem 
                                                     request={req}
                                                     status={check}
@@ -142,7 +151,13 @@ export default function Transaction(props) {
                                             <option>1000</option>
                                         </select>
                                     </div>
-                                    <Pagination count={10} variant="outlined" shape="rounded" />
+                                    <Pagination 
+                                        count={Math.ceil(data.length/limit)}
+                                        page={page} 
+                                        variant="outlined" 
+                                        shape="rounded" 
+                                        onChange={({e,page})=>handleChange(page)}
+                                    />
                                 </div>
                             </div>
                         </div>
