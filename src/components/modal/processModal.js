@@ -28,7 +28,9 @@ export default function CreatePostModal({show,setShow}) {
                 onClick={()=>setShow(!show)}
             >&times;</button>
             <div className="flex-modal-content">
-                
+                <div>
+                    <p>Details ang information</p>
+                </div>
             </div>
         </div>
      </Modal>

@@ -8,6 +8,8 @@ import GraphCard from '../card/graphCard';
 import {BsPeopleFill,BsCardChecklist} from 'react-icons/bs'
 import {BiMessageAltDetail,BiTransfer} from 'react-icons/bi'
 import {RiKakaoTalkLine} from 'react-icons/ri'
+import DTable from '../table/dashboardTable'
+
 
 export default function Dashboard(props) {
     
@@ -87,6 +89,10 @@ export default function Dashboard(props) {
                                 title={'Total Visits'}
                                 data={newData}
                             />
+                       </div>
+                       <div className="card-row">
+                            <DTable />
+                            <DTable />
                        </div>
                     </div>
                 </div>

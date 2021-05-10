@@ -47,7 +47,7 @@ export default function TSidebar({width,active,holdActive,historyActive,releaseA
         </Link>
         <Link 
             className={releaseActive ? 'form-a-active':'form-a-default'}
-            to="/requests/release">Released Requests 
+            to="/requests/release">On-Progress Requests 
             <span 
                 className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />
