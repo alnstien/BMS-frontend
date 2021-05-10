@@ -14,7 +14,7 @@ import {FaBirthdayCake} from 'react-icons/fa'
 import {GoHome,GoPerson} from 'react-icons/go'
 import {MdModeEdit,MdPersonPinCircle,MdEmail,MdLocalPhone} from 'react-icons/md'
 
-function Details({icon,details}){
+export function Details({icon,details}){
 
   return(
     <>
@@ -31,7 +31,7 @@ function Details({icon,details}){
   )
 }
 
-function UserInfo({icon,content,label,variant,options}){
+export function UserInfo({icon,content,label,variant,options}){
   const [edit,setEdit] = useState(false)
   const [text,setText] = useState(content);
 

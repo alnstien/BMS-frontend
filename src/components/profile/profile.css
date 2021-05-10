@@ -1,138 +1,21 @@
-.profile-wrapper{
+.admin-profile-wrapper{
     width: 100%;
-    min-height: 100vh;
-    background: #fff;
-    position: relative;
-    padding: 20px;
-}
-.profile-info-me h4{
-    font-size: 30px;
-    color: #52389A;
-}
-.form-group-profile{
-    display: flex;
-    position: relative;
-    margin-top: 10px;
-}
-.profile-picture{
-    min-height: 200px;
-    min-width: 150px;
-    max-height: 200px;
-    max-width: 150px;
-    margin-bottom: 10px;
-    background: red;
-    position: relative;
-    border-radius: 10px;
-}
-#profilePhoto{
-    display: none;
-}
-.edit-profile-picture-btn{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.5);
-    transition: .3s;
-    color: #a3a3a3;
-}
-.edit-btn{
-    top: 0;
-    right: 0;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: rgba(0,0,0,0.2);
-    transition: .3s;
-}
-.edit-btn:hover{
-    background: rgba(0,0,0,0.1);
-}
-.edit-profile-picture-btn:hover{
-    background: rgba(0,0,0,0.3);
-}
-.profile-info-me{
-    min-height: 200px;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: flex-start;
-    border-bottom: 1px solid gray;
-}
-.profile-info-me h3{
-    color: #545353;
-}
-.profile-role{
-    padding:10px;
-    background: #7B79CD;
-    color: #EFEFEF;
-}
-.form-col{
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-}
-.form-label{
-    color: #545353;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 18px;
-}
-.form-input{
-    font-size: 17px;
-    flex:1;
-    min-width: 200px;
-    border: none;
-    outline: none;
     height: 100%;
-    padding: 5px;
-    height: 40px;
-}
-.fieldset{
-    margin-top: 10px;
     display: flex;
-    flex: 1;
+    overflow: auto;
+    align-items: flex-start;
+    justify-content: center;
+}
+.admin-profile-content{
+    width: 80%;
+    min-height: 100%;
+    background: #fff;
+    padding: 30px;
     position: relative;
-    padding: 5px;
-    padding-left: 10px;
-    border-radius: 5px;
-    border: 1.6px solid gray;
-    min-width: 200px;
 }
-.fieldset-btn{
-    border: none;
-    outline: none;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    background: rgba(0,0,0,0.2);
-    transition: .3s;
-}
-.fieldset-btn:hover{
-    background: rgba(0,0,0,0.1);
-}
-.form-inline-group-profile{
-    display: flex;
-    flex-direction: row;
+.admin-profile-header{
+    background: red;
+    height: 300px;
 }
 @media screen and (max-width: 800px){
     .profile-wrapper{
@@ -155,5 +38,9 @@
     }
     .profile-info-me{
         margin-left: 0;
+    }
+    .admin-profile-content{
+        width: 100%;
+        padding: 10px;
     }
 }
