@@ -11,8 +11,8 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
-
-
+import {FiSkipForward,FiSkipBack} from 'react-icons/fi'
+import {GrNext,GrPrevious} from 'react-icons/gr'
 
 const useStyles1 = makeStyles((theme) => ({
     root: {
@@ -49,24 +49,24 @@ const useStyles1 = makeStyles((theme) => ({
           disabled={page === 0}
           aria-label="first page"
         >
-          {theme.direction === 'rtl' ? "lp" :"fp"}
+          {theme.direction === 'rtl' ? <FiSkipForward size={22} /> :<FiSkipBack size={22} />}
         </IconButton>
         <IconButton onClick={handleBackButtonClick} disabled={page === 0} aria-label="previous page">
-          {theme.direction === 'rtl' ? "r ": "l"}
+          {theme.direction === 'rtl' ?<GrNext size={20} color={"lightgray"} />: <GrPrevious size={19} color={"lightgray"} /> }
         </IconButton>
         <IconButton
           onClick={handleNextButtonClick}
           disabled={page >= Math.ceil(count / rowsPerPage) - 1}
           aria-label="next page"
         >
-          {theme.direction === 'rtl' ? "l" : "r"}
+          {theme.direction === 'rtl' ? <GrPrevious size={19} color={"lightgray"}  /> : <GrNext size={20}  color={"lightgray"} />}
         </IconButton>
         <IconButton
           onClick={handleLastPageButtonClick}
           disabled={page >= Math.ceil(count / rowsPerPage) - 1}
           aria-label="last page"
         >
-          {theme.direction === 'rtl' ?"fp" : "lp"}
+          {theme.direction === 'rtl' ? <FiSkipBack size={22} /> : <FiSkipForward size={22} />}
         </IconButton>
       </div>
     );
@@ -106,7 +106,7 @@ const useStyles1 = makeStyles((theme) => ({
   });
 
 
-  
+
 export default function DTable(props) {
 
 const classes = useStyles2();
@@ -114,9 +114,7 @@ const [page, setPage] = React.useState(0);
 const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
 const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
+
 const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -128,6 +126,7 @@ const handleChangePage = (event, newPage) => {
 
     return (
         <div className="d-table-wrapper">
+            <h2>Recent Requests</h2>
    <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="custom pagination table">
         <TableBody>
