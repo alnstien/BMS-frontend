@@ -1,6 +1,7 @@
 .option-nav{
     min-height: 10vh;
-    background: #52389A;
+    /* background: #52389A; */
+    background: #FF6699;
     z-index: 1;
     position: sticky;
     top: 0;
@@ -47,7 +48,7 @@
     outline: none;
     background: none;
     font-size: 17px;
-    color: rgb(228, 228, 228);
+    color: rgb(255, 255, 255);
 }
 .custom-search-btn{
     height: 40px;

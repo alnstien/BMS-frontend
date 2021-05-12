@@ -14,9 +14,10 @@ export default function EmptyNavbar() {
                 <img src={Logo} alt="" />
             </div>
             <div className="navbar-location">
+                <h4>Barangay Esperanza</h4>
                 <h5>Municipality of Ramon Magsaysay</h5>
-                <small>Zamboanga del Sur</small>
-                <small>Region IX</small>
+                <small>Zamboanga del Sur Region IX</small>
+                <small></small>
             </div>
             {/* <button className="logout-btn"><FiLogOut size={22} color={'#fff'} /></button> */}
         </div>

@@ -8,7 +8,8 @@
     height: 87.40157480314961vh;
     min-width: 100px;
     max-width: 100px;
-    background: #52389A;
+    /* background: #52389A; */
+    background: #FF6699;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -95,7 +96,8 @@
     background: #EFEFEF;
     border-radius: 50%;
     display: flex;
-    color: #52389A;
+    /* color: #52389A; */
+    color: #FF6699;
     margin: 5px;
     align-items: center;
     justify-content: center;
@@ -103,7 +105,8 @@
 .sidebar-link-icon-active{
     height: 35px;
     width: 35px;
-    background: #52389A;
+    /* background: #52389A; */
+    background: #FF6699;
     border-radius: 50%;
     display: flex;
     margin: 5px;
@@ -131,7 +134,8 @@
     text-transform: uppercase;
     align-items: flex-end;
     justify-content: flex-end;
-    background: #52389A;
+    /* background: #52389A; */
+    background: #FF6699;
 }
 .signout-btn{
     min-height: 12.598425196850394vh;
@@ -160,7 +164,8 @@
     height: 35px;
     width: 35px;
     background: #EFEFEF;
-    color: #52389A;
+    /* color: #52389A; */
+    color: #FF6699;
     border-radius: 50%;
     display: flex;
     margin: 5px;

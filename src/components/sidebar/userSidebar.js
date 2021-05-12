@@ -5,7 +5,9 @@ import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
 import {FaCertificate,FaUserAlt} from 'react-icons/fa'
 import {MdEventNote,MdNotifications} from 'react-icons/md'
 import {BiFile} from 'react-icons/bi'
+import {FiLogOut} from 'react-icons/fi'
 import {HiOutlineLogout} from 'react-icons/hi'
+import SimpleBar from 'simplebar-react';
 
 function NavLink({active,icon,name,path,count}){
     return(
@@ -35,27 +37,7 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
     }
     return (
         <div className="user-sidebar">
-            <button 
-                className="user-sidebar-btn"
-                onClick={()=>handleShowModal(setShowCreatePostModal)}
-            >
-                <span className="icon-span"><AiOutlinePlus color={"green"} size={24} /></span>
-                Create Post
-            </button>
-            <button 
-                className="user-sidebar-btn"
-                onClick={()=>handleShowModal(setShow)}
-            >
-                <span className="icon-span"><FaCertificate color={"#E05304 "} size={24} /></span>
-                Request a Certificate
-            </button>
-            <button 
-                className="user-sidebar-btn"
-                onClick={()=>handleShowModal(setShowComplain)}
-            >
-                <span className="icon-span"><BiFile color={"#52389A "} size={24} /></span>
-                File a Complaint
-            </button>
+            <div className="user-sidebar-content">
             <NavLink 
                 active={homeActive}
                 icon={homeIcon}
@@ -82,11 +64,37 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
                 path='/user/notifications'
                 name="Notifications"
             />
-             <NavLink 
-                icon={logoutIcon}
-                path='/user/notifications'
-                name="Signout"
-            />
+            <button 
+                className="user-sidebar-btn"
+                onClick={()=>handleShowModal(setShowCreatePostModal)}
+            >
+                <span className="icon-span"><AiOutlinePlus color={"#6C0C35"} size={24} /></span>
+                Create Post
+            </button>
+            <button 
+                className="user-sidebar-btn"
+                onClick={()=>handleShowModal(setShow)}
+            >
+                <span className="icon-span"><FaCertificate color={"#6C0C35 "} size={24} /></span>
+                Request a Certificate
+            </button>
+            <button 
+                className="user-sidebar-btn"
+                onClick={()=>handleShowModal(setShowComplain)}
+            >
+                <span className="icon-span"><BiFile color={"#6C0C35 "} size={24} /></span>
+                File a Complaint
+            </button>
+
+            </div>
+             <div className="user-sidebar-footer">
+                <button className="logout-btn-custom">
+                    Logout
+                    <span className="icon-span">
+                        <FiLogOut size={22} />
+                    </span>
+                </button>
+             </div>
         </div>
     )
 }

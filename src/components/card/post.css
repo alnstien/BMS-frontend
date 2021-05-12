@@ -1,5 +1,5 @@
 .post-wrapper{
-    width: 100%;
+    width: 80%;
     min-height: 150px;
     background: #fff;
     padding:10px;
@@ -38,15 +38,21 @@
 .post-avatar-wrapper{
     height: 45px;
     width: 45px;
-    background: red;
+    /* background: red; */
     overflow: hidden;
     border-radius: 50%;
     margin-right: 10px;
+    position: relative;
+}
+.post-avatar-wrapper img{
+    height: 100%;
+    width: 100%;
 }
 .post-content-wrapper{
     width: 100%;
     position: relative;
     padding: 10px;
+    border-bottom: 1px solid lightgray;
 }
 .post-content-img{
     margin-top: 10px;
@@ -93,7 +99,7 @@
 }
 .comment{
     margin-bottom: 10px;
-    background: #F9F7F7;
+    background: #d1d1d1;
     padding: 5px;
 }
 .comment-header{
@@ -109,6 +115,9 @@
     .post-content-img{
         margin-top: 10px;
         height: 100vmin;
+        width: 100%;
+    }
+    .post-wrapper{
         width: 100%;
     }
 }

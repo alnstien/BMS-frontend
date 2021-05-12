@@ -24,9 +24,14 @@
     min-width: 150px;
     max-height: 150px;
     max-width: 150px;
-    background: red;
     border-radius: 50%;
+    position: relative;
+    overflow: hidden;
     z-index: 1;
+  }
+  .logo-holder img{
+    height: 100%;
+    width: 100%;
   }
   .login-form{
     height: 90%;

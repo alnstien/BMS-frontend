@@ -188,7 +188,7 @@ export default function Profile(props) {
               :null
             }
                 <div className="user-root">
-                    <div style={{padding:10}}>
+                    <div className="me-main">
                        <div className="me-wrapper">
                           <div className="me-profile-wrapper">
                             <img src={DefaultImg} alt="" />

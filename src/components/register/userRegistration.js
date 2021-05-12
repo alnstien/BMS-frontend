@@ -6,7 +6,7 @@ import validateFormat from '../../config/validateFormat';
 import './register.css';
 import ENavbar from '../navbar/emptyNavbar';
 import {TextField,Select,InputLabel,FormControl} from '@material-ui/core'
-
+import {Link} from 'react-router-dom'
 
 export default function Registration(props) {
     const [fname,setFname]=useState("");
@@ -28,11 +28,8 @@ export default function Registration(props) {
     const [error,setError] = useState([]);
     const [show,setShow] = useState(false);
     const [valid,setValid] = useState(null);
-    const server = 'https://e-learning-db.herokuapp.com/'; 
+    const server ='http://192.168.1.62:51219';
 
-    const handleChangeMonth=()=>{
-
-    }
 
     const handleChange =(e,fn)=>{
         return fn(e.target.value)
@@ -106,6 +103,7 @@ export default function Registration(props) {
         console.log(err)
        }
     }
+
     return (
         <>
         <ENavbar />
@@ -236,7 +234,12 @@ export default function Registration(props) {
                                         label="Confirm Password"
                                         onChange={e=>handleChange(e,setPassword2)}
                                     />
+                                    <div className="reg-footer">
+                                    <Link to="/login" >
+                                        Already have and account ?
+                                    </Link>
                                     <button type="submit" className="submit-btn" onClick={e=>handleSubmit(e)}>Submit</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>

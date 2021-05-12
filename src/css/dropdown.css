@@ -50,7 +50,7 @@
     background: none;
     font-weight: bold;
     color: rgb(75, 74, 74);
-    border-bottom: 1px solid lightgray;
+    /* border-bottom: 1px solid lightgray; */
 }
 .dropdown-links:hover{
     background: rgba(0,0,0,0.1);
