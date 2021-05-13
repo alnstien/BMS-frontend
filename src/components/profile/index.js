@@ -14,11 +14,11 @@ export default function Profile(props) {
     const [edit,setEdit] = useState(false)
     const gender = ['Male','Female'];
     //icons
-    const addressIcon = <GoHome size={24} color={'#000'} />
-    const bdayIcon = <FaBirthdayCake size={24} color={'#000'} />
-    const genderIcon = <GoPerson size={24} color={'#000'} />
-    const emailIcon = <MdEmail size={24} color={'#000'} />
-    const phoneIcon = <MdLocalPhone size={24} color={'#000'} />
+    const addressIcon = <GoHome size={24} color={'#fa72a0'} />
+    const bdayIcon = <FaBirthdayCake size={24} color={'#fa72a0'} />
+    const genderIcon = <GoPerson size={24} color={'#fa72a0'} />
+    const emailIcon = <MdEmail size={24} color={'#fa72a0'} />
+    const phoneIcon = <MdLocalPhone size={24} color={'#fa72a0'} />
     return (
     <div className="con-container"> 
         <Sidebar profileActive={true}/>

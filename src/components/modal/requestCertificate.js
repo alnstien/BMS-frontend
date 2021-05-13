@@ -54,22 +54,27 @@ export default function RequestCertificateModal({show,setShow}) {
                 <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
-                <MenuItem value={'Barangay Certificate'}>Barangay Certificate</MenuItem>
-                <MenuItem value={"Certificate of Indegency"}>Certificate of Indegency</MenuItem>
+                <MenuItem value={'Barangay Certification of Residency'}>Barangay Certification of Residency</MenuItem>
+                <MenuItem value={'Barangay Clearance'}>Barangay Clearance</MenuItem>
+                <MenuItem value={"Certification of Indegency"}>Certification of Indegency</MenuItem>
+                <MenuItem value={"Certification of Good Moral"}>Certification of Good Moral</MenuItem>
+                <MenuItem value={"Barangay Certification of Land Ownership"}>Barangay Certification of Land Ownership</MenuItem>
+                <MenuItem value={"Certificate of Cutting Trees"}>Certificate of Cutting Trees</MenuItem>
                 <MenuItem value={"Letter of Acceptance"}>Letter of Acceptance</MenuItem>
                 <MenuItem value={"Others"}>Others</MenuItem>
               </Select>
             </FormControl>
             {
               others ? 
+              <>
                 <FormControl style={{marginTop:10}}>
                   <TextField
                     multiline={true}
-                    label="Please Specify..."
-                    rows={1}
+                    label="Please Specify your purpose..."
                     rowsMax={15}
                   />
                 </FormControl>
+                </>
               : null
             }
               <FormControl style={{marginTop:10}}>
@@ -77,13 +82,19 @@ export default function RequestCertificateModal({show,setShow}) {
                   value={issuedName}
                   control={<Checkbox 
                   value={issuedName}
-                  color="primary" 
+                  color="secondary" 
                   onChange={e=>handleCheckRequest(e)}
                 />}
                   label="I don't want to send my request as John Doe"
                   labelPlacement="end"
               />
               </FormControl>
+                <FormControl style={{marginTop:10}}>
+                  <TextField
+                    label="Enter Full Name..."
+                    disabled={issuedName ? false : true}
+                  />
+                </FormControl>
                 <FormControl style={{marginTop:10}}>
                   <TextField
                     label="Enter Full Name"

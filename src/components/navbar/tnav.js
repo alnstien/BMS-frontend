@@ -8,8 +8,8 @@ import {MdClose,MdCheckBox,MdIndeterminateCheckBox} from 'react-icons/md'
 
 const ascIcon = <BiSortAZ size={24} />
 const descIcon = <BiSortZA size={24} />
-const openIcon = <CgMenuLeft size={24} />
-const closeIcon = <MdClose size={24} />
+const openIcon = <CgMenuLeft size={24} color={'#fa72a0'} />
+const closeIcon = <MdClose size={24} color={'#fa72a0'} />
 const trashIcon = <CgTrash size={24}  />
 const checkIcon = <MdCheckBox size={24}  />
 const unCheckIcon = <MdIndeterminateCheckBox size={24} />

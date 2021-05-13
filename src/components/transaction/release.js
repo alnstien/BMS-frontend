@@ -34,7 +34,7 @@ const data=[
 
 export default function Release(props) {
     const [sortAsc,setSortAsc] = useState(false)
-    const [isOpen,setOpen] = useState(false)
+    const [isOpen,setOpen] = useState(true)
     const [check,setCheck] = useState(false)
     const [checked,setChecked] = useState(false);
     const [show,setShow] = useState(false)

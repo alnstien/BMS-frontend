@@ -62,6 +62,7 @@ export function UserInfo({icon,content,label,variant,options}){
             <FormControl>
              <TextField
                 variant="outlined"
+                color="secondary"
                 value={content}
                 label={label}
                 type="date"
@@ -71,8 +72,12 @@ export function UserInfo({icon,content,label,variant,options}){
               :
               variant ==='select' ? 
               <FormControl>
-              <InputLabel id="demo-simple-select-helper-label">Gender</InputLabel>
+              <InputLabel       
+                id="demo-simple-select-helper-label"
+                color="secondary"
+              >Gender</InputLabel>
               <Select
+                 color="secondary"
                 labelId="demo-simple-select-helper-label"
                 id="demo-simple-select-helper"
                 value={text}
@@ -92,6 +97,7 @@ export function UserInfo({icon,content,label,variant,options}){
               <FormControl>
               <TextField
                 variant="outlined"
+                color="secondary"
                 label={label}
                 value={text}
                 onChange={(e)=>handleChange(e)}
@@ -152,18 +158,20 @@ export default function Profile(props) {
         const screenWidth = window.innerWidth;
         const [edit,setEdit]=useState(false);
         const gender = ['Male','Female'];
+
         const handleEdit=()=>{
           setEdit(prevEdit=>!prevEdit);
         }
+        
         //icons
-        const postIcon = <BiMessageSquareEdit size={24} color={'blue'} />
-        const transactIcon = <BiTransfer size={24} color={'blue'} />
-        const unityIcon = <BsPeople size={24} color={'blue'} />
-        const addressIcon = <GoHome size={24} color={'#000'} />
-        const bdayIcon = <FaBirthdayCake size={24} color={'#000'} />
-        const genderIcon = <GoPerson size={24} color={'#000'} />
-        const emailIcon = <MdEmail size={24} color={'#000'} />
-        const phoneIcon = <MdLocalPhone size={24} color={'#000'} />
+        const postIcon = <BiMessageSquareEdit size={24} color={'#fa72a0'} />
+        const transactIcon = <BiTransfer size={24} color={'#fa72a0'} />
+        const unityIcon = <BsPeople size={24} color={'#fa72a0'} />
+        const addressIcon = <GoHome size={24} color={'#fa72a0'} />
+        const bdayIcon = <FaBirthdayCake size={24} color={'#fa72a0'} />
+        const genderIcon = <GoPerson size={24} color={'#fa72a0'} />
+        const emailIcon = <MdEmail size={24} color={'#fa72a0'} />
+        const phoneIcon = <MdLocalPhone size={24} color={'#fa72a0'} />
     return (
         <>
         <Navbar />
