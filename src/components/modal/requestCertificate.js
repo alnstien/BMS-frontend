@@ -9,17 +9,44 @@ import {flexContent,flexoverlay,fulloverlay,content,width} from '../../config/se
 export default function RequestCertificateModal({show,setShow}) {
   const [others,setOthers] = useState(false);
   const [issuedName,setIssueName] = useState(false);
-
+  const [approval,setApproval] = useState(false)
+  const [acceptance,setAcceptance] = useState(false)
+  const [land,setLand] = useState(false)
 
   const handleClose=()=>{
+    setOthers(false)
+    setApproval(false);
+    setAcceptance(false)
+    setLand(false)
     return setShow(false);
   }
 
   const handleSelect=(e)=>{
-      if(e.target.value==="Others"){
+      if(e.target.value==="others"){
         setOthers(true)
+        setApproval(false);
+        setAcceptance(false)
+        setLand(false)
+      }else if(e.target.value==="certificate_of_cutting_trees"){
+        setApproval(true);
+        setOthers(false)
+        setLand(false)
+        setAcceptance(false)
+      }else if(e.target.value==="letter_of_acceptance"){
+        setAcceptance(true)
+        setApproval(false);
+        setOthers(false)
+        setLand(false)
+      }else if(e.target.value==="barangay_certification_of_land_ownership"){
+        setAcceptance(false)
+        setLand(true)
+        setApproval(false);
+        setOthers(false)
       }else{
         setOthers(false)
+        setApproval(false);
+        setAcceptance(false)
+        setLand(false)
       }
   }
   const handleCheckRequest=(e)=>{
@@ -45,33 +72,97 @@ export default function RequestCertificateModal({show,setShow}) {
             <form className="form-flex">
             <FormGroup>
             <FormControl >
-              <InputLabel id="demo-simple-select-helper-label">Type Of Certificate</InputLabel>
+              <InputLabel 
+                id="demo-simple-select-helper-label"
+                color="secondary"
+              >Type Of Certificate</InputLabel>
               <Select
                 labelId="demo-simple-select-helper-label"
                 id="demo-simple-select-helper"
                 onChange={e=>handleSelect(e)}
+                color="secondary"
               >
                 <MenuItem value="">
                   <em>None</em>
                 </MenuItem>
-                <MenuItem value={'Barangay Certification of Residency'}>Barangay Certification of Residency</MenuItem>
-                <MenuItem value={'Barangay Clearance'}>Barangay Clearance</MenuItem>
-                <MenuItem value={"Certification of Indegency"}>Certification of Indegency</MenuItem>
-                <MenuItem value={"Certification of Good Moral"}>Certification of Good Moral</MenuItem>
-                <MenuItem value={"Barangay Certification of Land Ownership"}>Barangay Certification of Land Ownership</MenuItem>
-                <MenuItem value={"Certificate of Cutting Trees"}>Certificate of Cutting Trees</MenuItem>
-                <MenuItem value={"Letter of Acceptance"}>Letter of Acceptance</MenuItem>
-                <MenuItem value={"Others"}>Others</MenuItem>
+                <MenuItem value={'barangay_certification_of_residency'}>Barangay Certification of Residency</MenuItem>
+                <MenuItem value={'barangay_clearance'}>Barangay Clearance</MenuItem>
+                <MenuItem value={"certification_of_indegency"}>Certification of Indigency</MenuItem>
+                <MenuItem value={"certification_of_good_moral"}>Certification of Good Moral</MenuItem>
+                <MenuItem value={"barangay_certification_of_land_ownership"}>Barangay Certification of Land Ownership</MenuItem>
+                <MenuItem value={"certificate_of_cutting_trees"}>Certificate of Approval for Cutting Trees</MenuItem>
+                <MenuItem value={"letter_of_acceptance"}>Letter of Acceptance</MenuItem>
+                <MenuItem value={"others"}>Others</MenuItem>
               </Select>
             </FormControl>
+            {
+              approval ? 
+              <>
+                <FormControl style={{marginTop:10}}>
+                  <TextField
+                    multiline={true}
+                    color="secondary"
+                    label="Kumpletong inpormasyon, ex. ngalan sa kahoy, pila kabook"
+                    rowsMax={15}
+                  />
+                  <TextField
+                    color="secondary"
+                    label="Lokasyon"
+                  />
+                  <TextField
+                    color="secondary"
+                    label="Purpose"
+                  />
+                </FormControl>
+                </>
+              : null
+            }
             {
               others ? 
               <>
                 <FormControl style={{marginTop:10}}>
                   <TextField
                     multiline={true}
+                    color="secondary"
                     label="Please Specify your purpose..."
                     rowsMax={15}
+                  />
+                </FormControl>
+                </>
+              : null
+            }
+            {
+              land ? 
+              <>
+                <FormControl style={{marginTop:10}}>
+                  <TextField
+                    color="secondary"
+                    label="Lokasyon sa yuta"
+                  />
+                  <TextField
+                    color="secondary"
+                    label="Pilay sukod sa yuta" 
+                  />
+                  <TextField
+                    color="secondary"
+                    label="Dokumento nga nagpamatood"
+                    type="file"
+                  />
+                  <TextField
+                    color="secondary"
+                    label="Purpose" 
+                  />
+                </FormControl>
+                </>
+              : null
+            }
+            {
+              acceptance ? 
+              <>
+                <FormControl style={{marginTop:10}}>
+                  <TextField
+                    color="secondary"
+                    label="Lokasyon kung asa ka gikan"
                   />
                 </FormControl>
                 </>
@@ -81,28 +172,27 @@ export default function RequestCertificateModal({show,setShow}) {
                 <FormControlLabel
                   value={issuedName}
                   control={<Checkbox 
-                  value={issuedName}
-                  color="secondary" 
-                  onChange={e=>handleCheckRequest(e)}
+                    value={issuedName}
+                    color="secondary" 
+                    onChange={e=>handleCheckRequest(e)}
                 />}
-                  label="I don't want to send my request as John Doe"
+                  label="Not for me"
                   labelPlacement="end"
               />
               </FormControl>
                 <FormControl style={{marginTop:10}}>
                   <TextField
-                    label="Enter Full Name..."
-                    disabled={issuedName ? false : true}
-                  />
-                </FormControl>
-                <FormControl style={{marginTop:10}}>
-                  <TextField
-                    label="Enter Full Name"
+                    color="secondary"
+                    label="Ngalan sa kuhaan..."
                     disabled={issuedName ? false : true}
                   />
                 </FormControl>
             <FormControl>
-            <Button variant="contained" color="primary" style={{marginTop:20}}>
+            <Button 
+              variant="contained" 
+              color="secondary" 
+              style={{marginTop:20}}
+            >
               Send Request
             </Button>
             </FormControl>

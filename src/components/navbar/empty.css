@@ -1,6 +1,7 @@
 .navbar-dummy{
     height: 10vh;
-    background-color: #FF6699;
+    /* background-color: #FF6699; */
+    background: #f3397a;
     display: flex;
     align-items: center;
 }
