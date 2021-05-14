@@ -1,7 +1,7 @@
 import React from 'react'
 import './userSidebar.css'
 import {Link} from 'react-router-dom'
-import {AiFillHome} from 'react-icons/ai'
+import {AiFillHome,AiFillFolderOpen} from 'react-icons/ai'
 import {FaCertificate,FaUserAlt} from 'react-icons/fa'
 import {MdEventNote,MdNotifications} from 'react-icons/md'
 import {FiLogOut} from 'react-icons/fi'
@@ -22,13 +22,13 @@ function NavLink({active,icon,name,path,count}){
     )
 }
 
-export default function USidebar({homeActive,eventsActive,inboxActive,setShow,profileActive}) {
+export default function USidebar({homeActive,eventsActive,inboxActive,setShow,profileActive,transActive}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
     const inboxIcon = <MdNotifications size={22} />;
     const profileIcon = <FaUserAlt size={22} />;
-
+    const transactIcon = <AiFillFolderOpen size={28} />
 
     const handleShowModal=(fn)=>{
         fn(true);
@@ -47,6 +47,12 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,pr
                 icon={profileIcon}
                 path='/user/me'
                 name="My Profile"
+            />
+            <NavLink 
+                active={transActive}
+                icon={transactIcon}
+                path='/user/transactions'
+                name="My Transactions"
             />
             <NavLink 
                 active={eventsActive}

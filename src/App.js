@@ -21,7 +21,7 @@ import TransactionHistory from './components/transaction/history';
 import Settings from './components/settings/settings';
 import Setting from './components/settings/settings';
 import Release from './components/transaction/release'
-
+import MyTransaction from './components/user/transactions';
 
 function App() {
   return (
@@ -36,6 +36,11 @@ function App() {
           exact
           path="/user/me"
           component={UserProfile}
+        />
+        <Route 
+          exact
+          path="/user/transactions"
+          component={MyTransaction}
         />
         <Route 
           exact

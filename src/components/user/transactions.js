@@ -10,7 +10,7 @@ import { Typography } from '@material-ui/core';
 
 
 
-export default function User(props) {
+export default function MyTransaction(props) {
   const [certificateModal,setCertificateModal] = useState(false);
   const screenWidth = window.innerWidth;
 
@@ -21,7 +21,7 @@ export default function User(props) {
         <div className="root-mod">
             <div className="col-mod">
                 <Sidebar
-                    homeActive ={true}
+                    transActive ={true}
                     setShow={setCertificateModal}
                 />
             </div>
@@ -29,7 +29,7 @@ export default function User(props) {
               {
                 screenWidth <= 700 ? 
                 <PhoneNav 
-                  homeActive ={true}
+                  transActive ={true}
                   setShow={setCertificateModal}
               />
               :null
