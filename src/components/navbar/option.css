@@ -65,7 +65,7 @@
     display: flex;
     width: 100%;
     background: #fff;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     border-top: 1px solid lightgray;
     position: sticky;

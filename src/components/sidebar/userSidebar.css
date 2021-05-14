@@ -2,7 +2,6 @@
     height: 90vh;
     min-width: 20vw;
     max-width:  20vw;
-    /* background: #f7b2c9; */
     background: #fff;
     border-right: 1px solid lightgray;
     display: flex;
@@ -11,8 +10,6 @@
     top: 0;
     bottom: 0;
     overflow: auto;
-    /* padding: 10px;
-    padding-top: 5px; */
 }
 .user-sidebar-content{
     height: 83vh;
@@ -37,12 +34,12 @@
     justify-content: center;
     cursor: pointer;
     width: 100%;
-    color: rgb(54, 54, 54);
     font-size: 15px;
     font-weight: bold;
     outline: none;
     border: none;
     transition: .3s;
+    color: #ee0d58;
 }
 
 .logout-btn-custom:hover{
@@ -52,11 +49,8 @@
     height: 40px;
     position: relative;
     width: 40px;
-    /* background: #fff; */
     border-radius: 50%;
-    /* color:#E05304 ; */
     margin-right: 10px;
-    /* background: #fff; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +59,6 @@
     position: relative;
     height: 40px;
     width: 40px;
-    /* background: #52389A; */
     border-radius: 50%;
     color: #fff;
     margin-right: 10px;
@@ -104,27 +97,8 @@
 .user-sidebar-btn:hover{
     background: #EEEEEE;
 }
-/* .user-sidebar-btn:nth-child(1){
-    background: #480564;
-}
-.user-sidebar-btn:nth-child(2){
-    background: #87067A;
-}
-.user-sidebar-btn:nth-child(3){
-    background: #E612A2;
-}
-.user-sidebar-btn:nth-child(1):hover{
-    background: rgb(2, 105, 2);
-}
-.user-sidebar-btn:nth-child(2):hover{
-    background: #ac4306;
-}
-.user-sidebar-btn:nth-child(3):hover{
-    background: #442c86;
-} */
 .user-sidebar-link{
     padding: 5px;
-    margin-top: 5px;
     margin-bottom: 10px;
     cursor: pointer;
     text-decoration: none;
@@ -140,9 +114,8 @@
 }
 .user-sidebar-link-active{
     padding: 5px;
-    text-decoration: none;
-    margin-top: 5px;
     margin-bottom: 10px;
+    text-decoration: none;
     cursor: pointer;
     display: flex;
     align-items: center;

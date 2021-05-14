@@ -2,12 +2,8 @@ import React,{useState} from 'react'
 import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
 import RequestCertificateModal from '../modal/requestCertificate'
-import ComplainModal from '../modal/complainModal';
-import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
-import {BsReply,BsTrash} from 'react-icons/bs'
 import { Typography } from '@material-ui/core';
-import Nav from '../navbar/optionNav';
 import FloatingActions from '../navbar/floatingActions';
 
 function Message(){
@@ -35,8 +31,6 @@ function Message(){
 
 export default function Inbox(props) {
     const [certificateModal,setCertificateModal] = useState(false);
-    const [complainModal,setComplainModal] = useState(false);
-    const [createPostModal,setCreatePostModal] = useState(false);
     const screenWidth = window.innerWidth;
     return (
         <>
@@ -46,8 +40,6 @@ export default function Inbox(props) {
                 <Sidebar
                     inboxActive ={true}
                     setShow={setCertificateModal}
-                    setShowComplain={setComplainModal}
-                    setShowCreatePostModal={setCreatePostModal}
                 />
             </div>
             <div className="user-wrapper">
@@ -56,8 +48,6 @@ export default function Inbox(props) {
                 <PhoneNav 
                     inboxActive ={true}
                     setShow={setCertificateModal}
-                    setShowComplain={setComplainModal}
-                    setShowCreatePostModal={setCreatePostModal}
               />
               :null
               }
@@ -68,8 +58,6 @@ export default function Inbox(props) {
                 screenWidth <= 700 ? 
                 <FloatingActions
                   setShow={setCertificateModal}
-                  setShowComplain={setComplainModal}
-                  setShowCreatePostModal={setCreatePostModal}
                 />
                 :null
               }
@@ -78,14 +66,6 @@ export default function Inbox(props) {
         <RequestCertificateModal 
           show={certificateModal}
           setShow={setCertificateModal}
-        />
-        <ComplainModal 
-          show={complainModal}
-          setShow={setComplainModal}
-        />
-        <CreatePostModal 
-          show={createPostModal}
-          setShow={setCreatePostModal}
         />
         </>
     )

@@ -1,13 +1,11 @@
 import React from 'react'
 import './userSidebar.css'
 import {Link} from 'react-router-dom'
-import {AiOutlinePlus,AiFillHome} from 'react-icons/ai'
+import {AiFillHome} from 'react-icons/ai'
 import {FaCertificate,FaUserAlt} from 'react-icons/fa'
 import {MdEventNote,MdNotifications} from 'react-icons/md'
-import {BiFile} from 'react-icons/bi'
 import {FiLogOut} from 'react-icons/fi'
-import {HiOutlineLogout} from 'react-icons/hi'
-import SimpleBar from 'simplebar-react';
+
 
 function NavLink({active,icon,name,path,count}){
     return(
@@ -24,13 +22,13 @@ function NavLink({active,icon,name,path,count}){
     )
 }
 
-export default function USidebar({homeActive,eventsActive,inboxActive,setShow,setShowComplain,setShowCreatePostModal,profileActive}) {
+export default function USidebar({homeActive,eventsActive,inboxActive,setShow,profileActive}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
     const inboxIcon = <MdNotifications size={22} />;
     const profileIcon = <FaUserAlt size={22} />;
-    const logoutIcon = <HiOutlineLogout size={22} />;
+
 
     const handleShowModal=(fn)=>{
         fn(true);
@@ -66,26 +64,11 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,se
             />
             <button 
                 className="user-sidebar-btn"
-                onClick={()=>handleShowModal(setShowCreatePostModal)}
-            >
-                <span className="icon-span"><AiOutlinePlus color={"#6C0C35"} size={24} /></span>
-                Create Post
-            </button>
-            <button 
-                className="user-sidebar-btn"
                 onClick={()=>handleShowModal(setShow)}
             >
                 <span className="icon-span"><FaCertificate color={"#6C0C35 "} size={24} /></span>
                 Request a Certificate
             </button>
-            <button 
-                className="user-sidebar-btn"
-                onClick={()=>handleShowModal(setShowComplain)}
-            >
-                <span className="icon-span"><BiFile color={"#6C0C35 "} size={24} /></span>
-                File a Complaint
-            </button>
-
             </div>
              <div className="user-sidebar-footer">
                 <button className="logout-btn-custom">

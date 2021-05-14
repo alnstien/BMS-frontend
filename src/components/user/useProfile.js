@@ -2,8 +2,6 @@ import React,{useState} from 'react'
 import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
 import RequestCertificateModal from '../modal/requestCertificate'
-import ComplainModal from '../modal/complainModal';
-import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
 import {FormControl,TextField,MenuItem,Select,Typography,InputLabel, FormGroup} from '@material-ui/core'
@@ -153,8 +151,6 @@ export function UserInfo({icon,content,label,variant,options}){
 export default function Profile(props) {
 
         const [certificateModal,setCertificateModal] = useState(false);
-        const [complainModal,setComplainModal] = useState(false);
-        const [createPostModal,setCreatePostModal] = useState(false);
         const screenWidth = window.innerWidth;
         const [edit,setEdit]=useState(false);
         const gender = ['Male','Female'];
@@ -180,8 +176,6 @@ export default function Profile(props) {
                 <Sidebar
                     profileActive ={true}
                     setShow={setCertificateModal}
-                    setShowComplain={setComplainModal}
-                    setShowCreatePostModal={setCreatePostModal}
                 />
             </div>
             <div className="user-wrapper">
@@ -190,8 +184,6 @@ export default function Profile(props) {
                 <PhoneNav 
                     profileActive ={true}
                     setShow={setCertificateModal}
-                    setShowComplain={setComplainModal}
-                    setShowCreatePostModal={setCreatePostModal}
               />
               :null
             }
@@ -278,8 +270,6 @@ export default function Profile(props) {
                 screenWidth <= 700 ? 
                 <FloatingActions
                   setShow={setCertificateModal}
-                  setShowComplain={setComplainModal}
-                  setShowCreatePostModal={setCreatePostModal}
                 />
                 :null
               }
@@ -289,27 +279,6 @@ export default function Profile(props) {
           show={certificateModal}
           setShow={setCertificateModal}
         />
-        <ComplainModal 
-          show={complainModal}
-          setShow={setComplainModal}
-        />
-        <CreatePostModal 
-          show={createPostModal}
-          setShow={setCreatePostModal}
-        />
     </>
     )
 }
-{/* <form className="form-flex">
-                              
-<div className="me-row">
-  <input type="file" id="pp" />
-  <label htmlFor="pp">
-    <span><MdPhotoCamera size={24} /></span>
-    Change Photo
-  </label>
-</div>
-<div className="me-form-group">
-
-</div>
-</form> */}

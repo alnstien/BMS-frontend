@@ -2,8 +2,6 @@ import React,{useState} from 'react'
 import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
 import RequestCertificateModal from '../modal/requestCertificate'
-import ComplainModal from '../modal/complainModal';
-import CreatePostModal from '../modal/createPost';
 import PhoneNav from '../navbar/phoneNavbar';
 import { Typography } from '@material-ui/core';
 import FloatingActions from '../navbar/floatingActions';
@@ -30,8 +28,7 @@ Feel free to let us know your concerns.
 
 export default function Events(props) {
     const [certificateModal,setCertificateModal] = useState(false);
-    const [complainModal,setComplainModal] = useState(false);
-    const [createPostModal,setCreatePostModal] = useState(false);
+
     const screenWidth = window.innerWidth;
 
     return (
@@ -42,8 +39,6 @@ export default function Events(props) {
                 <Sidebar
                     eventsActive ={true}
                     setShow={setCertificateModal}
-                    setShowComplain={setComplainModal}
-                    setShowCreatePostModal={setCreatePostModal}
                 />
             </div>
             <div className="user-wrapper">
@@ -52,8 +47,6 @@ export default function Events(props) {
                 <PhoneNav 
                     eventsActive ={true}
                     setShow={setCertificateModal}
-                    setShowComplain={setComplainModal}
-                    setShowCreatePostModal={setCreatePostModal}
               />
               :null
             }
@@ -66,8 +59,6 @@ export default function Events(props) {
                 screenWidth <= 700 ? 
                 <FloatingActions
                   setShow={setCertificateModal}
-                  setShowComplain={setComplainModal}
-                  setShowCreatePostModal={setCreatePostModal}
                 />
                 :null
               }
@@ -76,14 +67,6 @@ export default function Events(props) {
         <RequestCertificateModal 
           show={certificateModal}
           setShow={setCertificateModal}
-        />
-        <ComplainModal 
-          show={complainModal}
-          setShow={setComplainModal}
-        />
-        <CreatePostModal 
-          show={createPostModal}
-          setShow={setCreatePostModal}
         />
         </>
     )

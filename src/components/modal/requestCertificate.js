@@ -89,7 +89,6 @@ export default function RequestCertificateModal({show,setShow}) {
                 <MenuItem value={'barangay_clearance'}>Barangay Clearance</MenuItem>
                 <MenuItem value={"certification_of_indegency"}>Certification of Indigency</MenuItem>
                 <MenuItem value={"certification_of_good_moral"}>Certification of Good Moral</MenuItem>
-                <MenuItem value={"barangay_certification_of_land_ownership"}>Barangay Certification of Land Ownership</MenuItem>
                 <MenuItem value={"certificate_of_cutting_trees"}>Certificate of Approval for Cutting Trees</MenuItem>
                 <MenuItem value={"letter_of_acceptance"}>Letter of Acceptance</MenuItem>
                 <MenuItem value={"others"}>Others</MenuItem>
@@ -126,31 +125,6 @@ export default function RequestCertificateModal({show,setShow}) {
                     color="secondary"
                     label="Please Specify your purpose..."
                     rowsMax={15}
-                  />
-                </FormControl>
-                </>
-              : null
-            }
-            {
-              land ? 
-              <>
-                <FormControl style={{marginTop:10}}>
-                  <TextField
-                    color="secondary"
-                    label="Lokasyon sa yuta"
-                  />
-                  <TextField
-                    color="secondary"
-                    label="Pilay sukod sa yuta" 
-                  />
-                  <TextField
-                    color="secondary"
-                    label="Dokumento nga nagpamatood"
-                    type="file"
-                  />
-                  <TextField
-                    color="secondary"
-                    label="Purpose" 
                   />
                 </FormControl>
                 </>
