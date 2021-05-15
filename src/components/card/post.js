@@ -23,7 +23,7 @@ function RenderStatus({status}){
 
     return(
         <Typography
-            style={{color:color,fontWeight:'bold'}}
+            style={{color:color,fontWeight:'bold',marginTop:10}}
         >
         {
             status
@@ -87,7 +87,7 @@ export default function Post({request}) {
                         null
                     }
                 </div>
-                <div className="dropdown-nav ft" ref={DropdownRef}>
+                <div className="dropdown-nav ft m-15" ref={DropdownRef}>
                     <div className="dropdown-content">
                         <button 
                             className="dropdown-btn" 

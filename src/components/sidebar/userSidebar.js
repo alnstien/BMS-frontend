@@ -3,8 +3,9 @@ import './userSidebar.css'
 import {Link} from 'react-router-dom'
 import {AiFillHome,AiFillFolderOpen} from 'react-icons/ai'
 import {FaCertificate,FaUserAlt} from 'react-icons/fa'
-import {MdEventNote,MdNotifications} from 'react-icons/md'
+import {MdEventNote} from 'react-icons/md'
 import {FiLogOut} from 'react-icons/fi'
+import {IoIosPeople} from 'react-icons/io'
 
 
 function NavLink({active,icon,name,path,count}){
@@ -22,11 +23,11 @@ function NavLink({active,icon,name,path,count}){
     )
 }
 
-export default function USidebar({homeActive,eventsActive,inboxActive,setShow,profileActive,transActive}) {
+export default function USidebar({homeActive,householdActive,eventsActive,setShow,profileActive,transActive}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
-    const inboxIcon = <MdNotifications size={22} />;
+    const householdIcon = <IoIosPeople size={30} />;
     const profileIcon = <FaUserAlt size={22} />;
     const transactIcon = <AiFillFolderOpen size={28} />
 
@@ -41,6 +42,12 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,pr
                 icon={homeIcon}
                 path='/'
                 name="Home"
+            />
+            <NavLink 
+                active={householdActive}
+                icon={householdIcon}
+                path='/user/my-household'
+                name="My Household"
             />
              <NavLink 
                 active={profileActive}
@@ -61,13 +68,6 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,pr
                 path='/user/events'
                 name="Announcements"
             />
-            {/* <NavLink 
-                active={inboxActive}
-                count={true}
-                icon={inboxIcon}
-                path='/user/notifications'
-                name="Notifications"
-            /> */}
             <button 
                 className="user-sidebar-btn"
                 onClick={()=>handleShowModal(setShow)}
