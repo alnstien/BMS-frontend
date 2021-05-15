@@ -6,6 +6,7 @@ import qr from '../../assets/qr.png'
 import {BiTrash} from 'react-icons/bi'
 import ClickOutsideHandler from '../../config/clickOutsideHandler';
 import { Typography } from '@material-ui/core'
+import { width } from '../../config/setup'
 
 function RenderStatus({status}){
     const [color,setColor] = useState('');
@@ -77,12 +78,16 @@ export default function Post({request}) {
                                 className="download-btn"
                             >
                                 <BsDownload size={24} />
+                                {
+                                    width <=700 ? null: 
+                                    <Typography style={{marginLeft:10}}>Download</Typography>
+                                }
                             </button>
                         :
                         null
                     }
                 </div>
-                <div className="dropdown-nav" ref={DropdownRef}>
+                <div className="dropdown-nav ft" ref={DropdownRef}>
                     <div className="dropdown-content">
                         <button 
                             className="dropdown-btn" 

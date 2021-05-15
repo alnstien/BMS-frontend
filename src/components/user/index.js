@@ -61,14 +61,6 @@ export default function User(props) {
                       />
                     })
                   }
-                  {/* <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card /> */}
                  {/* =======================end of content here===================== */}
               </div>
               {

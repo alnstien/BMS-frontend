@@ -61,13 +61,13 @@ export default function USidebar({homeActive,eventsActive,inboxActive,setShow,pr
                 path='/user/events'
                 name="Announcements"
             />
-            <NavLink 
+            {/* <NavLink 
                 active={inboxActive}
                 count={true}
                 icon={inboxIcon}
                 path='/user/notifications'
                 name="Notifications"
-            />
+            /> */}
             <button 
                 className="user-sidebar-btn"
                 onClick={()=>handleShowModal(setShow)}
