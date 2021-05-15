@@ -36,22 +36,7 @@ export default function MyTransaction(props) {
               }
               <div className="user-root">
                 {/* ========================content goes here======================= */}
-                  <div className="post-heading">
-                    <Typography
-                      variant="h5"
-                      color="textSecondary"
-                    >
-                      Your Recent Transactions
-                    </Typography>
-                  </div>
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
+                
                  {/* =======================end of content here===================== */}
               </div>
               {

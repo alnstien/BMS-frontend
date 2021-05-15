@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Modal from 'react-modal';
+import 'simplebar/dist/simplebar.min.css';
+
 
 Modal.setAppElement('#root')
 ReactDOM.render(

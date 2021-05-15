@@ -13,7 +13,16 @@ import { Typography } from '@material-ui/core';
 export default function User(props) {
   const [certificateModal,setCertificateModal] = useState(false);
   const screenWidth = window.innerWidth;
+  
 
+  const data = [
+    {status:"Success",type:"Barangay Certification of Residency" ,name:'Jane Doe', date:'December 21, 2025'},
+    {status:"Pending",type:"Barangay Clearance" ,name:'Jane Doe', date:'December 21, 2025'},
+    {status:"Rejected",type:"Barangay Certification of Indigency" ,name:'Jane Doe', date:'December 21, 2025'},
+    {status:"Success",type:"Barangay Certification of Residency" ,name:'Jane Doe', date:'December 21, 2025'},
+    {status:"Pending",type:"Barangay Certification of Residency" ,name:'Jane Doe', date:'December 21, 2025'},
+    {status:"Success",type:"Barangay Certification of Residency" ,name:'Jane Doe', date:'December 21, 2025'},
+  ]
 
     return (
         <>
@@ -44,14 +53,22 @@ export default function User(props) {
                       Your Recent Transactions
                     </Typography>
                   </div>
+                  {
+                    data.map((req,index)=>{
+                      return <Card 
+                        request={req} 
+                        key={index}
+                      />
+                    })
+                  }
+                  {/* <Card />
                   <Card />
                   <Card />
                   <Card />
                   <Card />
                   <Card />
                   <Card />
-                  <Card />
-                  <Card />
+                  <Card /> */}
                  {/* =======================end of content here===================== */}
               </div>
               {

@@ -7,13 +7,41 @@ import {BiTrash} from 'react-icons/bi'
 import ClickOutsideHandler from '../../config/clickOutsideHandler';
 import { Typography } from '@material-ui/core'
 
+function RenderStatus({status}){
+    const [color,setColor] = useState('');
 
-export default function Post({text,image}) {
+    useEffect(()=>{
+        if(status==="Success"){
+            setColor('green')
+        }else if(status==="Pending"){
+            setColor('orange')
+        }else{
+            setColor('#F93F3F')
+        }
+    },[])
+
+    return(
+        <Typography
+            style={{color:color,fontWeight:'bold'}}
+        >
+        {
+            status
+        }
+        </Typography>
+    )
+}
+
+
+
+export default function Post({request}) {
 
     const [showOption,setShowOption] = useState(false)
     const DropdownRef = useRef()
 
     ClickOutsideHandler(DropdownRef,useEffect,setShowOption);
+
+   
+   
 
 
     return (
@@ -23,35 +51,36 @@ export default function Post({text,image}) {
                     <div className="qr-code">
                         <img src={qr} alt=""/>
                     </div>
-                    <Typography
-                        style={{color:'green',fontWeight:'bold'}}
-                    >
-                        Success
-                    </Typography>
+                    <RenderStatus status={request.status} />
                 </div>
                 <div className="post-content">
                     <Typography
                         variant="h6"
                     >
-                        Certification of Barangay Residency
+                        {request.type}
                     </Typography>
                     <Typography
                         variant="subtitle1"
                         color="textSecondary"
                     >
-                        Issued to: Jane Doe
+                        Issued to: {request.name}
                     </Typography>
                     <Typography
                         variant="subtitle1"
                         color="textSecondary"
                     >
-                        Issued on: December 23, 2029
+                        Issued on: {request.date}
                     </Typography>
-                        <button
-                            className="download-btn"
-                        >
-                            <BsDownload size={24} />
-                        </button>
+                    {
+                        request.status==="Success" ?
+                            <button
+                                className="download-btn"
+                            >
+                                <BsDownload size={24} />
+                            </button>
+                        :
+                        null
+                    }
                 </div>
                 <div className="dropdown-nav" ref={DropdownRef}>
                     <div className="dropdown-content">

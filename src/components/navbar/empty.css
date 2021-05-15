@@ -4,6 +4,7 @@
     background: #f3397a;
     display: flex;
     align-items: center;
+    padding-right: 20px;
 }
 .logo img{
    width: 100%;
@@ -26,20 +27,8 @@
     flex-direction: column;
     color: #fff;
 }
-.logout-btn{
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    right: 0;
-    margin: 20px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    border: none;
-    outline: none;
-    border-radius: 50%;
-    cursor: pointer;
-    background: rgba(0,0,0,0.2);
+.notif-holder{
+    height: 550px;
 }
 @media screen and (max-width: 800px){
     .logo{
