@@ -1,0 +1,120 @@
+.household-wrapper{
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.household-id{
+    padding:10px;
+    background: #fff;
+    border:1px solid lightgray;
+    border-radius: 10px;
+}
+.household-wrapper-content{
+    flex:1;
+    margin-top: 10px;
+    background: red;
+    padding:10px;
+    background: #fff;
+    border:1px solid lightgray;
+    border-radius: 10px;
+}
+.household-header-content{
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.household-body-content{
+    position: relative;
+}
+.household-body-content form{
+    width: 100%;
+}
+.btn-add-member{
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    background: #ecabbf;
+    color: #9F0710;
+    border-radius: 5px;
+}
+.btn-add-member span{
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.household-body-content-heading{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.collapse-div-heading-header{
+    height: 55px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 10px;
+}
+.collapse-div-heading-content{
+    /* background: red; */
+    flex: 1;
+    height: 55px;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+.collapse-input{
+    width: 400px;
+}
+.collapse-btn{
+    height: 55px;
+    margin: 2px;
+    width: 55px;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.collapse-btn span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-div{
+    display: flex;
+    align-items: center;
+    /* background: red; */
+    flex-direction: column;
+}
+.collapse-div-body-header{
+    margin-bottom: 10px;
+    border-bottom: solid 1px gray;
+}
+.collapse-div-heading{
+    width: 100%;
+    display: flex;
+    /* background: green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 10px;
+}
+.collapse-div-body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.collapse-details-info{
+    display: flex;
+}
