@@ -129,6 +129,7 @@ export default function Registration(props) {
                                     }
                                     <div className="form-inline-group">
                                         <TextField 
+                                            color="secondary"
                                             variant="outlined"
                                             label="First Name"
                                             onChange={e=>handleChange(e,setFname)}
@@ -136,6 +137,7 @@ export default function Registration(props) {
                                     </div>
                                     <div className="form-inline-group">
                                         <TextField 
+                                            color="secondary"
                                             variant="outlined"
                                             label="Last Name"
                                             onChange={e=>handleChange(e,setLname)}
@@ -143,6 +145,7 @@ export default function Registration(props) {
                                     </div>
                                     <div className="form-inline-group">
                                         <TextField 
+                                            color="secondary"
                                             variant="outlined"
                                             label="Email Address"
                                             type="email"
@@ -151,6 +154,7 @@ export default function Registration(props) {
                                     </div>
                                     <div className="form-inline-group">
                                         <TextField 
+                                            color="secondary"
                                             variant="outlined"
                                             label="Full Address"
                                             onChange={e=>handleChange(e,setAddress)}
@@ -158,6 +162,7 @@ export default function Registration(props) {
                                     </div>
                                     <div className="form-inline-group">
                                         <TextField 
+                                            color="secondary"
                                             variant="outlined"
                                             type="number"
                                             label="Contact Number"
@@ -166,8 +171,9 @@ export default function Registration(props) {
                                     </div>
                                     <div className="form-inline-group">
                                         <FormControl variant="outlined">
-                                            <InputLabel htmlFor="outlined-age-native-simple">Gender</InputLabel>
+                                            <InputLabel color="secondary" htmlFor="outlined-age-native-simple">Gender</InputLabel>
                                                 <Select
+                                                    color="secondary"
                                                     native
                                                     value={gender}
                                                     onChange={e=>handleChange(e,setGender)}
@@ -186,7 +192,6 @@ export default function Registration(props) {
                                     <div className="form-inline-group">
                                         <label className="form-inline-label">Birthdate: </label>
                                         <input 
-                                            placeholder="09********9"  
                                             type="date"
                                             className="form-inline-input" 
                                             onChange={e=>handleChange(e,setPhone)}
@@ -214,6 +219,7 @@ export default function Registration(props) {
                             <form encType="multipart/form-data">
                                 <div className="form-inline-group">
                                     <TextField 
+                                        color="secondary"
                                         variant="outlined"
                                         label="Username"
                                         onChange={e=>handleChange(e,setUsername)}
@@ -221,6 +227,7 @@ export default function Registration(props) {
                                 </div>
                                 <div className="form-inline-group">
                                      <TextField
+                                        color="secondary"
                                         type="password" 
                                         variant="outlined"
                                         label="Password"
@@ -229,6 +236,7 @@ export default function Registration(props) {
                                 </div>
                                 <div className="form-inline-group">
                                     <TextField 
+                                        color="secondary"
                                         type="password" 
                                         variant="outlined"
                                         label="Confirm Password"

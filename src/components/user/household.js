@@ -8,10 +8,11 @@ import RequestCertificateModal from '../modal/requestCertificate'
 import { Typography } from '@material-ui/core';
 import {IoMdAdd} from 'react-icons/io'
 import CollapseDiv from '../collapse/collapseDiv';
-
+import AddMemberModal from '../modal/addMember';
 
 export default function Household() {
     const [certificateModal,setCertificateModal] = useState(false);
+    const [addMember,setAddMember] = useState(false)
     const screenWidth = window.innerWidth;
 
     const houseHold = [
@@ -23,6 +24,11 @@ export default function Household() {
       {id: 6,role:'Child', gender:'Male', name:"Jonas Doe", age:19, bdate: "September 21, 2001"},
       {id: 7,role:'Child', gender:'Male', name:"Jonas Doe", age:19, bdate: "September 21, 2001"},
     ]
+    const openModal=(e)=>{
+      e.preventDefault();
+      return setAddMember(true)
+
+    }
     return (
         <>
          <Navbar />
@@ -62,9 +68,9 @@ export default function Household() {
                           <div className="household-body-content">
                               <form>
                                 <div className="household-body-content-heading">
-                                  <button className="btn-add-member">
+                                  <button onClick={e=>openModal(e)} className="btn-add-member">
                                     <span><IoMdAdd size={24} color={"#9F0710"} /></span>
-                                    Add a Member
+                                    Add a Household Member
                                   </button>
                                 </div>
                                 {
@@ -90,6 +96,10 @@ export default function Household() {
         <RequestCertificateModal 
           show={certificateModal}
           setShow={setCertificateModal}
+        />
+        <AddMemberModal 
+          show={addMember}
+          setShow={setAddMember}
         />
       </>
     )

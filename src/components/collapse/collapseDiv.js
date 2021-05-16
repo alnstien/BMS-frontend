@@ -90,11 +90,11 @@ function CollapseField({member}){
                 className="collapse-div-body"
                 style={styles.collapseStyle}
             >   <div className="collapse-div-body-header">
-                    <Typography variant="h6">Additional Member Information</Typography>
+                    <Typography variant="h6">Additional Household Member Information</Typography>
                 </div>
-                 <Typography variant="body2">{`Age: ${member.age}`}</Typography>
-                 <Typography variant="body2">{`Gender: ${member.gender}`}</Typography>
-                 <Typography variant="body2">{`Birthdate: ${member.bdate}`}</Typography>
+                 <Typography variant="body2">Age: <b>{member.age}</b></Typography>
+                 <Typography variant="body2">Gender: <b>{member.gender}</b></Typography>
+                 <Typography variant="body2">Birthdate: <b>{member.bdate}</b> </Typography>
             </div>
         </div>
         </>

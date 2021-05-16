@@ -6,30 +6,23 @@ import Nav from '../navbar/optionNav'
 import Card from '../card/dashboardCard'
 import GraphCard from '../card/graphCard';
 import {BsPeopleFill,BsCardChecklist} from 'react-icons/bs'
-import {BiMessageAltDetail,BiTransfer} from 'react-icons/bi'
-import {RiKakaoTalkLine} from 'react-icons/ri'
+import {BiTransfer} from 'react-icons/bi'
 import DTable from '../table/dashboardTable'
-
+import {TiGroup} from 'react-icons/ti'
 
 export default function Dashboard(props) {
     
     const [isOpen,setOpen] = useState(true);
-    const items=[
-        {name:"Overview",path:'/myAdmin',status:true}
-    ]
-
 
     const reqIcon = <BsPeopleFill size={24} color={'rgb(29, 28, 28)'} />
     const transIcon = <BiTransfer size={30} color={'blue'} />
-    const postsIcon = <BiMessageAltDetail size={30} color={'green'} />
-    const complaintIcon = <RiKakaoTalkLine size={30} color={'orange'} />
+    const populationIcon = <TiGroup size={30} color={'orange'} />
     const releaseIcon = <BsCardChecklist size={30} color={'red'} />
 
     const cardContent=[
-        {icon:reqIcon, title:'Engagements',subtitle:'Visitors',count:'23,223'},
+        {icon:reqIcon, title:'Engagements',subtitle:'Visitors',count:'500'},
         {icon:transIcon, title:'Requests',subtitle:'Requests recently',count:'154'},
-        {icon:postsIcon, title:'Activity',subtitle:'Posts today',count:290},
-        {icon:complaintIcon, title:'Service',subtitle:'Complaints recently',count:39},
+        {icon:populationIcon, title:'Population',subtitle:'Total Residents',count:"1,000"},
         {icon:releaseIcon, title:'Release',subtitle:'Total Certificates Released',count:39}
     ]
 
