@@ -91,6 +91,14 @@ export default function AddMember({show,setShow}) {
                     label="Last Name"
                 />
             </FormControl>
+            <FormControl style={{marginTop:10}}>
+                <TextField
+                    type="number"
+                    variant="outlined"
+                    color="secondary"
+                    label="Contact Number(Optional)"
+                />
+            </FormControl>
             <FormControl style={{marginTop:10}} >
               <InputLabel 
                 id="demo-simple-select-helper-label"

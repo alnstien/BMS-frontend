@@ -16,13 +16,13 @@ export default function Household() {
     const screenWidth = window.innerWidth;
 
     const houseHold = [
-      {id: 1,role:'Father', gender:'Male', name:"Justin Doe", age:42, bdate: "September 21, 1984"},
-      {id: 2,role:'Mother', gender:'Female', name:"Jane Doe", age:39, bdate :"September 21, 1981"},
-      {id: 3,role:'Child', gender:'Male', name:"John Doe", age:23, bdate: "September 21, 1997"},
-      {id: 4,role:'Child', gender:'Female', name:"Judy Doe", age:21, bdate: "September 21, 1999"},
-      {id: 5,role:'Child', gender:'Male', name:"Jonas Doe", age:19, bdate: "September 21, 2001"},
-      {id: 6,role:'Child', gender:'Male', name:"Jonas Doe", age:19, bdate: "September 21, 2001"},
-      {id: 7,role:'Child', gender:'Male', name:"Jonas Doe", age:19, bdate: "September 21, 2001"},
+      {id: 1,role:'Father', gender:'Male', name:"Justin Doe", age:42, bdate: "September 21, 1984",phone:"09484873789"},
+      {id: 2,role:'Mother', gender:'Female', name:"Jane Doe", age:39, bdate :"September 21, 1981",phone:"09484873789"},
+      {id: 3,role:'Child', gender:'Male', name:"John Doe", age:23, bdate: "September 21, 1997",phone:"09484873789"},
+      {id: 4,role:'Child', gender:'Female', name:"Judy Doe", age:21, bdate: "September 21, 1999",phone:"09484873789"},
+      {id: 5,role:'Child', gender:'Male', name:"Jonas Doe", age:19, bdate: "September 21, 2001",phone:"09484873789"},
+      {id: 6,role:'Child', gender:'Male', name:"Jonas Doe", age:19, bdate: "September 21, 2001",phone:"09484873789"},
+      {id: 7,role:'Child', gender:'Male', name:"Jonas Doe", age:19, bdate: "September 21, 2001",phone:"09484873789"},
     ]
     const openModal=(e)=>{
       e.preventDefault();

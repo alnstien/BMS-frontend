@@ -95,6 +95,7 @@ function CollapseField({member}){
                  <Typography variant="body2">Age: <b>{member.age}</b></Typography>
                  <Typography variant="body2">Gender: <b>{member.gender}</b></Typography>
                  <Typography variant="body2">Birthdate: <b>{member.bdate}</b> </Typography>
+                 <Typography variant="body2">Contact: <b>{member.phone}</b> </Typography>
             </div>
         </div>
         </>

@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #E9E3F9;
+    background: linear-gradient(180deg,#ee6291,#310b18)
   }
   .login-form-wrapper{
     height: 500px;
@@ -61,16 +61,11 @@
     outline: none;
     margin-top: 20px;
     font-size: 20px;
-    background: #7B66FF;
-    color: #fff;
     font-size: 20px;
     transition: .3s;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .login-form div button:hover{
-    background: #654ef7;
   }
   .login-form div a{
     text-align: center;
@@ -84,6 +79,9 @@
     width: 100%;
     margin-top: 10px;
     text-align: center;
+  }
+  .login-link a{
+    color: #681a34;
   }
   @media screen and (max-width: 700px) {
     .container-login{

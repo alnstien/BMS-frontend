@@ -41,6 +41,18 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                         onClick={handleProcess}
                     >Process</button>
                 </td>
+                <td>
+                    <button 
+                        className="process-btn"
+                        onClick={handleProcess}
+                    >Edit</button>
+                </td>
+                <td>
+                    <button 
+                        className="process-btn"
+                        onClick={handleProcess}
+                    >Delete</button>
+                </td>
             </tr>
         </>
     )

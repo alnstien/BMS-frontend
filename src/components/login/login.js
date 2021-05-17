@@ -62,6 +62,7 @@ export default function Login(props){
                                     id="outlined-basic" 
                                     label="Username" 
                                     value={username}
+                                    color="secondary"
                                     variant="outlined" 
                                     onChange={e=>handleChange(setUsername,e)}
                                     style={{marginTop:20,flex:1,width:'80%'}}
@@ -73,6 +74,7 @@ export default function Login(props){
                                     id="outlined-basic" 
                                     label="Password"
                                     type="password" 
+                                    color="secondary"
                                     variant="outlined" 
                                     onChange={e=>handleChange(setPassword,e)}
                                     style={{marginTop:20,flex:1,width:'80%'}}
@@ -81,7 +83,7 @@ export default function Login(props){
                         <div>
                             <Button 
                                 variant="contained" 
-                                color="primary"
+                                color="secondary"
                                 type="submit"
                             >Login</Button>
                         </div>

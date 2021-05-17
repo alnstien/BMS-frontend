@@ -64,7 +64,7 @@
     padding: 10px;
     border: none;
     outline: none;
-    background: #52389A;
+    background: #EE155E;
     color: #fff;
     cursor: pointer;
     border-radius: 7px;
@@ -90,7 +90,7 @@
     background: #918f8f;
   }
   .submit-btn:hover {
-    background: #482c94;
+    background: #c7124e;
   }
   .form-avatar-preview{
     width: 100%;
@@ -116,20 +116,23 @@
     outline: none;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     font-size: 16px;
   }
   .form-inline-option {
     outline: none;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid gray;
+    border: 2px solid lightgray;
     margin-right: 10px;
     font-size: 18px;
   }
+  .form-inline-input:hover{
+    border: 1px solid black;
+  }
   .form-inline-input:focus,
   .form-inline-option:focus {
-    border: 1px solid #30009b;
+    border: 1px solid #EE155E;
   }
   .form-group-flex {
     display: flex;

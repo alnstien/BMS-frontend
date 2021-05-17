@@ -244,7 +244,7 @@ export default function Registration(props) {
                                     />
                                     <div className="reg-footer">
                                     <Link to="/login" >
-                                        Already have and account ?
+                                        Already have an account ?
                                     </Link>
                                     <button type="submit" className="submit-btn" onClick={e=>handleSubmit(e)}>Submit</button>
                                     </div>
