@@ -4,7 +4,7 @@ import {FcSearch} from 'react-icons/fc'
 import {AiOutlineRight} from 'react-icons/ai'
 
 
-export default function RSidebar({width,active,holdActive,historyActive,releaseActive}) {
+export default function RSidebar({width,active,purokActive}) {
 
 
     return (
@@ -31,8 +31,17 @@ export default function RSidebar({width,active,holdActive,historyActive,releaseA
         <Link 
             className={ active ? 
                 'form-a-active': 'form-a-default'}
-            to="/records/residents">
+            to="/records">
                 Resident's Record 
+            <span className="icon-wrapper-mod">
+                <AiOutlineRight size={20} />
+            </span>
+        </Link>
+        <Link 
+            className={ purokActive ? 
+                'form-a-active': 'form-a-default'}
+            to="/records">
+                Purok
             <span className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />
             </span>

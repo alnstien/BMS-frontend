@@ -5,31 +5,22 @@ import TNavbar from '../navbar/tnav';
 import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
 import RSidebar from '../sidebar/recordSidebar'; 
-import ListItem from '../transaction/listItem';
+import ListItem from '../transaction/recordList';
 const width = window.innerWidth;
 
 
 const data=[
-    {id:1,date: Date.now(),name: 'Al Ares', request:'Barangay Certificate',status:'Invalid'},
-    {id:2,date: Date.now(),name: 'Jane Doe', request:'Barangay Certificate',status:'Invalid'},
-    {id:3,date: Date.now(),name: 'Juan dela Cruz', request:'Barangay Certificate',status:'Valid'},
-    {id:4,date: Date.now(),name: 'Anthony Smith', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Jason Derulo', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Kristine Mae', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Jia Lissa', request:'Barangay Certificate',status:'Valid'},
-    {id:1,date: Date.now(),name: 'Voilet Rain', request:'Barangay Certificate',status:'Valid'},
-    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Valid'},
-    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Invalid'},
-    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'},
-    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Valid'},
-    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Invalid'},
-    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'}
+    {id:1,purok:"Purok 6",household:"HSE-15456565656",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:2,purok:"Purok 1",household:"HSE-15456565657",householdManager: 'Johenson Santos', role:'Father',member:6},
+    {id:3,purok:"Purok 6",household:"HSE-15456565658",householdManager: 'Arnel Samson', role:'Child',member:6},
+    {id:4,purok:"Purok 5",household:"HSE-15456565659",householdManager: 'Juan dela Cruz', role:'Mother',member:6},
+    {id:5,purok:"Purok 2",household:"HSE-1545656560",householdManager: 'Sarrah Jane', role:'Mother',member:6},
+    {id:6,purok:"Purok 3",household:"HSE-15456565661",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:7,purok:"Purok 8",household:"HSE-15456565662",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:8,purok:"Purok 7",household:"HSE-15456565663",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:9,purok:"Purok 3",household:"HSE-15456565664",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:10,purok:"Purok 6",household:"HSE-15456565665",householdManager: 'Al Ares', role:'Mother',member:6},
+
 ]
 
 export default function Transaction(props) {
@@ -117,10 +108,12 @@ export default function Transaction(props) {
                                                 </th>
                                                 :null
                                             }
-                                                <th>Date <button>Sort</button></th>
-                                                <th>Resident</th>
-                                                <th>Request</th>
-                                                <th>Status</th>
+                                                <th>
+                                                    Purok
+                                                </th>
+                                                <th>Household Id</th>
+                                                <th>Household Holder</th>
+                                                <th>Role</th>
                                                 <th>Action</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>

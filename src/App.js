@@ -23,7 +23,7 @@ import Setting from './components/settings/settings';
 import Release from './components/transaction/release'
 import MyTransaction from './components/user/transactions';
 import MyHousehold from './components/user/household';
-
+import MyPurok from './components/purok/index'
 
 function App() {
   return (
@@ -68,6 +68,11 @@ function App() {
           exact
           path="/"
           component={User}
+        />
+        <Route 
+          exact
+          path="/my-purok"
+          component={MyPurok}
         />
         <Route 
           exact
