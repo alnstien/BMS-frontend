@@ -6,8 +6,7 @@ import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
 import RequestCertificateModal from '../modal/requestCertificate'
 import { Typography } from '@material-ui/core';
-import { DataGrid } from '@material-ui/data-grid'
-
+import ListItem from '../transaction/userTransaction'
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -47,9 +46,15 @@ const rows = [
 
 export default function MyTransaction(props) {
   const [certificateModal,setCertificateModal] = useState(false);
+  const [check,setCheck]= useState(false)
   const screenWidth = window.innerWidth;
+  const checked = false;
+  const handleCheckAll=()=>{
 
+  }
+  const handleProcess =()=>{
 
+  }
     return (
         <>
          <Navbar />
@@ -80,7 +85,44 @@ export default function MyTransaction(props) {
                     </Typography>
                   </div>
                 <div style={{ height: 500, width: '100%',marginTop: 10 }}>
-                  <DataGrid rows={rows} columns={columns} pageSize={10} checkboxSelection />
+                <table className="req-table">
+                  <thead className="t-head">
+                      <tr>
+                          {
+                            check ? 
+                              <th>
+                                <input 
+                                    type="checkbox" 
+                                    checked={checked ?true :false}
+                                    className="req-check"
+                                    onChange={handleCheckAll}
+                                />
+                            </th>
+                            :
+                            null
+                          }
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                        <th>Delete</th>
+                    </tr>
+                  </thead>
+                    <tbody className="t-body">
+                    {
+                        rows.map((req,index)=>{
+                            return <ListItem 
+                               key={index}
+                               request={req}
+                               status={check}
+                               checked={checked}
+                               handleProcess={handleProcess}
+                         />
+                        })
+                    }
+                   </tbody>
+                   </table>
                 </div>
                  {/* =======================end of content here===================== */}
               </div>

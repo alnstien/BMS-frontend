@@ -9,7 +9,6 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
         setSelected(prevSelect=>!prevSelect)
     },[checked])
 
-    
     return(
         <>
             <tr className="tb-tr">
@@ -26,10 +25,10 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                         </td>
                     :null
                 }
-                <td>{request.purok}</td>
-                <td>{request.household}</td>
-                <td>{request.householdManager}</td>
-                <td>{request.role}</td>
+                <td>{request.name}</td>
+                <td>{request.type}</td>
+                <td>{request.status}</td>
+                <td>{request.rel_date}</td>
                 <td>
                     <button 
                         className="process-btn"
@@ -38,17 +37,10 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                 </td>
                 <td>
                     <button 
-                        style={{background:'#4F56F4'}}
-                        className="process-btn"
-                        onClick={handleProcess}
-                    >Edit</button>
-                </td>
-                <td>
-                    <button 
                         style={{background:'#ED3434'}}
                         className="process-btn"
                         onClick={handleProcess}
-                    >Delete</button>
+                    >Cancel</button>
                 </td>
             </tr>
         </>
