@@ -1,31 +1,29 @@
 import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
-import './transaction.css';
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/tnav';
 import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
-import TSidebar from '../sidebar/transactionSidebar'; 
-import RequestItem from './requestItem';
+import RSidebar from '../sidebar/recordSidebar'; 
+import ListItem from '../transaction/recordList';
 const width = window.innerWidth;
 
 
 const data=[
-    {id:1,date:"September 21, 2023",name: 'Al Ares', request:'Barangay Certificate',status:'Non-Resident'},
-    {id:2,date:"September 21, 2023",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-Resident'},
-    {id:3,date:"September 21, 2023",name: 'Juan dela Cruz', request:'Barangay Certificate',status:'Resident'},
-    {id:4,date:"September 21, 2023",name: 'Anthony Smith', request:'Barangay Certificate',status:'Resident'},
-    {id:5,date:"September 21, 2023",name: 'Jason Derulo', request:'Barangay Certificate',status:'Resident'},
-    {id:6,date:"September 21, 2023",name: 'Kristine Mae', request:'Barangay Certificate',status:'Resident'},
-    {id:1,date:"September 21, 2023",name: 'Al Ares', request:'Barangay Certificate',status:'Non-Resident'},
-    {id:2,date:"September 21, 2023",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-Resident'},
-    {id:3,date:"September 21, 2023",name: 'Juan dela Cruz', request:'Barangay Certificate',status:'Resident'},
-    {id:4,date:"September 21, 2023",name: 'Anthony Smith', request:'Barangay Certificate',status:'Resident'},
-    {id:5,date:"September 21, 2023",name: 'Jason Derulo', request:'Barangay Certificate',status:'Resident'},
-    {id:6,date:"September 21, 2023",name: 'Kristine Mae', request:'Barangay Certificate',status:'Resident'},
+    {id:1,purok:"Purok 6",household:"HSE-15456565656",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:2,purok:"Purok 1",household:"HSE-15456565657",householdManager: 'Johenson Santos', role:'Father',member:6},
+    {id:3,purok:"Purok 6",household:"HSE-15456565658",householdManager: 'Arnel Samson', role:'Child',member:6},
+    {id:4,purok:"Purok 5",household:"HSE-15456565659",householdManager: 'Juan dela Cruz', role:'Mother',member:6},
+    {id:5,purok:"Purok 2",household:"HSE-1545656560",householdManager: 'Sarrah Jane', role:'Mother',member:6},
+    {id:6,purok:"Purok 3",household:"HSE-15456565661",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:7,purok:"Purok 8",household:"HSE-15456565662",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:8,purok:"Purok 7",household:"HSE-15456565663",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:9,purok:"Purok 3",household:"HSE-15456565664",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:10,purok:"Purok 6",household:"HSE-15456565665",householdManager: 'Al Ares', role:'Mother',member:6},
+
 ]
 
-export default function Transaction(props) {
+export default function Residents(props) {
     const [sortAsc,setSortAsc] = useState(false)
     const [isOpen,setOpen] = useState(true)
     const [check,setCheck] = useState(false)
@@ -66,7 +64,7 @@ export default function Transaction(props) {
     return (
         <>
         <div className="con-container"> 
-            <Sidebar transactionActive={true}/>
+            <Sidebar recordsActive={true}/>
             <div className="content-wrapper">
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">
@@ -87,8 +85,8 @@ export default function Transaction(props) {
                                 }}
                             >
                             <SimpleBar className="req-overview-holder">
-                                <TSidebar 
-                                    active={true} 
+                                <RSidebar 
+                                    residentActive={true} 
                                     width={width}
                                 />
                             </SimpleBar>
@@ -110,18 +108,20 @@ export default function Transaction(props) {
                                                 </th>
                                                 :null
                                             }
-                                                <th>Date</th>
-                                                <th>Resident</th>
-                                                <th>Request</th>
-                                                <th>Classification</th>
-                                                <th>Process</th>
-                                                <th>Reject</th>
+                                                <th>
+                                                    Purok
+                                                </th>
+                                                <th>Household Id</th>
+                                                <th>Household Holder</th>
+                                                <th>Role</th>
+                                                <th>Action</th>
+                                                <th>Edit</th>
                                             </tr>
                                         </thead>
                                         <tbody className="t-body">
                                          {
                                              data.slice(startIndex,endIndex).map(req=>{
-                                                 return <RequestItem 
+                                                 return <ListItem 
                                                     request={req}
                                                     status={check}
                                                     checked={checked}

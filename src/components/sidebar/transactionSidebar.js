@@ -39,15 +39,7 @@ export default function TSidebar({width,active,holdActive,historyActive,releaseA
         </Link>
         <Link 
             className={holdActive ? 'form-a-active':'form-a-default'}
-            to="/requests/hold">Hold Requests 
-            <span 
-                className="icon-wrapper-mod">
-                <AiOutlineRight size={20} />
-            </span>
-        </Link>
-        <Link 
-            className={releaseActive ? 'form-a-active':'form-a-default'}
-            to="/requests/release">On-Progress Requests 
+            to="/requests/hold">Rejected Requests 
             <span 
                 className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />
@@ -55,7 +47,7 @@ export default function TSidebar({width,active,holdActive,historyActive,releaseA
         </Link>
         <Link 
             className={historyActive ? 'form-a-active':'form-a-default'}
-            to="/requests/history">Transaction History 
+            to="/requests/history">History 
             <span 
                 className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />

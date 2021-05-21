@@ -77,11 +77,16 @@
     height: 55px;
     margin: 2px;
     width: 55px;
+    cursor: pointer;
     outline: none;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .3s;
+}
+.collapse-btn:hover{
+    background: rgba(0,0,0,0.2);
 }
 .collapse-btn span{
     display: flex;

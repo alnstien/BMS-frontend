@@ -1,4 +1,8 @@
 import React,{useCallback,useState} from 'react';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 
 export default function ListItem({status,request,checked,handleCheck,handleProcess}){
@@ -45,8 +49,8 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                     <button 
                         style={{background:'red'}}
                         className="process-btn"
-                        onClick={handleProcess}
-                    >Delete</button>
+                        onClick={()=>MySwal.fire('Oops...', 'Something went wrong!', 'error')}
+                    >Reject</button>
                 </td>
             </tr>
         </>

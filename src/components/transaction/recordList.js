@@ -43,13 +43,6 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                         onClick={handleProcess}
                     >Edit</button>
                 </td>
-                <td>
-                    <button 
-                        style={{background:'#ED3434'}}
-                        className="process-btn"
-                        onClick={handleProcess}
-                    >Delete</button>
-                </td>
             </tr>
         </>
     )

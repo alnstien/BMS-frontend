@@ -19,11 +19,14 @@ import UserProfile from './components/user/useProfile';
 import HoldTransaction from './components/transaction/onhold';
 import TransactionHistory from './components/transaction/history';
 import Settings from './components/settings/settings';
-import Setting from './components/settings/settings';
-import Release from './components/transaction/release'
+import UserSettings from './components/user/settings';
 import MyTransaction from './components/user/transactions';
 import MyHousehold from './components/user/household';
 import MyPurok from './components/purok/index'
+import Certificate from './components/user/certificate';
+import ResidentRecords from './components/record/residents';
+import Purok from './components/record/myPurok';
+
 
 function App() {
   return (
@@ -43,6 +46,16 @@ function App() {
           exact
           path="/user/my-household"
           component={MyHousehold}
+        />
+        <Route 
+          exact
+          path="/user/certificates"
+          component={Certificate}
+        />
+        <Route 
+          exact
+          path="/user/settings"
+          component={UserSettings}
         />
         <Route 
           exact
@@ -82,12 +95,22 @@ function App() {
         <Route 
           exact
           path="/settings"
-          component={Setting}
+          component={Settings}
         />
         <Route 
           exact
           path="/records"
           component={Record}
+        />
+        <Route 
+          exact
+          path="/records/residents"
+          component={ResidentRecords}
+        />
+        <Route 
+          exact
+          path="/records/purok"
+          component={Purok}
         />
         <Route 
           exact
@@ -103,11 +126,6 @@ function App() {
           exact
           path="/requests/hold"
           component={HoldTransaction}
-        />
-         <Route 
-          exact
-          path="/requests/release"
-          component={Release}
         />
         <Route 
           exact

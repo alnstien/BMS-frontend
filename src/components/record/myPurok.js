@@ -1,45 +1,45 @@
 import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
-import './transaction.css';
 import SimpleBar from 'simplebar-react';
+import TNavbar from '../navbar/tnav';
 import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
-import TSidebar from '../sidebar/transactionSidebar'; 
-import ListItem from './listItem';
-import TNavbar from '../navbar/tnav';
+import RSidebar from '../sidebar/recordSidebar'; 
+import ListItem from '../transaction/purokRecordList';
+const width = window.innerWidth;
 
 
 const data=[
-    {id:1,date: Date.now(),name: 'Al Ares', request:'Barangay Certificate',status:'Invalid'},
-    {id:2,date: Date.now(),name: 'Jane Doe', request:'Barangay Certificate',status:'Invalid'},
-    {id:3,date: Date.now(),name: 'Juan dela Cruz', request:'Barangay Certificate',status:'Valid'},
-    {id:4,date: Date.now(),name: 'Anthony Smith', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Jason Derulo', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Kristine Mae', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Jia Lissa', request:'Barangay Certificate',status:'Valid'},
-    {id:1,date: Date.now(),name: 'Voilet Rain', request:'Barangay Certificate',status:'Valid'},
-    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Valid'},
-    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Invalid'},
-    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'},
-    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Valid'},
-    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Invalid'},
-    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'}
+    {id:1,purok:"Purok 1",purokLeader: 'Al Ares',member:23},
+    {id:2,purok:"Purok 2",purokLeader: 'Johenson Santos',member:35},
+    {id:3,purok:"Purok 3",purokLeader: 'Arnel Samson',member:40},
+    {id:4,purok:"Purok 4",purokLeader: 'Juan dela Cruz',member:23},
+    {id:5,purok:"Purok 5",purokLeader: 'Sarrah Jane',member:36},
+    {id:6,purok:"Purok 6",purokLeader: 'Al Ares',member:45},
+    {id:7,purok:"Purok 7",purokLeader: 'Al Ares',member:65},
+    {id:8,purok:"Purok 8",purokLeader: 'Al Ares',member:45},
+    {id:9,purok:"Purok 9",purokLeader: 'Al Ares',member:36},
+    {id:10,purok:"Purok 10",purokLeader: 'Al Ares',member:45},
+
 ]
 
-export default function Release(props) {
+export default function Purok(props) {
     const [sortAsc,setSortAsc] = useState(false)
     const [isOpen,setOpen] = useState(true)
     const [check,setCheck] = useState(false)
     const [checked,setChecked] = useState(false);
-    const [show,setShow] = useState(false)
+    const [show,setShow] = useState(false);
+    const [page,setPage]= useState(1);
 
-    const width = window.innerWidth;
+
+    const limit = 5;
+    const startIndex = (page-1) * limit;
+    const endIndex = page * limit;
+    
+    const handleChange=(page)=>{
+        alert(page)
+    }
+
     const toggleSidebar=(e)=>{
         e.preventDefault();
         setOpen(prevOpen=>!prevOpen)
@@ -60,10 +60,11 @@ export default function Release(props) {
     const handleProcess=()=>{
         setShow(!show)
     }
+
     return (
         <>
         <div className="con-container"> 
-            <Sidebar transactionActive={true}/>
+            <Sidebar recordsActive={true}/>
             <div className="content-wrapper">
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">
@@ -84,11 +85,10 @@ export default function Release(props) {
                                 }}
                             >
                             <SimpleBar className="req-overview-holder">
-                                <TSidebar 
-                                    releaseActive={true} 
+                                <RSidebar 
+                                    purokActive={true} 
                                     width={width}
                                 />
-                                    
                             </SimpleBar>
                             </div>
                             <div className="req-wrapper">
@@ -108,10 +108,11 @@ export default function Release(props) {
                                                 </th>
                                                 :null
                                             }
-                                                <th>Date <button>Sort</button></th>
-                                                <th>Resident</th>
-                                                <th>Request</th>
-                                                <th>Status</th>
+                                                <th>
+                                                    Purok
+                                                </th>
+                                                <th>Purok Leader</th>
+                                                <th>Member/s</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -141,7 +142,13 @@ export default function Release(props) {
                                             <option>1000</option>
                                         </select>
                                     </div>
-                                    <Pagination count={10} variant="outlined" shape="rounded" />
+                                    <Pagination 
+                                        count={Math.ceil(data.length/limit)}
+                                        page={page} 
+                                        variant="outlined" 
+                                        shape="rounded" 
+                                        onChange={({e,page})=>handleChange(page)}
+                                    />
                                 </div>
                             </div>
                         </div>

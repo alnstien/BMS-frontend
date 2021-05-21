@@ -3,7 +3,7 @@ import './userSidebar.css'
 import {Link} from 'react-router-dom'
 import {AiFillHome,AiFillFolderOpen} from 'react-icons/ai'
 import {FaCertificate,FaUserAlt} from 'react-icons/fa'
-import {MdEventNote} from 'react-icons/md'
+import {MdEventNote,MdSettings} from 'react-icons/md'
 import {FiLogOut} from 'react-icons/fi'
 import {IoIosPeople} from 'react-icons/io'
 
@@ -23,13 +23,15 @@ function NavLink({active,icon,name,path,count}){
     )
 }
 
-export default function USidebar({homeActive,householdActive,eventsActive,setShow,profileActive,transActive}) {
+export default function USidebar({homeActive,householdActive,eventsActive,setShow,profileActive,transActive,settingActive}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
     const householdIcon = <IoIosPeople size={30} />;
     const profileIcon = <FaUserAlt size={22} />;
     const transactIcon = <AiFillFolderOpen size={28} />
+    const settingsIcon = <MdSettings size={25} />
+
 
     const handleShowModal=(fn)=>{
         fn(true);
@@ -67,6 +69,12 @@ export default function USidebar({homeActive,householdActive,eventsActive,setSho
                 count={true}
                 path='/user/events'
                 name="Announcements"
+            />
+            <NavLink 
+                active={settingActive}
+                icon={settingsIcon}
+                path='/user/settings'
+                name="Settings"
             />
             <button 
                 className="user-sidebar-btn"

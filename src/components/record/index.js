@@ -116,7 +116,6 @@ export default function Transaction(props) {
                                                 <th>Role</th>
                                                 <th>Action</th>
                                                 <th>Edit</th>
-                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody className="t-body">

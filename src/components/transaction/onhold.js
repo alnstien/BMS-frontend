@@ -10,26 +10,18 @@ import TNavbar from '../navbar/tnav';
 
 
 const data=[
-    {id:1,date: Date.now(),name: 'Al Ares', request:'Barangay Certificate',status:'Invalid'},
-    {id:2,date: Date.now(),name: 'Jane Doe', request:'Barangay Certificate',status:'Invalid'},
-    {id:3,date: Date.now(),name: 'Juan dela Cruz', request:'Barangay Certificate',status:'Valid'},
-    {id:4,date: Date.now(),name: 'Anthony Smith', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Jason Derulo', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Kristine Mae', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Jia Lissa', request:'Barangay Certificate',status:'Valid'},
-    {id:1,date: Date.now(),name: 'Voilet Rain', request:'Barangay Certificate',status:'Valid'},
-    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Valid'},
-    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Invalid'},
-    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'},
-    {id:2,date: Date.now(),name: 'Al Ares1', request:'Barangay Certificate',status:'Valid'},
-    {id:3,date: Date.now(),name: 'Al Ares2', request:'Barangay Certificate',status:'Invalid'},
-    {id:4,date: Date.now(),name: 'Al Ares3', request:'Barangay Certificate',status:'Valid'},
-    {id:5,date: Date.now(),name: 'Al Ares4', request:'Barangay Certificate',status:'Valid'},
-    {id:6,date: Date.now(),name: 'Al Ares5', request:'Barangay Certificate',status:'Valid'},
-    {id:7,date: Date.now(),name: 'Al Ares6', request:'Barangay Certificate',status:'Valid'}
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
 ]
 
 export default function HoldTransaction(props) {
@@ -108,11 +100,12 @@ export default function HoldTransaction(props) {
                                                 </th>
                                                 :null
                                             }
-                                                <th>Date <button>Sort</button></th>
+                                                <th>Date</th>
                                                 <th>Resident</th>
                                                 <th>Request</th>
-                                                <th>Status</th>
+                                                <th>Classification</th>
                                                 <th>Action</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody className="t-body">

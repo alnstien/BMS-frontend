@@ -70,6 +70,24 @@ export default function AddMember({show,setShow}) {
                 }
               </Select>
             </FormControl>
+            <FormControl style={{marginTop:10}} >
+              <InputLabel 
+                id="demo-simple-select-helper-label"
+                color="secondary"
+              >Gender</InputLabel>
+              <Select
+                labelId="demo-simple-select-helper-label"
+                id="demo-simple-select-helper"
+                // onChange={e=>handleSelect(e)}
+                color="secondary"
+              >
+                {
+                    gender.map(fam=>{
+                        return<MenuItem value={fam.value}>{fam.name}</MenuItem>
+                    })
+                }
+              </Select>
+            </FormControl>
             <FormControl style={{marginTop:10}}>
                 <TextField
                     variant="outlined"
@@ -99,31 +117,6 @@ export default function AddMember({show,setShow}) {
                     label="Contact Number(Optional)"
                 />
             </FormControl>
-            <FormControl style={{marginTop:10}} >
-              <InputLabel 
-                id="demo-simple-select-helper-label"
-                color="secondary"
-              >Gender</InputLabel>
-              <Select
-                labelId="demo-simple-select-helper-label"
-                id="demo-simple-select-helper"
-                // onChange={e=>handleSelect(e)}
-                color="secondary"
-              >
-                {
-                    gender.map(fam=>{
-                        return<MenuItem value={fam.value}>{fam.name}</MenuItem>
-                    })
-                }
-              </Select>
-            </FormControl>
-                <FormControl style={{marginTop:10}}>
-                  <TextField
-                    color="secondary"
-                    label="Ngalan sa kuhaan..."
-                    disabled={issuedName ? false : true}
-                  />
-                </FormControl>
             <FormControl>
             <Button 
               variant="contained" 
