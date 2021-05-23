@@ -3,7 +3,7 @@ import './phoneNav.css';
 import {Link} from 'react-router-dom';
 import {AiFillHome} from 'react-icons/ai'
 import {FaUserAlt} from 'react-icons/fa'
-import {MdEventNote,MdNotifications} from 'react-icons/md'
+import {MdEventNote,MdNotifications,MdSettings} from 'react-icons/md'
 import {HiOutlineLogout} from 'react-icons/hi'
 import {IoIosPeople} from 'react-icons/io'
 
@@ -41,7 +41,7 @@ export  function PNButton({fnc,icon,color}){
 }
 
 
-export default function PhoneNavbar({householdActive,profileActive,homeActive,eventsActive,inboxActive}) {
+export default function PhoneNavbar({householdActive,profileActive,homeActive,eventsActive,inboxActive,settingsActive}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={26} />
@@ -49,6 +49,7 @@ export default function PhoneNavbar({householdActive,profileActive,homeActive,ev
     const profileIcon =  <FaUserAlt size={22} />
     const logoutIcon = <HiOutlineLogout size={24}  />
     const householdIcon = <IoIosPeople size={30} />;
+    const settingsIcon = <MdSettings size={30} />;
     return (
     <div className="phone-nav">
             <NavLink 
@@ -79,8 +80,12 @@ export default function PhoneNavbar({householdActive,profileActive,homeActive,ev
                 path='/user/notifications'
             />
             <NavLink 
+                active={settingsActive}
+                icon={settingsIcon}
+                path='/user/settings'
+            />
+            <NavLink 
                 icon={logoutIcon}
-                path='/user/notifications'
             />
     </div>
     )

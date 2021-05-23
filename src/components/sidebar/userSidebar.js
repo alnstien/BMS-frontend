@@ -8,10 +8,10 @@ import {FiLogOut} from 'react-icons/fi'
 import {IoIosPeople} from 'react-icons/io'
 
 
-function NavLink({active,icon,name,path,count}){
+function NavLink({active,icon,name,path,count,style}){
     return(
         <>
-         <Link to={path} className={active ? "user-sidebar-link-active":"user-sidebar-link"}>
+         <Link to={path} className={active ? "user-sidebar-link-active":"user-sidebar-link"} style={style}>
                 <span className={active ? "icon-span-active":"icon-span"}>{icon}
                     {
                         count ? <small id="span-small">9+</small> : null
@@ -23,7 +23,7 @@ function NavLink({active,icon,name,path,count}){
     )
 }
 
-export default function USidebar({homeActive,householdActive,eventsActive,setShow,profileActive,transActive,settingActive}) {
+export default function USidebar({homeActive,householdActive,eventsActive,setShow,profileActive,transActive,settingActive,certificateActive}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
@@ -31,14 +31,18 @@ export default function USidebar({homeActive,householdActive,eventsActive,setSho
     const profileIcon = <FaUserAlt size={22} />;
     const transactIcon = <AiFillFolderOpen size={28} />
     const settingsIcon = <MdSettings size={25} />
+    const certIcon = <FaCertificate size={25} />
 
-
-    const handleShowModal=(fn)=>{
-        fn(true);
-    }
     return (
         <div className="user-sidebar">
             <div className="user-sidebar-content">
+            <NavLink 
+                active={certificateActive}
+                icon={certIcon}
+                path='/user/certificates'
+                name="Request Certificate"
+                style={{background:'#480564',color:'#fff'}}
+            />
             <NavLink 
                 active={homeActive}
                 icon={homeIcon}
@@ -76,13 +80,6 @@ export default function USidebar({homeActive,householdActive,eventsActive,setSho
                 path='/user/settings'
                 name="Settings"
             />
-            <button 
-                className="user-sidebar-btn"
-                onClick={()=>handleShowModal(setShow)}
-            >
-                <span className="icon-span"><FaCertificate color={"#6C0C35 "} size={24} /></span>
-                Request a Certificate
-            </button>
             </div>
              <div className="user-sidebar-footer">
                 <button className="logout-btn-custom">

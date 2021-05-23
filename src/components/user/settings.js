@@ -26,7 +26,7 @@ export default function Settings(props) {
               {
                 screenWidth <= 700 ? 
                 <PhoneNav 
-                    settingActive ={true}
+                    settingsActive ={true}
                     setShow={setCertificateModal}
               />
               :null
