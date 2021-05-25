@@ -57,7 +57,7 @@ export default function MyTransaction(props) {
   }
     return (
         <>
-         <Navbar />
+         <Navbar isLogged={true} />
         <div className="root-mod">
             <div className="col-mod">
                 <Sidebar

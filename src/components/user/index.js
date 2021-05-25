@@ -26,7 +26,9 @@ export default function User(props) {
 
     return (
         <>
-         <Navbar />
+         <Navbar
+            isLogged={true}
+         />
         <div className="root-mod">
             <div className="col-mod">
                 <Sidebar

@@ -31,7 +31,7 @@ export default function Household() {
     }
     return (
         <>
-         <Navbar />
+         <Navbar isLogged={true} />
         <div className="root-mod">
             <div className="col-mod">
                 <Sidebar

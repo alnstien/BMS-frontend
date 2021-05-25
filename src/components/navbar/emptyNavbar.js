@@ -6,7 +6,7 @@ import SimpleBar from 'simplebar-react';
 import ClickOutsideHandler from '../../config/clickOutsideHandler'
 import { Typography } from '@material-ui/core';
 
-export default function EmptyNavbar() {
+export default function EmptyNavbar({isLogged}) {
     let DropdownRef=useRef();
     const user = true;
     const [showOption,setShowOption]=useState(false);
@@ -29,6 +29,7 @@ export default function EmptyNavbar() {
                 </div>
             </div>
         {
+            !isLogged ? null :
             width <=800 ?
                 null
             : 

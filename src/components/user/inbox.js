@@ -34,7 +34,7 @@ export default function Inbox(props) {
     const screenWidth = window.innerWidth;
     return (
         <>
-        <Navbar />
+        <Navbar isLogged={true} />
         <div className="root-mod">
             <div className="col-mod">
                 <Sidebar

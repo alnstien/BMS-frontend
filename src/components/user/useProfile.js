@@ -170,7 +170,7 @@ export default function Profile(props) {
         const phoneIcon = <MdLocalPhone size={24} color={'#fa72a0'} />
     return (
         <>
-        <Navbar />
+        <Navbar isLogged={true} />
         <div className="root-mod">
             <div className="col-mod">
                 <Sidebar
