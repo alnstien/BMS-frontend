@@ -26,7 +26,7 @@ import MyPurok from './components/purok/index'
 import Certificate from './components/user/certificate';
 import ResidentRecords from './components/record/residents';
 import Purok from './components/record/myPurok';
-
+import ViewMyTransaction from './components/user/viewMyTransaction';
 
 function App() {
   return (
@@ -61,6 +61,11 @@ function App() {
           exact
           path="/user/transactions"
           component={MyTransaction}
+        />
+        <Route 
+          exact
+          path="/user/transactions/view=:id"
+          component={ViewMyTransaction}
         />
         <Route 
           exact

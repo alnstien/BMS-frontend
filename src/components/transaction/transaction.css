@@ -278,6 +278,64 @@
 .t-body tr td{
    padding: 10px;
 }
+.my-transaction-wrapper{
+    min-height: 90vh;
+    background: #fff;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.my-transaction-header{
+    margin-top: 20px;
+}
+.my-transaction-header form{
+}
+.delete-transaction-btn{
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.download-transaction-btn{
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    border: none;
+    margin-top: 10px;
+    background: #b22252;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+.my-transaction-qr-code{
+    height: 150px;
+    width: 150px;
+    background: #fff;
+    position: relative;
+    border: 1px solid lightgray;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.my-transaction-qr-code img{
+    height: 100%;
+    width: 100%;
+}
 @media screen and (max-width:700px){    
     .mynav{
         padding-right:10px ;

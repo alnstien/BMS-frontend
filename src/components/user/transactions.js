@@ -28,13 +28,13 @@ const columns = [
 
 const rows = [
   { id: 1, name:'Juan dela Cruz', type: 'Certificate of Barangay Indigency', status: "Pending", rel_date:"September 12, 2021" },
-  { id: 2, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
-  { id: 3, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
+  { id: 2, name:'Jane Doe', type: 'Barangay Clearance', status: "Success", rel_date:"September 12, 2021" },
+  { id: 3, name:'Jane Doe', type: 'Barangay Clearance', status: "Declined", rel_date:"September 12, 2021" },
   { id: 4, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
-  { id: 5, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
+  { id: 5, name:'Jane Doe', type: 'Barangay Clearance', status: "Success", rel_date:"September 12, 2021" },
   { id: 6, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
-  { id: 7, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
-  { id: 8, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
+  { id: 7, name:'Jane Doe', type: 'Barangay Clearance', status: "Success", rel_date:"September 12, 2021" },
+  { id: 8, name:'Jane Doe', type: 'Barangay Clearance', status: "Declined", rel_date:"September 12, 2021" },
   { id: 9, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
   { id: 10, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
   { id: 11, name:'Jane Doe', type: 'Barangay Clearance', status: "Pending", rel_date:"September 12, 2021" },
