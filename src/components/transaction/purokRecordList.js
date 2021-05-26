@@ -1,5 +1,5 @@
 import React,{useCallback,useState} from 'react';
-
+import {Link} from 'react-router-dom'
 
 export default function ListItem({status,request,checked,handleCheck,handleProcess}){
 
@@ -30,10 +30,14 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                 <td>{request.purokLeader}</td>
                 <td>{request.member}</td>
                 <td>
-                    <button 
+                    {/* <button 
                         className="process-btn"
                         onClick={handleProcess}
-                    >View</button>
+                    >View</button> */}
+                    <Link
+                        to="/records/purok/view"
+                        className="process-btn"
+                    >View</Link>
                 </td>
             </tr>
         </>

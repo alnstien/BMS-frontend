@@ -23,7 +23,7 @@ const data=[
 
 ]
 
-export default function Residents(props) {
+export default function ViewHousehold(props) {
     const [sortAsc,setSortAsc] = useState(false)
     const [isOpen,setOpen] = useState(true)
     const [check,setCheck] = useState(false)
@@ -86,71 +86,14 @@ export default function Residents(props) {
                             >
                             <SimpleBar className="req-overview-holder">
                                 <RSidebar 
-                                    residentActive={true} 
+                                    active={true} 
                                     width={width}
                                 />
                             </SimpleBar>
                             </div>
                             <div className="req-wrapper">
                                 <div className="requests">
-                                    <table className="req-table">
-                                        <thead className="t-head">
-                                           <tr>
-                                            {
-                                                check ? 
-                                                <th>
-                                                    <input 
-                                                        type="checkbox" 
-                                                        checked={checked ?true :false}
-                                                        className="req-check"
-                                                        onChange={handleCheckAll}
-                                                    />
-                                                </th>
-                                                :null
-                                            }
-                                                <th>
-                                                    Purok
-                                                </th>
-                                                <th>Household Id</th>
-                                                <th>Resident's Name</th>
-                                                <th>Gender</th>
-                                                <th>Action</th>
-                                                <th>Edit</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody className="t-body">
-                                         {
-                                             data.map(req=>{
-                                                 return <ListItem 
-                                                    request={req}
-                                                    status={check}
-                                                    checked={checked}
-                                                    handleProcess={handleProcess}
-                                              />
-                                             })
-                                         }
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div className="requests-footer">
-                                    <div>
-                                        <label>Rows per page:</label>
-                                        <select>
-                                            <option>10</option>
-                                            <option>50</option>
-                                            <option>100</option>
-                                            <option>200</option>
-                                            <option>500</option>
-                                            <option>1000</option>
-                                        </select>
-                                    </div>
-                                    <Pagination 
-                                        count={Math.ceil(data.length/limit)}
-                                        page={page} 
-                                        variant="outlined" 
-                                        shape="rounded" 
-                                        onChange={({e,page})=>handleChange(page)}
-                                    />
+
                                 </div>
                             </div>
                         </div>

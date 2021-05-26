@@ -27,6 +27,9 @@ import Certificate from './components/user/certificate';
 import ResidentRecords from './components/record/residents';
 import Purok from './components/record/myPurok';
 import ViewMyTransaction from './components/user/viewMyTransaction';
+import ViewHousehold from './components/record/viewHousehold';
+import ViewResident from './components/record/viewResident';
+import ViewPurok from './components/record/viewPurok';
 
 function App() {
   return (
@@ -106,6 +109,21 @@ function App() {
           exact
           path="/records"
           component={Record}
+        />
+        <Route 
+          exact
+          path="/records/purok/view"
+          component={ViewPurok}
+        />
+        <Route 
+          exact
+          path="/records/residents/view"
+          component={ViewResident}
+        />
+        <Route 
+          exact
+          path="/records/view"
+          component={ViewHousehold}
         />
         <Route 
           exact

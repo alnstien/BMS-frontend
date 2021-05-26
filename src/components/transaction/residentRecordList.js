@@ -1,5 +1,5 @@
 import React,{useCallback,useState} from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 export default function ListItem({status,request,checked,handleCheck,handleProcess}){
 
@@ -29,9 +29,14 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                 <td>{request.purok}</td>
                 <td>{request.household}</td>
                 <td>{request.householdManager}</td>
-                <td>{request.role}</td>
+                <td>{request.gender}</td>
                 <td>
-                    <Link className="process-btn" to='/records/view' >View</Link>
+                    <Link 
+                        to='/records/residents/view'
+                        className="process-btn"
+                    >
+                        View
+                    </Link>
                 </td>
                 <td>
                     <button 

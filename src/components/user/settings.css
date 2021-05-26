@@ -1,0 +1,35 @@
+.user-setting-header{
+    height: 10vh;
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+.user-setting-body{
+    position: relative;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+}
+.user-setting-cat{
+    display: flex;
+    align-items: center;
+}
+.user-setting-name{
+    width: 20%;
+}
+.user-edit-btn{
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    color: blue;
+    background: none;
+    outline: none;
+    border:none;
+    cursor: pointer;
+}
+.user-edit-btn:hover{
+    text-decoration: underline;
+}

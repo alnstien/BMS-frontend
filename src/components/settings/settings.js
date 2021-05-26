@@ -4,7 +4,7 @@ import SimpleBar from 'simplebar-react';
 import ProcessModal from '../modal/processModal'; 
 import SSidebar from '../sidebar/settingsSidebar'; 
 import Sidebar from '../sidebar' 
-
+import SNavbar from '../navbar/snav';
 const width = window.innerWidth;
 
 
@@ -12,6 +12,10 @@ export default function Setting(props) {
     const [isOpen,setOpen] = useState(true)
     const [show,setShow] = useState(false);
 
+    const toggleSidebar=(e)=>{
+        e.preventDefault();
+        setOpen(prevOpen=>!prevOpen)
+    }
 
     return (
         <>
@@ -20,6 +24,10 @@ export default function Setting(props) {
             <div className="content-wrapper">
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">
+                        <SNavbar 
+                            toggleSidebar={toggleSidebar}
+                            isOpen={isOpen}
+                        />
                         <div className="content-flex">
                             <div className="req-overview"
                                 style={{
