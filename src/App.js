@@ -30,6 +30,10 @@ import ViewMyTransaction from './components/user/viewMyTransaction';
 import ViewHousehold from './components/record/viewHousehold';
 import ViewResident from './components/record/viewResident';
 import ViewPurok from './components/record/viewPurok';
+import PurokLeader from './components/purokLeader/index';
+import LeadersPurok from './components/purokLeader/myPurok';
+import PurokLeaderProfile from './components/purokLeader/myProfile';
+
 
 function App() {
   return (
@@ -39,6 +43,21 @@ function App() {
           exact
           path="/myAdmin"
           component={Dashboard}
+        />
+        <Route 
+          exact
+          path="/purok-leader"
+          component={PurokLeader}
+        />
+        <Route 
+          exact
+          path="/purok-leader/me"
+          component={PurokLeaderProfile}
+        />
+        <Route 
+          exact
+          path="/purok-leader/my-purok"
+          component={LeadersPurok}
         />
         <Route 
           exact
