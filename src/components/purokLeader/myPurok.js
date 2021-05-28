@@ -10,7 +10,7 @@ import { Typography } from '@material-ui/core';
 
 
 export default function LeaderPurok(props) {
-  const [certificateModal,setCertificateModal] = useState(false);
+
 
   
     return (
@@ -21,8 +21,7 @@ export default function LeaderPurok(props) {
         <div className="root-mod">
             <div className="col-mod">
                 <Sidebar
-                    homeActive ={true}
-                    setShow={setCertificateModal}
+                    purokActive ={true}
                 />
             </div>
             <div className="user-wrapper">

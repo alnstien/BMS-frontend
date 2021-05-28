@@ -33,7 +33,9 @@ import ViewPurok from './components/record/viewPurok';
 import PurokLeader from './components/purokLeader/index';
 import LeadersPurok from './components/purokLeader/myPurok';
 import PurokLeaderProfile from './components/purokLeader/myProfile';
-
+import PurokAnnouncement from './components/purokLeader/announcements';
+import PurokTransaction from './components/purokLeader/requests';
+import AcceptedTransaction from './components/transaction/accepted';
 
 function App() {
   return (
@@ -51,6 +53,11 @@ function App() {
         />
         <Route 
           exact
+          path="/purok-leader/transaction"
+          component={PurokTransaction}
+        />
+         <Route 
+          exact
           path="/purok-leader/me"
           component={PurokLeaderProfile}
         />
@@ -58,6 +65,11 @@ function App() {
           exact
           path="/purok-leader/my-purok"
           component={LeadersPurok}
+        />
+        <Route 
+          exact
+          path="/purok-leader/announcements"
+          component={PurokAnnouncement}
         />
         <Route 
           exact
@@ -168,6 +180,11 @@ function App() {
           exact
           path="/requests/hold"
           component={HoldTransaction}
+        />
+        <Route 
+          exact
+          path="/requests/accepted"
+          component={AcceptedTransaction}
         />
         <Route 
           exact

@@ -6,7 +6,7 @@ import PhoneNav from '../navbar/phoneNavbar';
 import { Typography } from '@material-ui/core';
 import FloatingActions from '../navbar/floatingActions';
 
-function Event(){
+export function Event(){
    return(
        <>
         <div className="post-wrapper">

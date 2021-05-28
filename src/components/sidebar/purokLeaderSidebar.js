@@ -2,8 +2,8 @@ import React from 'react'
 import './userSidebar.css'
 import {Link} from 'react-router-dom'
 import {AiFillHome,AiFillFolderOpen} from 'react-icons/ai'
-import {FaCertificate,FaUserAlt} from 'react-icons/fa'
-import {MdEventNote,MdSettings} from 'react-icons/md'
+import {FaUserAlt} from 'react-icons/fa'
+import {MdEventNote} from 'react-icons/md'
 import {FiLogOut} from 'react-icons/fi'
 import {IoIosPeople} from 'react-icons/io'
 
@@ -23,14 +23,14 @@ function NavLink({active,icon,name,path,count,style}){
     )
 }
 
-export default function PurokLeaderSidebar({homeActive,householdActive,eventsActive,setShow,profileActive,transActive,settingActive,certificateActive}) {
+export default function PurokLeaderSidebar({homeActive,eventsActive,profileActive, purokActive,transActive,}) {
 
     const homeIcon = <AiFillHome size={24} />
     const AnnouncementsIcon = <MdEventNote size={24} />
     const householdIcon = <IoIosPeople size={30} />;
     const profileIcon = <FaUserAlt size={22} />;
     const transactIcon = <AiFillFolderOpen size={28} />
-    const settingsIcon = <MdSettings size={25} />
+
 
     return (
         <div className="user-sidebar">
@@ -42,7 +42,13 @@ export default function PurokLeaderSidebar({homeActive,householdActive,eventsAct
                 name="Home"
             />
             <NavLink 
-                active={householdActive}
+                active={transActive}
+                icon={transactIcon}
+                path='/purok-leader/transaction'
+                name="Transaction Records"
+            />
+            <NavLink 
+                active={purokActive}
                 icon={householdIcon}
                 path='/purok-leader/my-purok'
                 name="My Purok"
@@ -57,14 +63,8 @@ export default function PurokLeaderSidebar({homeActive,householdActive,eventsAct
                 active={eventsActive}
                 icon={AnnouncementsIcon}
                 count={true}
-                path='/user/events'
+                path='/purok-leader/announcements'
                 name="Announcements"
-            />
-            <NavLink 
-                active={settingActive}
-                icon={settingsIcon}
-                path='/user/settings'
-                name="Settings"
             />
             </div>
              <div className="user-sidebar-footer">

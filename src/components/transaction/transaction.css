@@ -250,10 +250,12 @@
 }
 .t-head{
     /* background:rgba(0,0,0,0.2); */
-    position: sticky;
+    /* position: sticky; */
     border-bottom: 1px solid lightgray;
     top: 0;
     padding: 10px;
+    z-index: 1;
+    /* background: gray; */
     /* border: 1px solid lightgray; */
 }
 .t-head tr th{

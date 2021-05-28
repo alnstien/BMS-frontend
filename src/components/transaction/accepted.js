@@ -2,28 +2,29 @@ import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
 import './transaction.css';
 import SimpleBar from 'simplebar-react';
-import TNavbar from '../navbar/tnav';
 import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
 import TSidebar from '../sidebar/transactionSidebar'; 
-import ListItem from './historyListItem';
+import ListItem from './listItem';
+import TNavbar from '../navbar/tnav';
+
 
 const data=[
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Accepted'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Accepted'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Accepted'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Accepted'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Resident'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Resident'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Resident'},
 ]
 
-export default function TransactionHistory(props) {
+export default function AcceptedTransaction(props) {
     const [sortAsc,setSortAsc] = useState(false)
     const [isOpen,setOpen] = useState(true)
     const [check,setCheck] = useState(false)
@@ -76,9 +77,10 @@ export default function TransactionHistory(props) {
                             >
                             <SimpleBar className="req-overview-holder">
                                 <TSidebar 
-                                    historyActive={true} 
+                                    acceptedActive={true} 
                                     width={width}
                                 />
+                                    
                             </SimpleBar>
                             </div>
                             <div className="req-wrapper">
@@ -101,8 +103,9 @@ export default function TransactionHistory(props) {
                                                 <th>Date</th>
                                                 <th>Resident</th>
                                                 <th>Request</th>
-                                                <th>Status</th>
-                                                <th>Remove</th>
+                                                <th>Classification</th>
+                                                <th>Action</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody className="t-body">

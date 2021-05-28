@@ -6,10 +6,10 @@ import Card from '../card/post';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
 import { Typography } from '@material-ui/core';
+import {Event} from '../user/events';
 
 
-
-export default function LeaderPurok(props) {
+export default function PurokRequests(props) {
   const [certificateModal,setCertificateModal] = useState(false);
 
   
@@ -21,13 +21,15 @@ export default function LeaderPurok(props) {
         <div className="root-mod">
             <div className="col-mod">
                 <Sidebar
-                    profileActive ={true}
+                    transActive ={true}
                 />
             </div>
             <div className="user-wrapper">
               <div className="user-root">
                 {/* ========================content goes here======================= */}
-
+                    <Event />
+                    <Event />
+                    <Event />
                  {/* =======================end of content here===================== */}
               </div>
             </div>

@@ -4,7 +4,7 @@ import {FcSearch} from 'react-icons/fc'
 import {AiOutlineRight} from 'react-icons/ai'
 
 
-export default function TSidebar({width,active,holdActive,historyActive,releaseActive}) {
+export default function TSidebar({width,active,holdActive,historyActive,acceptedActive}) {
 
 
     return (
@@ -34,6 +34,14 @@ export default function TSidebar({width,active,holdActive,historyActive,releaseA
             to="/requests">
                 All Requests 
             <span className="icon-wrapper-mod">
+                <AiOutlineRight size={20} />
+            </span>
+        </Link>
+        <Link 
+            className={acceptedActive ? 'form-a-active':'form-a-default'}
+            to="/requests/accepted">Accepted Requests 
+            <span 
+                className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />
             </span>
         </Link>
