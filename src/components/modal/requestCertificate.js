@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import './modal.css';
 import { TextField,Button,MenuItem,Select,InputLabel,FormControl,FormControlLabel,Checkbox, FormGroup } from '@material-ui/core';
-import {flexContent,flexoverlay,fulloverlay,content,width} from '../../config/setup'
+import {flexContent,flexoverlay,fullContent,fulloverlay,content,width} from '../../config/setup'
 
 
 
@@ -55,8 +55,8 @@ export default function RequestCertificateModal({show,setShow}) {
   return (
       <Modal isOpen={show}
         style={{
-          overlay: width <= 700 ? fulloverlay : flexoverlay,
-          content: width <= 700 ? content : flexContent
+          overlay: fulloverlay,
+          content:fullContent 
         }}
      >
       <div className="modal-wrapper">

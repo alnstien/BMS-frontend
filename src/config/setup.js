@@ -1,4 +1,6 @@
 export const width = window.innerWidth;
+
+
 export const content={
     position: 'relative',
     border: 'none',
@@ -40,6 +42,21 @@ export const flexContent ={
     justifyContent:"center",
     zIndex:"4"
 }
+export const fullContent ={
+    height:'100vh',
+    position: 'absolute',
+    border: 'none',
+    overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
+    borderRadius: '4px',
+    outline: 'none',
+    background: 'none',
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center",
+    zIndex:"4",
+}
+
 export const flexoverlay ={
     position: 'fixed',
     top: 0,

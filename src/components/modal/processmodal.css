@@ -10,5 +10,61 @@
 .flex-modal-content{
     flex: 1;
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    margin-top: 50px;
+    border-top: 1px solid lightgray;
+}
+.modal-process-header{
+    display: flex;
+    position: relative;
+    width: 80%;
+}
+.process-user-info{
+    flex: 1;
+    padding: 10px;
+    display: flex;
+}
+.process-user-info-content{
+    margin-left: 20px;
+}
+.process-user-info img{
+    height: 250px;
+    width: 250px;
+}
+.process-user-qr{
+    background: #fff;
+    padding: 10px;
+}
+.process-user-qr form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.process-user-qr form button{
+    width: 200px;
+    outline: none;
+    border: none;
+    background: #4A5CFF;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+.process-user-qr form button:hover{
+    background: #3649f7;
+}
+.process-user-classification{
+    padding: 10px;
+    background: green;
+    font-weight: bold;
+    color: #fff;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.process-qr-code{
+    height: 200px;
+    width: 200px;
 }
