@@ -1,6 +1,7 @@
 import React, { useState,useEffect,useCallback } from 'react'
 import SimpleBar from 'simplebar-react';
-import ProcessModal from '../modal/processModal'; 
+import {Event} from '../user/events';
+import './announcement.css';
 import PostSidebar from '../sidebar/postAnnouncementSidebar'; 
 import Sidebar from '../sidebar' 
 import SNavbar from '../navbar/snav';
@@ -46,6 +47,20 @@ export default function Announcement(props) {
                             </div>
                             <div className="req-wrapper">
                                 {/* content goes here */}
+                                    <div className="admin-announcement-wrapper">
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                        <Event auth={true} />
+                                    </div>
                                 {/* end of content*/}
                             </div>
                         </div>
