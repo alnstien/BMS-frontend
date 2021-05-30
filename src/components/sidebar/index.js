@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Logo from '../logo'
-import { MdDashboard } from "react-icons/md";
+import { MdDashboard,MdAnnouncement } from "react-icons/md";
 import { AiOutlineSchedule} from "react-icons/ai";
 import { BsFolderFill,BsPersonFill } from "react-icons/bs";
 import { FaMoneyBillWaveAlt} from "react-icons/fa";
@@ -18,7 +18,7 @@ import { BiTransfer } from "react-icons/bi";
     const billIcon = <FaMoneyBillWaveAlt size={22}  />
     const profileIcon = <BsPersonFill size={22} />
     const settingsIcon = <RiSettings5Fill size={22} />
-
+    const announcementIcon = <MdAnnouncement size={22} />
 
 function SidebarLink({name,icon,active,route}){
 
@@ -40,7 +40,7 @@ function SidebarLink({name,icon,active,route}){
 }
 
 
-export default function Sidebar({dashActive,transactionActive,recordsActive,eventActive,billsActive,profileActive,settingsActive}) {
+export default function Sidebar({dashActive,postActive,transactionActive,recordsActive,eventActive,billsActive,profileActive,settingsActive}) {
     
     
 
@@ -49,21 +49,17 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
         <div className="sidebar-wrapper">
     <div className="sidebar" >
         <Logo />
-        {/* <div className="sidebar-user-wrapper">
-            <div className="sidebar-avatar-wrapper">
-
-            </div>
-           <Link to='/me'>
-                <div className="sidebar-user-info">
-                    <h4>Al Jimson A. Megrino</h4>
-                </div>
-           </Link>
-        </div> */}
         <SidebarLink 
             route={'/myAdmin'}
             icon={dashIcon}
             name="Dashboard"
             active={dashActive}
+        />
+        <SidebarLink 
+            route={'/myAdmin/announcement'}
+            icon={announcementIcon}
+            name="Post"
+            active={postActive}
         />
          <SidebarLink 
             route={'/requests'}
@@ -89,18 +85,6 @@ export default function Sidebar({dashActive,transactionActive,recordsActive,even
             name="Settings"
             active={settingsActive}
         />
-         {/* <SidebarLink 
-            route={'/events'}
-            icon={schedIcon}
-            name="Events and Schedules"
-            active={eventActive}
-        /> */}
-        {/* <SidebarLink 
-            route={'/billing'}
-            icon={billIcon}
-            name="Water Bills"
-            active={billsActive}
-        /> */}
         
     </div>
     <div className="signout-btn-wrapper">

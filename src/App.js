@@ -10,7 +10,7 @@ import Dashboard from './components/dashboard/index';
 import Transaction from './components/transaction'
 import Record from './components/record'
 import Events from './components/events'
-import Billing from './components/bills'
+import Announcement from './components/announcement';
 import User from './components/user'
 import Profile from './components/profile'
 import UserEvents from './components/user/events'
@@ -45,6 +45,11 @@ function App() {
           exact
           path="/myAdmin"
           component={Dashboard}
+        />
+        <Route 
+          exact
+          path="/myAdmin/announcement"
+          component={Announcement}
         />
         <Route 
           exact
@@ -195,11 +200,6 @@ function App() {
           exact
           path="/register"
           component={Registration}
-        />
-        <Route 
-          exact
-          path="/billing"
-          component={Billing}
         />
       </Switch>
     </BrowserRouter>
