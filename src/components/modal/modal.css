@@ -10,7 +10,7 @@
     width: 600px;
     min-height: 360px;
     background: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -115,7 +115,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: linear-gradient(blue,purple);
+    background: linear-gradient(rgb(230, 61, 89),rgb(187, 35, 119));
 }
 .post-img-wrapper span{
     height: 50px;
