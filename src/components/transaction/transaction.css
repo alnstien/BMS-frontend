@@ -31,23 +31,6 @@
     padding: 10px;
     position: relative;
 }
-.sort-button{
-    height: 40px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    /* background: rgba(0,0,0,0.1); */
-    background: #fff;
-    transition: .3s;
-    margin: 10px;
-    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-}
 .sort-button:hover{
     background: rgba(0,0,0,0.1);
 }

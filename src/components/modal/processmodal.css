@@ -5,16 +5,27 @@
     position: relative;
     padding: 10px;
     display: flex;
-    border-radius: 10px;
+    flex-direction: column;
+    overflow: auto;
+}
+.flex-modal-body{
+    flex: 1;
+    width: 78%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    position: relative;
+    margin-top: 100px;
+    border-top: 1px solid lightgray;
 }
 .flex-modal-content{
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
     margin-top: 50px;
     border-top: 1px solid lightgray;
+    flex-direction: column;
 }
 .modal-process-header{
     display: flex;
@@ -30,8 +41,8 @@
     margin-left: 20px;
 }
 .process-user-info img{
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
 }
 .process-user-qr{
     background: #fff;

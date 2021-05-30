@@ -20,8 +20,8 @@ export default function CreatePostModal({show,setShow}) {
   return (
       <Modal isOpen={show}
         style={{
-            overlay: width <= 700 ? fulloverlay : flexoverlay,
-            content: width <= 700 ? content : flexContent
+            overlay: fulloverlay,
+            content: content
         }}
      >
         <div className="flex-modal">
@@ -42,6 +42,7 @@ export default function CreatePostModal({show,setShow}) {
                             <Typography><b>Name: </b>Jane Doe</Typography>
                             <Typography><b>Purok: </b>Purok 1</Typography>
                             <Typography><b>Household ID: </b>HSE-5687846868-12</Typography>
+                            <Typography><b>Name: </b>Jane Doe</Typography>
                         </div>
                     </div>
                     <div className="process-user-qr">
@@ -54,6 +55,9 @@ export default function CreatePostModal({show,setShow}) {
                            <button className="mt-5">Download QR Code</button>
                        </form>
                     </div>
+                </div>
+                <div className="flex-modal-body">
+dddddddddddddddddddddd
                 </div>
             </div>
         </div>
