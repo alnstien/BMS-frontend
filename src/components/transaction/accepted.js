@@ -7,7 +7,7 @@ import ProcessModal from '../modal/processModal';
 import TSidebar from '../sidebar/transactionSidebar'; 
 import ListItem from './listItem';
 import TNavbar from '../navbar/tnav';
-
+import ManualAddRequest from '../modal/manualAddRequest';
 
 const data=[
     {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Resident'},
@@ -30,6 +30,7 @@ export default function AcceptedTransaction(props) {
     const [check,setCheck] = useState(false)
     const [checked,setChecked] = useState(false);
     const [show,setShow] = useState(false)
+    const [openManual,setOpenModal] = useState(false);
 
     const width = window.innerWidth;
     const toggleSidebar=(e)=>{
@@ -79,6 +80,7 @@ export default function AcceptedTransaction(props) {
                                 <TSidebar 
                                     acceptedActive={true} 
                                     width={width}
+                                    setShow={setOpenModal}
                                 />
                                     
                             </SimpleBar>
@@ -145,6 +147,10 @@ export default function AcceptedTransaction(props) {
         <ProcessModal 
             show={show}
             setShow={setShow}
+        />
+        <ManualAddRequest 
+            show={openManual}
+            setShow={setOpenModal}
         />
     </>
     )

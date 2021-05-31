@@ -30,7 +30,7 @@ export default function Transaction(props) {
     const [checked,setChecked] = useState(false);
     const [show,setShow] = useState(false);
     const [page,setPage]= useState(1);
-
+    const [openModal,setModal] = useState(false)
 
     const limit = 5;
     const startIndex = (page-1) * limit;
@@ -88,6 +88,7 @@ export default function Transaction(props) {
                                 <RSidebar 
                                     active={true} 
                                     width={width}
+                                    setShow={setModal}
                                 />
                             </SimpleBar>
                             </div>

@@ -7,6 +7,7 @@ import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
 import TSidebar from '../sidebar/transactionSidebar'; 
 import ListItem from './historyListItem';
+import ManualAddRequest from '../modal/manualAddRequest';
 
 const data=[
     {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Accepted'},
@@ -29,6 +30,7 @@ export default function TransactionHistory(props) {
     const [check,setCheck] = useState(false)
     const [checked,setChecked] = useState(false);
     const [show,setShow] = useState(false)
+    const [openManual,setOpenModal] = useState(false);
 
     const width = window.innerWidth;
     const toggleSidebar=(e)=>{
@@ -78,6 +80,7 @@ export default function TransactionHistory(props) {
                                 <TSidebar 
                                     historyActive={true} 
                                     width={width}
+                                    setShow={setOpenModal}
                                 />
                             </SimpleBar>
                             </div>
@@ -142,6 +145,10 @@ export default function TransactionHistory(props) {
         <ProcessModal 
             show={show}
             setShow={setShow}
+        />
+        <ManualAddRequest 
+            show={openManual}
+            setShow={setOpenModal}
         />
     </>
     )

@@ -9,7 +9,6 @@ import Registration from './components/register/userRegistration';
 import Dashboard from './components/dashboard/index';
 import Transaction from './components/transaction'
 import Record from './components/record'
-import Events from './components/events'
 import Announcement from './components/announcement';
 import User from './components/user'
 import Profile from './components/profile'
@@ -130,11 +129,6 @@ function App() {
           exact
           path="/my-purok"
           component={MyPurok}
-        />
-        <Route 
-          exact
-          path="/events"
-          component={Events}
         />
         <Route 
           exact

@@ -1,10 +1,11 @@
 import React, { useState,useEffect,useCallback } from 'react'
 import SimpleBar from 'simplebar-react';
-import {Event} from '../user/events';
+import Event from '../card/announcementCard'
 import './announcement.css';
 import PostSidebar from '../sidebar/postAnnouncementSidebar'; 
 import Sidebar from '../sidebar' 
 import SNavbar from '../navbar/snav';
+import {Typography} from '@material-ui/core'
 import AddAnnouncementModal from '../modal/addAnnouncement';
 const width = window.innerWidth;
 
@@ -48,6 +49,9 @@ export default function Announcement(props) {
                             <div className="req-wrapper">
                                 {/* content goes here */}
                                     <div className="admin-announcement-wrapper">
+                                        <Typography variant='h4'>
+                                            My Announcements
+                                        </Typography>
                                         <Event auth={true} />
                                         <Event auth={true} />
                                         <Event auth={true} />

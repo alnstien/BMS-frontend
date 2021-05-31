@@ -6,11 +6,10 @@ import Card from '../card/post';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
 import { Typography } from '@material-ui/core';
-import {Event} from '../user/events';
+import Event from '../card/announcementCard';
 
 
 export default function PurokAnnouncement(props) {
-  const [certificateModal,setCertificateModal] = useState(false);
 
   
     return (

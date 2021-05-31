@@ -5,6 +5,7 @@ import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/tnav';
 import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
+import ManualAddRequest from '../modal/manualAddRequest';
 import TSidebar from '../sidebar/transactionSidebar'; 
 import RequestItem from './requestItem';
 const width = window.innerWidth;
@@ -32,7 +33,7 @@ export default function Transaction(props) {
     const [checked,setChecked] = useState(false);
     const [show,setShow] = useState(false);
     const [page,setPage]= useState(1);
-
+    const [openManual,setOpenModal] = useState(false);
 
     const limit = 5;
     const startIndex = (page-1) * limit;
@@ -90,6 +91,7 @@ export default function Transaction(props) {
                                 <TSidebar 
                                     active={true} 
                                     width={width}
+                                    setShow={setOpenModal}
                                 />
                             </SimpleBar>
                             </div>
@@ -161,6 +163,10 @@ export default function Transaction(props) {
         <ProcessModal 
             show={show}
             setShow={setShow}
+        />
+        <ManualAddRequest 
+            show={openManual}
+            setShow={setOpenModal}
         />
     </>
     )
