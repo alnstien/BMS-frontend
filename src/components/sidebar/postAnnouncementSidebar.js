@@ -14,11 +14,10 @@ export default function PostSidebar({show,setShow}) {
     return (
         <form>
             <FormGroup>
-                <FormControl>
+                <FormControl style={{marginTop:10}}>
                     <Button 
                         variant="contained" 
                         color="primary" 
-                        style={{marginTop:20}}
                         onClick={e=>handleToggleModal(e)}
                     >
                        Post Announcement

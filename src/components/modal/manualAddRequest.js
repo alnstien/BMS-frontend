@@ -31,33 +31,7 @@ export default function ManualAddRequest({show,setShow}) {
             >&times;</button>
             <div className="flex-modal-content">
                 <div className="modal-process-header">
-                    <div className="process-user-info">
-                        <img src={ProImg} alt="" />
-                        <div className="process-user-info-content">
-                            <div className="process-user-classification">
-                                <p>Resident</p>
-                            </div>
-                            <Typography variant="h5">CERTIFICATION OF INDIGENCY</Typography>
-                            <Typography color="textSecondary"><b>Date: </b>September 12, 2022</Typography>
-                            <Typography><b>Name: </b>Jane Doe</Typography>
-                            <Typography><b>Purok: </b>Purok 1</Typography>
-                            <Typography><b>Household ID: </b>HSE-5687846868-12</Typography>
-                            <Typography><b>Name: </b>Jane Doe</Typography>
-                        </div>
-                    </div>
-                    <div className="process-user-qr">
-                       <form>
-                           <img 
-                                src={ProQR}
-                                className="process-qr-code"
-                                alt="" 
-                            />
-                           <button className="mt-5">Download QR Code</button>
-                       </form>
-                    </div>
-                </div>
-                <div className="flex-modal-body">
-dddddddddddddddddddddd
+
                 </div>
             </div>
         </div>
