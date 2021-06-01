@@ -1,14 +1,36 @@
 .request-header{
-    height: 8vh;
+    min-height: 8vh;
+    max-height: 8vh;
     width: 100%;
+    background: #fff;
     border-bottom: 1px solid lightgray;
     display: flex;
     align-items: center;
     padding-left: 10px;
+    z-index: 1;
 }
 .request-header a{
     text-decoration: none;
 }
 .request-body{
-    padding:10px;
+    flex: 1;
+}
+.request-body-resident{
+    display: flex;
+    flex: 1;
+    height: 82vh;
+    padding: 10px;
+    position: relative;
+}
+.request-body-resident-img{
+    height: 100px;
+    width: 100px;
+}
+.request-body-resident-info{
+    flex: 1;
+    padding: 10px;
+}
+.inline{
+    display: flex;
+    /* flex-direction: column; */
 }

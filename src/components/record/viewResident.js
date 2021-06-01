@@ -1,12 +1,12 @@
-import * as fs from "fs";
 import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
+import {Link} from 'react-router-dom'
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/tnav';
-import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
 import RSidebar from '../sidebar/recordSidebar'; 
-import { Document, Packer, Paragraph, TextRun } from "docx";
+import {Button,TextField,Typography} from '@material-ui/core'
+import DfaultImg from '../../assets/avatar.jpg'
 const width = window.innerWidth;
 
 
@@ -79,8 +79,50 @@ export default function ViewResident(props) {
                             </SimpleBar>
                             </div>
                             <div className="req-wrapper">
-                                <div className="requests">
-                                    
+                                <div className="requests-view">
+                                    <div className="request-header">
+                                        <Link to='/records/residents'>
+                                            <Button 
+                                                style={{marginRight:10}}
+                                                variant="contained"
+                                                color="secondary"
+                                            >
+                                                Back
+                                            </Button>
+                                        </Link>
+                                        <Typography><b>Resident:</b> Al Ares</Typography>
+                                    </div>
+                                    <div className="request-body">
+                                        <div className="request-body-resident">
+                                            <img src={DfaultImg} alt="" className="request-body-resident-img" />
+                                            <div className="request-body-resident-info">
+                                                <div className="inline mt-5">
+                                                    <Typography><b>Household Number:</b></Typography>
+                                                    <TextField variant="outlined" value="001-077" />
+                                                </div>
+                                                <div className="inline mt-5">
+                                                    <Typography><b>Barangay:</b></Typography>
+                                                    <TextField variant="outlined" value="Barangay Ezperanza" />
+                                                </div>
+                                                <div className="inline mt-5">
+                                                    <Typography><b>Address:</b></Typography>
+                                                    <TextField variant="outlined" value="Purok 1" />
+                                                </div>
+                                                <div className="inline mt-5">
+                                                    <Typography><b>Full Name:</b></Typography>
+                                                    
+                                                </div>
+                                                <div className="inline mt-5">
+                                                    <Typography><b>First Name:</b></Typography>
+                                                    <TextField variant="outlined" value="Al" />
+                                                </div>
+                                                <div className="inline mt-5">
+                                                    <Typography><b>Middle Name:</b></Typography>
+                                                    <TextField variant="outlined" value="Lapinig" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -16,10 +16,8 @@ const data=[
     {id:4,purok:"Purok 5",household:"HSE-15456565659",householdManager: 'Juan dela Cruz', role:'Mother',member:6},
     {id:5,purok:"Purok 2",household:"HSE-1545656560",householdManager: 'Sarrah Jane', role:'Mother',member:6},
     {id:6,purok:"Purok 3",household:"HSE-15456565661",householdManager: 'Al Ares', role:'Mother',member:6},
-    {id:7,purok:"Purok 8",household:"HSE-15456565662",householdManager: 'Al Ares', role:'Mother',member:6},
-    {id:8,purok:"Purok 7",household:"HSE-15456565663",householdManager: 'Al Ares', role:'Mother',member:6},
     {id:9,purok:"Purok 3",household:"HSE-15456565664",householdManager: 'Al Ares', role:'Mother',member:6},
-    {id:10,purok:"Purok 6",household:"HSE-15456565665",householdManager: 'Al Ares', role:'Mother',member:6},
+    {id:10,purok:"Purok 6",household:"HSE-15456565665",householdManager: 'Al Ares', role:'Mother',member:6}
 ]
 
 export default function Transaction(props) {

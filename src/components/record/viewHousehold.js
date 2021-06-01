@@ -89,6 +89,10 @@ export default function ViewHousehold(props) {
                                     </div>
                                     <div className="request-body">
                                         <Typography>4 Member/s</Typography>
+                                        <Typography>Jane Doe</Typography>
+                                        <Typography>Justin Die</Typography>
+                                        <Typography>4 Member/s</Typography>
+                                        <Typography>4 Member/s</Typography>
                                     </div>
                                 </div>
                             </div>

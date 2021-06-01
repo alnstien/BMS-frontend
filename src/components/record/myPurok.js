@@ -16,11 +16,6 @@ const data=[
     {id:4,purok:"Purok 4",purokLeader: 'Juan dela Cruz',member:23},
     {id:5,purok:"Purok 5",purokLeader: 'Sarrah Jane',member:36},
     {id:6,purok:"Purok 6",purokLeader: 'Al Ares',member:45},
-    {id:7,purok:"Purok 7",purokLeader: 'Al Ares',member:65},
-    {id:8,purok:"Purok 8",purokLeader: 'Al Ares',member:45},
-    {id:9,purok:"Purok 9",purokLeader: 'Al Ares',member:36},
-    {id:10,purok:"Purok 10",purokLeader: 'Al Ares',member:45},
-
 ]
 
 export default function Purok(props) {

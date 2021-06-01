@@ -192,6 +192,15 @@
     flex-direction: column;
     overflow: auto;
 }
+.requests-view{
+    height: 90vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow: auto;
+}
 .requests-footer{
     height: 10%;
     /* background: red; */
