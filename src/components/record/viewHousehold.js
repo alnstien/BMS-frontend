@@ -4,12 +4,21 @@ import './index.css';
 import {Link} from 'react-router-dom';
 import {Typography,Button} from '@material-ui/core'
 import SimpleBar from 'simplebar-react';
-import TNavbar from '../navbar/tnav';
+import TNavbar from '../navbar/snav';
 import ProcessModal from '../modal/processModal'; 
 import RSidebar from '../sidebar/recordSidebar'; 
+import ListItem from './householdMemberList';
+import Pagination from '@material-ui/lab/Pagination';
+
+
 const width = window.innerWidth;
-
-
+const data=[
+    {id:1, name:'John Doe',gender:'Male'},
+    {id:2, name:'Jane Doe',gender:'Female'},
+    {id:3, name:'Justin Doe',gender:'Male'},
+    {id:4, name:'Johansen Doe',gender:'Male'},
+    
+]
 
 export default function ViewHousehold(props) {
     const [sortAsc,setSortAsc] = useState(false)
@@ -74,7 +83,7 @@ export default function ViewHousehold(props) {
                             </SimpleBar>
                             </div>
                             <div className="req-wrapper">
-                                <div className="requests">
+                                <div className="requests-view">
                                     <div className="request-header">
                                         <Link to='/records'>
                                             <Button 
@@ -88,12 +97,48 @@ export default function ViewHousehold(props) {
                                         <Typography><b>Household ID:</b> HSE-15456565658</Typography>
                                     </div>
                                     <div className="request-body">
-                                        <Typography>4 Member/s</Typography>
-                                        <Typography>Jane Doe</Typography>
-                                        <Typography>Justin Die</Typography>
-                                        <Typography>4 Member/s</Typography>
-                                        <Typography>4 Member/s</Typography>
+                                        <table className="req-table">
+                                            <thead className="t-head">
+                                                <tr>
+                                                    <th>
+                                                        #
+                                                    </th>
+                                                    <th>Name</th>
+                                                    <th>Gender</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="t-body">
+                                            {
+                                             data.map((list,index)=>{
+                                                 return <ListItem 
+                                                    list={list}
+                                                    key={index}
+                                              />
+                                             })
+                                            }
+                                            </tbody>
+                                        </table>
                                     </div>
+                                    <div className="sticky-footer">
+                                            <div>
+                                            <label>Rows per page:</label>
+                                            <select>
+                                                <option>10</option>
+                                                <option>50</option>
+                                                <option>100</option>
+                                                <option>200</option>
+                                                <option>500</option>
+                                                <option>1000</option>
+                                            </select>
+                                            </div>
+                                            <Pagination 
+                                                count={1}
+                                                page={1} 
+                                                variant="outlined" 
+                                                shape="rounded" 
+                                            />
+                                        </div>
                                 </div>
                             </div>
                         </div>

@@ -16,6 +16,7 @@
 }
 .request-body{
     flex: 1;
+    position: relative;
 }
 .request-body-resident{
     display: flex;
@@ -45,5 +46,15 @@
 .inline-column{
     display: flex;
     flex-direction: column;
+}
+.sticky-footer{
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 

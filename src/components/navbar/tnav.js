@@ -80,7 +80,7 @@ export default function Navbar({toggleSidebar,handleSort,handleCheck,isOpen,sort
                     icon1={checkIcon}
                     icon2={unCheckIcon}
                 />
-                 <button className="nav-download-btn">Download</button>
+                 {/* <button className="nav-download-btn">Download</button> */}
         </form>
     </div>
     )

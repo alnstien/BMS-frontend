@@ -2,7 +2,7 @@ import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
 import {Link} from 'react-router-dom'
 import SimpleBar from 'simplebar-react';
-import TNavbar from '../navbar/tnav';
+import TNavbar from '../navbar/snav';
 import ProcessModal from '../modal/processModal'; 
 import RSidebar from '../sidebar/recordSidebar'; 
 import {Button,TextField,Typography,FormControlLabel,Radio,RadioGroup} from '@material-ui/core'

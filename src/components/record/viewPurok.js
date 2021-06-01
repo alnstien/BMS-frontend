@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 import {Button,Typography} from '@material-ui/core';
 import Sidebar from '../sidebar' 
 import SimpleBar from 'simplebar-react';
-import TNavbar from '../navbar/tnav';
+import TNavbar from '../navbar/snav';
 import RSidebar from '../sidebar/recordSidebar'; 
 import ListItem from './purokMemberList';
-
+import Pagination from '@material-ui/lab/Pagination';
 
 const width = window.innerWidth;
 
@@ -123,6 +123,25 @@ export default function ViewPurok(props) {
                                          }
                                         </tbody>
                                     </table>
+                                    </div>
+                                    <div className="sticky-footer">
+                                        <div>
+                                            <label>Rows per page:</label>
+                                            <select>
+                                                <option>10</option>
+                                                <option>50</option>
+                                                <option>100</option>
+                                                <option>200</option>
+                                                <option>500</option>
+                                                <option>1000</option>
+                                            </select>
+                                        </div>
+                                        <Pagination 
+                                            count={3}
+                                            page={1} 
+                                            variant="outlined" 
+                                            shape="rounded" 
+                                        />
                                     </div>
                                 </form>
                             </div>
