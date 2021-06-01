@@ -5,8 +5,36 @@ import Sidebar from '../sidebar'
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/tnav';
 import RSidebar from '../sidebar/recordSidebar'; 
+import ListItem from './purokMemberList';
+
 
 const width = window.innerWidth;
+
+const data=[
+    {id:1, name:'Al Ares', role:'President' },
+    {id:2, name:'Al Ares', role:'Vice-President' },
+    {id:3, name:'Al Ares', role:'Secretary' },
+    {id:4, name:'Al Ares', role:'Treasurer' },
+    {id:5, name:'Al Ares', role:'Auditor' },
+    {id:6, name:'Al Ares', role:'P.I.O' },
+    {id:7, name:'Al Ares', role:'B.H.W' },
+    {id:8, name:'Al Ares', role:'B.H.W' },
+    {id:9, name:'Al Ares', role:'Barangay Kagawad' },
+    {id:10, name:'Al Ares', role:'Member' },
+    {id:11, name:'Al Ares', role:'Member' },
+    {id:12, name:'Al Ares', role:'Member' },
+    {id:13, name:'Al Ares', role:'Member' },
+    {id:14, name:'Al Ares', role:'Member' },
+    {id:15, name:'Al Ares', role:'Member' },
+    {id:16, name:'Al Ares', role:'Member' },
+    {id:17, name:'Al Ares', role:'Member' },
+    {id:18, name:'Al Ares', role:'Member' },
+    {id:19, name:'Al Ares', role:'Member' },
+    {id:20, name:'Al Ares', role:'Member' },
+    {id:21, name:'Al Ares', role:'Member' },
+    {id:22, name:'Al Ares', role:'Member' },
+    {id:23, name:'Al Ares', role:'Member' },
+]
 
 export default function ViewPurok(props) {
     const [sortAsc,setSortAsc] = useState(false);
@@ -59,7 +87,7 @@ export default function ViewPurok(props) {
                             </SimpleBar>
                             </div>
                             <div className="req-wrapper">
-                                <div className="requests-view">
+                                <form className="requests-view">
                                     <div className="request-header">
                                         <Link to='/records/purok'>
                                             <Button 
@@ -73,9 +101,30 @@ export default function ViewPurok(props) {
                                         <Typography><b>Purok:</b> Purok 1</Typography>
                                     </div>
                                     <div className="request-body">
-
+                                    <table className="req-table">
+                                        <thead className="t-head">
+                                            <tr>
+                                                <th>
+                                                    #
+                                                </th>
+                                                <th>Name</th>
+                                                <th>Role</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="t-body">
+                                         {
+                                             data.map((list,index)=>{
+                                                 return <ListItem 
+                                                    list={list}
+                                                    key={index}
+                                              />
+                                             })
+                                         }
+                                        </tbody>
+                                    </table>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>

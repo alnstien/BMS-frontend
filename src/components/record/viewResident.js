@@ -88,7 +88,7 @@ export default function ViewResident(props) {
                             </SimpleBar>
                             </div>
                             <div className="req-wrapper">
-                                <div className="requests-view">
+                                <form className="requests-view">
                                     <div className="request-header">
                                         <Link to='/records/residents'>
                                             <Button 
@@ -235,7 +235,7 @@ export default function ViewResident(props) {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
