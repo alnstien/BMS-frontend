@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
-import RequestCertificateModal from '../modal/requestCertificate'
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
 import {FormControl,TextField,MenuItem,Select,Typography,InputLabel, FormGroup} from '@material-ui/core'
@@ -275,10 +274,6 @@ export default function Profile(props) {
               }
             </div>
         </div>
-        <RequestCertificateModal 
-          show={certificateModal}
-          setShow={setCertificateModal}
-        />
     </>
     )
 }

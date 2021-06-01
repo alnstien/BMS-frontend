@@ -4,7 +4,6 @@ import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
-import RequestCertificateModal from '../modal/requestCertificate'
 import { Typography } from '@material-ui/core';
 import ListItem from '../transaction/userTransaction'
 
@@ -135,10 +134,6 @@ export default function MyTransaction(props) {
               }
             </div>
         </div>
-        <RequestCertificateModal 
-          show={certificateModal}
-          setShow={setCertificateModal}
-        />
       </>
     )
 }

@@ -5,7 +5,6 @@ import Sidebar from '../sidebar/userSidebar';
 import Card from '../card/post';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
-import RequestCertificateModal from '../modal/requestCertificate'
 import { Typography } from '@material-ui/core';
 
 
@@ -74,10 +73,6 @@ export default function User(props) {
               }
             </div>
         </div>
-        <RequestCertificateModal 
-          show={certificateModal}
-          setShow={setCertificateModal}
-        />
       </>
     )
 }

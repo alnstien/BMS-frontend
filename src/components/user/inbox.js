@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
-import RequestCertificateModal from '../modal/requestCertificate'
 import PhoneNav from '../navbar/phoneNavbar';
 import { Typography } from '@material-ui/core';
 import FloatingActions from '../navbar/floatingActions';
@@ -63,10 +62,6 @@ export default function Inbox(props) {
               }
             </div>
         </div>
-        <RequestCertificateModal 
-          show={certificateModal}
-          setShow={setCertificateModal}
-        />
         </>
     )
 }

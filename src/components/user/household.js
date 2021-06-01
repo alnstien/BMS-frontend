@@ -4,7 +4,6 @@ import Navbar from '../navbar/emptyNavbar';
 import Sidebar from '../sidebar/userSidebar';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
-import RequestCertificateModal from '../modal/requestCertificate'
 import { Typography } from '@material-ui/core';
 import {IoMdAdd} from 'react-icons/io'
 import CollapseDiv from '../collapse/collapseDiv';
@@ -93,10 +92,6 @@ export default function Household() {
               }
             </div>
         </div>
-        <RequestCertificateModal 
-          show={certificateModal}
-          setShow={setCertificateModal}
-        />
         <AddMemberModal 
           show={addMember}
           setShow={setAddMember}
