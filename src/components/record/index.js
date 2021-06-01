@@ -20,7 +20,6 @@ const data=[
     {id:8,purok:"Purok 7",household:"HSE-15456565663",householdManager: 'Al Ares', role:'Mother',member:6},
     {id:9,purok:"Purok 3",household:"HSE-15456565664",householdManager: 'Al Ares', role:'Mother',member:6},
     {id:10,purok:"Purok 6",household:"HSE-15456565665",householdManager: 'Al Ares', role:'Mother',member:6},
-
 ]
 
 export default function Transaction(props) {
@@ -31,7 +30,7 @@ export default function Transaction(props) {
     const [show,setShow] = useState(false);
     const [page,setPage]= useState(1);
     const [openModal,setModal] = useState(false)
-
+    
     const limit = 5;
     const startIndex = (page-1) * limit;
     const endIndex = page * limit;

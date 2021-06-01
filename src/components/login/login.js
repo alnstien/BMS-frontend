@@ -22,7 +22,7 @@ export default function Login(props){
         return fnc(e.target.value)
     }
 
-    const handleLogin=(e)=>{
+    const handleLogin=async(e)=>{
         e.preventDefault();
         // alert(username)
         // check fields
@@ -32,17 +32,18 @@ export default function Login(props){
         //     setUError("Username must be greater than 5 characters.")
         // }
         // console.log(uError)
-        const data = {
-            username:username,
-            password:password
-        }
-        axios.post(`${server}/api/login`,data)
-        .then(res=>{
-            console.log(res.data)
-        })
-        .catch(e=>{
-            console.log(e)
-        })
+        // const data = {
+        //     username:username,
+        //     password:password
+        // }
+        // axios.post(`${server}/api/login`,data)
+        // .then(res=>{
+        //     console.log(res.data)
+        // })
+        // .catch(e=>{
+        //     console.log(e)
+        // })
+        await localStorage.setItem('user',username);
     }
 
     return(

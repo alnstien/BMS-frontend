@@ -36,18 +36,20 @@ import PurokAnnouncement from './components/purokLeader/announcements';
 import PurokTransaction from './components/purokLeader/requests';
 import AcceptedTransaction from './components/transaction/accepted';
 
+
+
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route 
           exact
-          path="/myAdmin"
+          path="/dashboard"
           component={Dashboard}
         />
         <Route 
           exact
-          path="/myAdmin/announcement"
+          path="/announcement"
           component={Announcement}
         />
         <Route 

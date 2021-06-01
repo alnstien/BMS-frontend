@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './dashboard.css'
 import ChartComponent, {Bar,Line} from 'react-chartjs-2';
 import Sidebar from '../sidebar';
@@ -11,7 +11,6 @@ import DTable from '../table/dashboardTable'
 import {TiGroup} from 'react-icons/ti'
 
 export default function Dashboard(props) {
-    
     const [isOpen,setOpen] = useState(true);
 
     const reqIcon = <BsPeopleFill size={24} color={'rgb(29, 28, 28)'} />
@@ -53,7 +52,7 @@ export default function Dashboard(props) {
     
     return (
         <div className="con-container"> 
-            <Sidebar dashActive={true} isOpen={isOpen}/>
+            <Sidebar dashActive={true} isOpen={isOpen} />
                 <div className="main-content-wrapper">
                     <Nav />
                     <div className="card-wrapper-main">
@@ -62,6 +61,7 @@ export default function Dashboard(props) {
                            cardContent.map((item,index)=>{
                                return( 
                                <Card 
+                                key={index}
                                 icon={item.icon} 
                                 title={item.title}
                                 subtitle={item.subtitle}
