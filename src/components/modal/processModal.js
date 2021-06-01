@@ -57,7 +57,7 @@ export default function CreatePostModal({show,setShow}) {
                     </div>
                 </div>
                 <div className="flex-modal-body">
-dddddddddddddddddddddd
+                    
                 </div>
             </div>
         </div>

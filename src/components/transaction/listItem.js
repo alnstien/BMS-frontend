@@ -1,5 +1,5 @@
 import React,{useCallback,useState} from 'react';
-
+import Swal from 'sweetalert2'
 
 export default function ListItem({status,request,checked,handleCheck,handleProcess}){
 
@@ -7,7 +7,7 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
 
     const handleSelect=useCallback(()=>{
         setSelected(prevSelect=>!prevSelect)
-    },[checked])
+    },[checked]);
 
     return(
         <>
@@ -34,19 +34,6 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                             style={{color: request.status==='Resident' ? 'green' :'rgb(231, 12, 12)' }}
                         >{request.status}</p>
                     </div>
-                </td>
-                <td>
-                    <button 
-                        className="process-btn"
-                        onClick={handleProcess}
-                    >Process</button>
-                </td>
-                <td>
-                    <button 
-                        style={{background:'red'}}
-                        className="process-btn"
-                        onClick={handleProcess}
-                    >Delete</button>
                 </td>
             </tr>
         </>

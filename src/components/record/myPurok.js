@@ -5,7 +5,7 @@ import TNavbar from '../navbar/tnav';
 import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
 import RSidebar from '../sidebar/recordSidebar'; 
-import ListItem from '../transaction/purokRecordList';
+import ListItem from './purokRecordList';
 const width = window.innerWidth;
 
 

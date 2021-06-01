@@ -5,7 +5,7 @@ import TNavbar from '../navbar/tnav';
 import Pagination from '@material-ui/lab/Pagination';
 import ProcessModal from '../modal/processModal'; 
 import RSidebar from '../sidebar/recordSidebar'; 
-import ListItem from '../transaction/residentRecordList';
+import ListItem from './residentRecordList';    
 const width = window.innerWidth;
 
 
@@ -116,7 +116,6 @@ export default function Residents(props) {
                                                 <th>Resident's Name</th>
                                                 <th>Gender</th>
                                                 <th>Action</th>
-                                                <th>Edit</th>
                                             </tr>
                                         </thead>
                                         <tbody className="t-body">

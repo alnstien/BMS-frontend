@@ -13,6 +13,25 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
         setSelected(prevSelect=>!prevSelect)
     },[checked])
 
+    const handleReject=()=>{
+       return Swal.fire({
+            title: 'Are you sure you want reject this request?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Reject it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            }
+          })
+    }
     return(
         <>
             <tr className="tb-tr">
@@ -49,7 +68,7 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                     <button 
                         style={{background:'red'}}
                         className="process-btn"
-                        onClick={()=>MySwal.fire('Oops...', 'Something went wrong!', 'error')}
+                        onClick={handleReject}
                     >Reject</button>
                 </td>
             </tr>

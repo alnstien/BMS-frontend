@@ -105,7 +105,6 @@ export default function TransactionHistory(props) {
                                                 <th>Resident</th>
                                                 <th>Request</th>
                                                 <th>Status</th>
-                                                <th>Remove</th>
                                             </tr>
                                         </thead>
                                         <tbody className="t-body">

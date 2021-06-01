@@ -106,8 +106,6 @@ export default function HoldTransaction(props) {
                                                 <th>Resident</th>
                                                 <th>Request</th>
                                                 <th>Classification</th>
-                                                <th>Action</th>
-                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody className="t-body">

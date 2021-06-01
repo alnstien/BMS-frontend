@@ -1,0 +1,14 @@
+.request-header{
+    height: 8vh;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.request-header a{
+    text-decoration: none;
+}
+.request-body{
+    padding:10px;
+}

@@ -138,6 +138,32 @@ export default function Certificate(props) {
                             <MenuItem value={"others"}>Others</MenuItem>
                           </Select>
                         </FormControl>
+                        <FormControl style={{marginTop:20}}>
+                          <InputLabel 
+                            id="demo-simple-select-helper-label"
+                            color="secondary"
+                          >Name of the Requester</InputLabel>
+                          <Select
+                            labelId="demo-simple-select-helper-label"
+                            id="demo-simple-select-helper"
+                            color="secondary"
+                            required
+                            onChange={e=>handleSelect(e)}
+                          >
+                            <MenuItem value="">
+                              <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={"Jane Doe"}>
+                              Jane Doe
+                            </MenuItem>
+                            <MenuItem value={"Jonas Doe"}>
+                              Jonas Doe
+                            </MenuItem>
+                            <MenuItem value={"Justin Doe"}>
+                              Justin Doe
+                            </MenuItem>
+                          </Select>
+                        </FormControl>
                         {
                           approval ? 
                           <FormControl style={{marginTop:10}}>

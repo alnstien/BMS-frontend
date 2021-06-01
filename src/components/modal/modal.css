@@ -189,6 +189,15 @@
     flex-direction: column;
     height: 100%;
 }
+.add-modal{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+.form-flex-add{
+    width: 90%;
+    padding: 10px;
+}
 @media screen and (max-width:800px){
     .create-post{
         width: 100%;
