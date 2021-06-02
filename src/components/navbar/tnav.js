@@ -69,11 +69,14 @@ export default function Navbar({toggleSidebar,handleSort,handleCheck,isOpen,sort
                     icon1={ascIcon}
                     icon2={descIcon}
                 />
-                <Button 
+                {
+                    check ? <Button 
                     fnc={e=>alert("delete something")}
                     status={false}
                     icon1={trashIcon}
                 />
+                :null
+                }
                 <Button 
                     fnc={e=>handleCheck(e)}
                     status={check}
