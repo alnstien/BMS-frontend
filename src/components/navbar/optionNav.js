@@ -92,7 +92,7 @@ export default function Option() {
                             >
                                 <IoIosNotifications  color={'#f3397a'} />
                                 <span className="dropdown-btn-span">
-                                    9+
+                                    4
                                 </span>
                             </button>
                         <div className="dropdown-content-nav-lg" 

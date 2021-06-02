@@ -44,7 +44,7 @@ export default function EmptyNavbar({isLogged}) {
                             >
                                 <IoIosNotifications  color={'#f3397a'} />
                                 <span className="dropdown-btn-span">
-                                    9+
+                                    2
                                 </span>
                             </button>
                         <div className="dropdown-content-nav-lg" 
