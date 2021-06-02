@@ -4,6 +4,8 @@ import Sidebar from '../sidebar/userSidebar';
 import PhoneNav from '../navbar/phoneNavbar';
 import FloatingActions from '../navbar/floatingActions';
 import Event from '../card/announcementCard';
+import {Typography} from '@material-ui/core'
+
 
 export default function Events(props) {
     const [certificateModal,setCertificateModal] = useState(false);
@@ -29,8 +31,7 @@ export default function Events(props) {
               :null
             }
                 <div className="user-root">
-                    <Event />
-                    <Event />
+                    <Typography style={{marginTop:20}} variant="h5">Barangay Announcements</Typography>
                     <Event />
                 </div>
                 {

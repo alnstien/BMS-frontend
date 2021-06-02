@@ -14,7 +14,7 @@ function NavLink({active,icon,name,path,count,style}){
          <Link to={path} className={active ? "user-sidebar-link-active":"user-sidebar-link"} style={style}>
                 <span className={active ? "icon-span-active":"icon-span"}>{icon}
                     {
-                        count ? <small id="span-small">9+</small> : null
+                        count ? <small id="span-small">1</small> : null
                     }
                 </span>
                 {name}
