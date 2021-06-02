@@ -1,8 +1,7 @@
 import React, { useState,useEffect,useCallback } from 'react'
 import './settings.css';
 import SimpleBar from 'simplebar-react';
-import {Switch, FormGroup,FormControlLabel,Typography,FormControl} from '@material-ui/core'
-import ProcessModal from '../modal/processModal'; 
+import {FormGroup,Typography,FormControl} from '@material-ui/core'
 import SSidebar from '../sidebar/settingsSidebar'; 
 import Sidebar from '../sidebar' 
 import SNavbar from '../navbar/snav';
@@ -85,10 +84,6 @@ export default function AccountSetting(props) {
                 </div>
             </div>
         </div>
-        <ProcessModal 
-            show={show}
-            setShow={setShow}
-        />
     </>
     )
 }

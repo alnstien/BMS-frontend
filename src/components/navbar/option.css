@@ -17,7 +17,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 .option-nav-btn{
     min-height: 40px;
@@ -34,7 +34,7 @@
 }
 .custom-search-wrapper{
     height: 40px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(255,255,255);
     display: flex;
     position: relative;
     align-items: center;
@@ -48,7 +48,7 @@
     outline: none;
     background: none;
     font-size: 17px;
-    color: rgb(255, 255, 255);
+    color: #000;
 }
 .custom-search-btn{
     height: 40px;

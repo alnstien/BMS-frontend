@@ -37,13 +37,13 @@ export default function Profile(props) {
                                             variant="h6"
                                             color="textPrimary"
                                         >
-                                            Jane Doe
+                                            Administrator
                                         </Typography>
                                         <Typography 
                                             variant="body2"
                                             color="textSecondary"
                                         >
-                                            @janedoe12
+                                            @admin12212
                                         </Typography>
                                     </div>
                                     <div className='me-row'>
@@ -71,7 +71,7 @@ export default function Profile(props) {
                           />
                            <UserInfo 
                             icon={addressIcon}
-                            content={"Malinao, Kabacsanan Iligan City"}
+                            content={"Purok 5 Ezperanza, Ramon Magsaysay"}
                             label={"Home Address"}
                           />
                           <UserInfo 

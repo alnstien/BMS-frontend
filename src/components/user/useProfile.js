@@ -246,7 +246,7 @@ export default function Profile(props) {
                           />
                            <UserInfo 
                             icon={addressIcon}
-                            content={"Malinao, Kabacsanan Iligan City"}
+                            content={"Purok 4 Ezperanza, Ramon Magsaysay"}
                             label={"Home Address"}
                           />
                           <UserInfo 
