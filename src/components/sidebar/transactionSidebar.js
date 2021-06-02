@@ -50,7 +50,7 @@ export default function TSidebar({width,active,holdActive,historyActive,accepted
             className={ active ? 
                 'form-a-active': 'form-a-default'}
             to="/requests">
-                All Requests 
+                Pending Requests
             <span className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />
             </span>
