@@ -41,9 +41,9 @@ export default function ViewTransaction(props) {
                 <div className="my-transaction-wrapper">
                     <div className="my-transaction-header">
                     <form>
-                            <button className="delete-transaction-btn">
+                            {/* <button className="delete-transaction-btn">
                                 <BsTrash size={20} color="red" />
-                            </button>
+                            </button> */}
                         <em><Typography 
                                 variant="h5"
                             >

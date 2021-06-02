@@ -77,73 +77,7 @@ export default function EmptyNavbar({isLogged}) {
                                             September 14, 2042
                                         </Typography>
                                         <Typography>
-                                            Your request of Certification of Barangay Indigency has been approved.
-                                        </Typography>
-                                    </a>
-                                    <a href="#" className="notif-link">
-                                        <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                        >
-                                            September 14, 2042
-                                        </Typography>
-                                        <Typography>
-                                            Your request of Barangay Clearance has been rejected.
-                                        </Typography>
-                                    </a>
-                                    <a href="#" className="notif-link">
-                                        <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                        >
-                                            September 14, 2042
-                                        </Typography>
-                                        <Typography>
-                                            Your request of Barangay Clearance has been rejected.
-                                        </Typography>
-                                    </a>
-                                    <a href="#" className="notif-link">
-                                        <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                        >
-                                            September 14, 2042
-                                        </Typography>
-                                        <Typography>
-                                            Your request of Barangay Clearance has been rejected.
-                                        </Typography>
-                                    </a>
-                                    <a href="#" className="notif-link">
-                                        <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                        >
-                                            September 14, 2042
-                                        </Typography>
-                                        <Typography>
-                                            Your request of Barangay Clearance has been rejected.
-                                        </Typography>
-                                    </a>
-                                    <a href="#" className="notif-link">
-                                        <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                        >
-                                            September 14, 2042
-                                        </Typography>
-                                        <Typography>
-                                            Your request of Barangay Clearance has been rejected.
-                                        </Typography>
-                                    </a>
-                                    <a href="#" className="notif-link">
-                                        <Typography
-                                            variant="body2"
-                                            color="textSecondary"
-                                        >
-                                            September 14, 2042
-                                        </Typography>
-                                        <Typography>
-                                            Your request of Barangay Clearance has been rejected.
+                                            Barangay Ezperanza added some announcement.
                                         </Typography>
                                     </a>
                                 </div>

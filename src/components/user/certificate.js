@@ -16,6 +16,10 @@ export default function Certificate(props) {
   const [land,setLand] = useState(false)
   const [requirements,setRequirements] =useState([])
 
+  const handleSelectName=(e)=>{
+
+  }
+
   const handleSelect=(e)=>{
     if(e.target.value==="others"){
       setOthers(true)
@@ -46,7 +50,7 @@ export default function Certificate(props) {
       setAcceptance(false)
     }else if(e.target.value==="barangay_clearance"){
       setRequirements([
-      {required:'Purok Clearance',fileId:'purok_clearance'},
+      {required:'Purok Clearance Photo',fileId:'purok_clearance'},
       {required:'Official Receipt Photo',fileId:'or_receipt'}
     ])
       setApproval(false);
@@ -148,7 +152,7 @@ export default function Certificate(props) {
                             id="demo-simple-select-helper"
                             color="secondary"
                             required
-                            onChange={e=>handleSelect(e)}
+                            onChange={e=>handleSelectName(e)}
                           >
                             <MenuItem value="">
                               <em>None</em>

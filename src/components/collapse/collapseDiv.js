@@ -79,12 +79,12 @@ function CollapseField({member}){
                 >
                     <MdModeEdit size={24} color="#5924F0" />
                 </button>
-                <button 
+                {/* <button 
                     className="collapse-btn"
                     // onClick={e=>toggleShow(e)}
                 >
                     <BsTrashFill size={24} color="#EE155E" />
-                </button>
+                </button> */}
             </div>
             <div 
                 className="collapse-div-body"

@@ -131,6 +131,14 @@ export default function Registration(props) {
                                         <TextField 
                                             color="secondary"
                                             variant="outlined"
+                                            label="Household Number"
+                                            onChange={e=>handleChange(e,setFname)}
+                                        />
+                                    </div>
+                                    <div className="form-inline-group">
+                                        <TextField 
+                                            color="secondary"
+                                            variant="outlined"
                                             label="First Name"
                                             onChange={e=>handleChange(e,setFname)}
                                         />

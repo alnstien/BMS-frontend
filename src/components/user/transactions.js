@@ -105,7 +105,7 @@ export default function MyTransaction(props) {
                         <th>Status</th>
                         <th>Date</th>
                         <th>Action</th>
-                        <th>Delete</th>
+                        <th>Cancel</th>
                     </tr>
                   </thead>
                     <tbody className="t-body">
