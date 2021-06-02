@@ -38,6 +38,7 @@
     display: flex;
     position: relative;
     width: 80%;
+    min-height:42vh;
 }
 .modal-process-footer{
     width: 80%;
@@ -53,6 +54,10 @@
 .process-user-info img{
     height: 150px;
     width: 150px;
+}
+.centered{
+    display:flex;
+    align-items:center;
 }
 .process-user-qr{
     background: #fff;

@@ -26,20 +26,20 @@ export default function Certificate(props) {
     }else if(e.target.value==="certificate_of_cutting_trees"){
       setRequirements([
         {required:'Purok Clearance',fileId:'purok_clearance'},
-        {required:'OR Receipt',fileId:'or_receipt'}
+        {required:'Official Receipt Photo',fileId:'or_receipt'}
       ])
       setApproval(true);
       setOthers(false)
       setLand(false)
       setAcceptance(false)
     }else if(e.target.value==="barangay_certification_of_residency" ){
-      setRequirements([{required:'OR Receipt',fileId:'or_receipt'}])
+      setRequirements([{required:'Official Receipt Photo',fileId:'or_receipt'}])
       setApproval(false);
       setOthers(false)
       setLand(false)
       setAcceptance(false)
     }else if(e.target.value==="certification_of_indegency" ){
-      setRequirements([{required:'OR Receipt',fileId:'or_receipt'}])
+      setRequirements([{required:'Official Receipt Photo',fileId:'or_receipt'}])
       setApproval(false);
       setOthers(false)
       setLand(false)
@@ -47,7 +47,7 @@ export default function Certificate(props) {
     }else if(e.target.value==="barangay_clearance"){
       setRequirements([
       {required:'Purok Clearance',fileId:'purok_clearance'},
-      {required:'OR Receipt',fileId:'or_receipt'}
+      {required:'Official Receipt Photo',fileId:'or_receipt'}
     ])
       setApproval(false);
       setOthers(false)
@@ -56,7 +56,7 @@ export default function Certificate(props) {
     }else if(e.target.value==="certification_of_good_moral"){
       setRequirements([
         {required:'Purok Clearance',fileId:'purok_clearance'},
-        {required:'OR Receipt',fileId:'or_receipt'}
+        {required:'Official Receipt Photo',fileId:'or_receipt'}
       ])
       setApproval(false);
       setOthers(false)
@@ -65,7 +65,7 @@ export default function Certificate(props) {
     }else if(e.target.value==="letter_of_acceptance"){
       setRequirements([
         {required:'Latest RT PCR or Antigen Test Negative Result',fileId:'purok_clearance'},
-        {required:'OR Receipt',fileId:'or_receipt'}
+        {required:'Official Receipt Photo',fileId:'or_receipt'}
       ])
       setAcceptance(true)
       setApproval(false);

@@ -9,7 +9,7 @@ import SNavbar from '../navbar/snav';
 const width = window.innerWidth;
 
 
-export default function Setting(props) {
+export default function AccountSetting(props) {
     const [isOpen,setOpen] = useState(true)
     const [show,setShow] = useState(false);
     const [checked, setChecked] = React.useState(false);
@@ -42,7 +42,7 @@ export default function Setting(props) {
                             >
                             <SimpleBar className="req-overview-holder">
                                 <SSidebar
-                                    active={true} 
+                                    accountActive={true} 
                                     width={width}
                                 />
                             </SimpleBar>
@@ -50,20 +50,7 @@ export default function Setting(props) {
                             <div className="req-wrapper">
                                 {/* content goes here */}
                                     <FormGroup style={{padding:10}}>
-                                        <FormControl style={{marginTop:15, padding:10}}>
-                                            <Typography variant="body2" color="textSecondary">Open sidebar menu</Typography>
-                                            <FormControlLabel
-                                                control={<Switch checked={true} />}
-                                                label={"Open"}
-                                            />
-                                        </FormControl>
-                                        <FormControl style={{marginTop:15,borderTop:'1px solid lightgray', padding:10}}>
-                                            <Typography variant="body2" color="textSecondary">Data Sorted Order</Typography>
-                                            <FormControlLabel
-                                                control={<Switch checked={false} />}
-                                                label={"Ascending"}
-                                            />
-                                        </FormControl>
+
                                     </FormGroup>
                                 {/* end of content*/}
                             </div>

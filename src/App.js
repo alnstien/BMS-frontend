@@ -18,6 +18,7 @@ import UserProfile from './components/user/useProfile';
 import HoldTransaction from './components/transaction/onhold';
 import TransactionHistory from './components/transaction/history';
 import Settings from './components/settings/settings';
+import AccountSetting from './components/settings/accountSetting';
 import UserSettings from './components/user/settings';
 import MyTransaction from './components/user/transactions';
 import MyHousehold from './components/user/household';
@@ -141,6 +142,11 @@ function App() {
           exact
           path="/settings"
           component={Settings}
+        />
+        <Route 
+          exact
+          path="/settings/account"
+          component={AccountSetting}
         />
         <Route 
           exact

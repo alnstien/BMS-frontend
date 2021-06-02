@@ -4,7 +4,7 @@ import {FcSearch} from 'react-icons/fc'
 import {AiOutlineRight} from 'react-icons/ai'
 
 
-export default function SettingSidebar({width,active,purokActive,residentActive}) {
+export default function SettingSidebar({active,accountActive}) {
 
 
     return (
@@ -19,19 +19,11 @@ export default function SettingSidebar({width,active,purokActive,residentActive}
             </span>
         </Link>
         <Link 
-            className={ purokActive ? 
-                'form-a-active': 'form-a-default'}
-            to="/settings">
+            className={ accountActive ? 
+                'form-a-active' : 
+                'form-a-default'}
+            to="/settings/account">
                 Account Settings
-            <span className="icon-wrapper-mod">
-                <AiOutlineRight size={20} />
-            </span>
-        </Link>
-        <Link 
-            className={ residentActive ? 
-                'form-a-active': 'form-a-default'}
-            to="/settings">
-               Miscellaneous Settings
             <span className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />
             </span>
