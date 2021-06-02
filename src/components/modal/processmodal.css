@@ -8,6 +8,14 @@
     flex-direction: column;
     overflow: auto;
 }
+.flex-modal-header-sticky{
+    position: sticky;
+    top:0;
+    width: 100%;
+    display: flex;
+    min-height: 10vh;
+    border-bottom: 1px solid lightgray;
+}
 .flex-modal-body{
     flex: 1;
     width: 78%;
@@ -23,13 +31,15 @@
     display: flex;
     align-items: center;
     position: relative;
-    margin-top: 50px;
-    border-top: 1px solid lightgray;
+    margin-top: 20px;
     flex-direction: column;
 }
 .modal-process-header{
     display: flex;
     position: relative;
+    width: 80%;
+}
+.modal-process-footer{
     width: 80%;
 }
 .process-user-info{
