@@ -3,7 +3,7 @@ import Sidebar from '../sidebar'
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/tnav';
 import Pagination from '@material-ui/lab/Pagination';
-import ProcessModal from '../modal/processModal'; 
+import AddManually from '../modal/addRecordManually'; 
 import RSidebar from '../sidebar/recordSidebar'; 
 import ListItem from './purokRecordList';
 const width = window.innerWidth;
@@ -152,9 +152,9 @@ export default function Purok(props) {
                 </div>
             </div>
         </div>
-        <ProcessModal 
-            show={show}
-            setShow={setShow}
+        <AddManually 
+            show={openModal}
+            setShow={setModal}
         />
     </>
     )

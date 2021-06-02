@@ -67,30 +67,6 @@ export default function RSidebar({width,active,purokActive,residentActive,setSho
                 <AiOutlineRight size={20} />
             </span>
         </Link>
-        {/* <Link 
-            className={holdActive ? 'form-a-active':'form-a-default'}
-            to="/records/residents">Purok 
-            <span 
-                className="icon-wrapper-mod">
-                <AiOutlineRight size={20} />
-            </span>
-        </Link>
-        <Link 
-            className={releaseActive ? 'form-a-active':'form-a-default'}
-            to="/records/residents">On-Progress Requests 
-            <span 
-                className="icon-wrapper-mod">
-                <AiOutlineRight size={20} />
-            </span>
-        </Link>
-        <Link 
-            className={historyActive ? 'form-a-active':'form-a-default'}
-            to="/records/residents">Transaction History 
-            <span 
-                className="icon-wrapper-mod">
-                <AiOutlineRight size={20} />
-            </span>
-        </Link> */}
     </form>
     )
 }
