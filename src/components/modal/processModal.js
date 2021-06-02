@@ -3,7 +3,7 @@ import Modal from 'react-modal'
 import './processmodal.css';
 import Swal from 'sweetalert2'
 import {flexContent,flexoverlay,fulloverlay,content,width} from '../../config/setup'
-import {Typography,Button,Stepper,StepLabel,Step, FormControl, TextField} from '@material-ui/core'
+import {Typography,Button,Stepper,StepLabel,Step, FormControl, TextField,Card,CardContent} from '@material-ui/core'
 import ProImg from '../../assets/avatar.jpg'
 import ProQR from '../../assets/qr.png'
 import ORImage from '../../assets/or.png'
@@ -65,7 +65,7 @@ function UserRequirements(){
     return(
             <form className="modal-process-header inline-column">
                 <div className="inline-column mt-10">
-                    <Typography>2 Files Attached</Typography>
+                    <Typography variant="h6" color="secondary">2 File/s Attached</Typography>
                     <a href={ORImage} target="_blank">Photo of Issued OR</a>
                     <a href={ProImg} target="_blank">Photo of Purok Clearance</a>
                 </div>
@@ -93,6 +93,24 @@ function UserRequirements(){
         )
 }
 
+function FileUpload(){
+
+    return(
+            <form className="modal-process-header inline-column">
+                <div className="inline">
+                    <Card variant="outlined" style={{background:'#efefef',width:'100%'}}>
+                        <CardContent>
+                            <FormControl>
+                                <Typography variant="h6" color="secondary">Upload your file</Typography>
+                                <input type="file" />
+                            </FormControl>
+                        </CardContent>
+                    </Card>
+                </div>
+            </form>
+        )
+}
+
 
 
 
@@ -107,7 +125,7 @@ function getStepContent(stepIndex) {
     case 1:
       return <UserRequirements />;
     case 2:
-      return 'This is the bit I really care about!';
+      return <FileUpload />;;
     default:
       return 'Unknown stepIndex';
   }
@@ -142,6 +160,7 @@ const handleNext = () => {
       'error'   
     )
     }
+
   return (
       <Modal isOpen={show}
         style={{
@@ -166,12 +185,12 @@ const handleNext = () => {
                         ))}
                     </Stepper>
                     <div>
-                        {activeStep === steps.length ? (
+                        {activeStep === steps.length ? 
                         <div>
-                        <Typography className={classes.instructions}>All steps completed</Typography>
-                        <Button onClick={handleReset}>Reset</Button>
-                    </div>
-                    ) : (
+                            <Typography className={classes.instructions}>All steps completed</Typography>
+                            <Button onClick={handleReset}>Reset</Button>
+                        </div>
+                    : (
                     <div style={{
                         width:'100%',
                         display:'flex',
@@ -196,9 +215,14 @@ const handleNext = () => {
                         >
                             Back
                         </Button>
-                        <Button variant="contained" color="primary" onClick={handleNext}>
-                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                        </Button>
+                        {
+                            activeStep === steps.length - 1 ? 
+                            <Button variant="contained" color="primary" onClick={()=>handleAlert()}>Finish</Button>
+                            : 
+                            <Button variant="contained" color="primary" onClick={handleNext}>
+                                Next
+                            </Button>
+                        }
                         </div>
                     </div>
                     )}
