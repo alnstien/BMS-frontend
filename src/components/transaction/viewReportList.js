@@ -1,5 +1,5 @@
-import React,{useCallback,useState} from 'react';
-import {Link} from 'react-router-dom'
+import React from 'react';
+
 
 export default function ListItem({list}){
 
@@ -8,9 +8,10 @@ export default function ListItem({list}){
         <>
             <tr className="tb-tr">
                 <td>{list.id}</td>
+                <td>{list.date}</td>
                 <td>{list.resident}</td>
                 <td>{list.request}</td>
-                <td>{list.status}</td>
+                <td style={{color: list.status==='Served' ? 'green' :'red'}}>{list.status}</td>
                 <td>{list.Or}</td>
             </tr>
         </>

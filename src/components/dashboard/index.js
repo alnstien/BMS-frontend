@@ -84,8 +84,8 @@ export default function Dashboard(props) {
                             />
                        </div>
                        <div className="card-row">
-                            <DTable />
-                            <DTable />
+                            <DTable title={"Recent Records"} />
+                            <DTable title={"Requests Served Recently"} />
                        </div>
                     </div>
                 </div>

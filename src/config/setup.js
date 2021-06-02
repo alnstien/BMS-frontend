@@ -34,7 +34,22 @@ export const AddContent={
     alignItems:'center',
     justifyContent:'center'
 }
-
+export const AddContentShort={
+    position: 'relative',
+    border: 'none',
+    borderRadius:0,
+    inset:0,
+    padding:0,
+    display:'flex',
+    background:'none',
+    height:'80%',
+    width:'70%',
+    overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
+    outline: 'none',
+    alignItems:'center',
+    justifyContent:'center'
+}
 export const fulloverlay={
     position: 'fixed',
     height:'100vh',

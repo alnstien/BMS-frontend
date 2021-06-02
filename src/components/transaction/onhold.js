@@ -1,5 +1,7 @@
 import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
+import {Button,Typography} from '@material-ui/core';
+import {FaFileExport} from 'react-icons/fa'
 import './transaction.css';
 import SimpleBar from 'simplebar-react';
 import Pagination from '@material-ui/lab/Pagination';
@@ -12,16 +14,14 @@ import ManualAddRequest from '../modal/manualAddRequest';
 const data=[
     {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
     {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
+    {id:3,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:4,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
+    {id:5,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:6,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
+    {id:7,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:8,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
+    {id:9,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Non-resident'},
+    {id:10,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Non-resident'},
 ]
 
 export default function HoldTransaction(props) {
@@ -87,6 +87,17 @@ export default function HoldTransaction(props) {
                             </div>
                             <div className="req-wrapper">
                                 <div className="requests">
+                                    <div className="request-header">
+                                        <Typography color="primary"><b>All Rejected Requests</b></Typography>
+                                        <Button style={{
+                                            position:'absolute',
+                                            right:0,
+                                            margin:10
+                                        }}>
+                                            Export
+                                            <FaFileExport size={22} />
+                                        </Button>
+                                    </div>
                                     <table className="req-table">
                                         <thead className="t-head">
                                            <tr>

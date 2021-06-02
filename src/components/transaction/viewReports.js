@@ -12,8 +12,16 @@ import Pagination from '@material-ui/lab/Pagination';
 const width = window.innerWidth;
 
 const data=[
-    {id:1, resident:'Al Ares',request:'Certification Of Indegency', status:'Served',Or:'001-0021'},
-
+    {id:1, date:'September 12, 2022', resident:'Al Ares',request:'Certification Of Indegency', status:'Served',Or:'001-0021'},
+    {id:2, date:'September 12, 2022', resident:'John Doe',request:'Certification Of Indegency', status:'Served',Or:'001-0022'},
+    {id:3, date:'September 12, 2022', resident:'Karl Invoker',request:'Certification Of Indegency', status:'Declined',Or:'001-0023'},
+    {id:4, date:'September 12, 2022', resident:'Al Ares',request:'Certification Of Indegency', status:'Declined',Or:'001-0024'},
+    {id:5, date:'September 12, 2022', resident:'John Doe',request:'Barangay Clearance', status:'Declined',Or:'001-0025'},
+    {id:6, date:'September 12, 2022', resident:'Karl Invoker',request:'Certification Of Indegency', status:'Served',Or:'001-0026'},
+    {id:7, date:'September 12, 2022', resident:'Al Ares',request:'Certification Of Indegency', status:'Served',Or:'001-0027'},
+    {id:8, date:'September 12, 2022', resident:'John Doe',request:'Certification Of Indegency', status:'Served',Or:'001-0028'},
+    {id:9, date:'September 12, 2022', resident:'Karl Invoker',request:'Certification Of Indegency', status:'Declined',Or:'001-0029'},
+    {id:10, date:'September 12, 2022', resident:'Karl Invoker',request:'Certification Of Indegency', status:'Served',Or:'001-0030'}
 ]
 
 export default function ViewReport(props) {
@@ -78,7 +86,7 @@ export default function ViewReport(props) {
                                                 Back
                                             </Button>
                                         </Link>
-                                        <Typography><b>Purok:</b> Purok 1</Typography>
+                                        <Typography><b>Total Request of Today </b></Typography>
                                         <Button style={{
                                             position:'absolute',
                                             right:0,
@@ -95,9 +103,10 @@ export default function ViewReport(props) {
                                                 <th>
                                                     #
                                                 </th>
+                                                <th>Date</th>
                                                 <th>Name</th>
-                                                <th>Role</th>
-                                                <th>Action</th>
+                                                <th>Request</th>
+                                                <th>Status</th>
                                                 <th>O.R. Number</th>
                                             </tr>
                                         </thead>

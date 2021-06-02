@@ -85,10 +85,10 @@ const useStyles1 = makeStyles((theme) => ({
   
   const rows = [
     createData('John Doe', "Barangay Clearance", "May 12, 2019"),
-    createData('John Doe', "Barangay Clearance", "May 12, 2019"),
-    createData('John Doe', "Barangay Clearance", "May 12, 2019"),
-    createData('John Doe', "Barangay Clearance", "May 12, 2019"),
-    createData('John Doe', "Barangay Clearance", "May 12, 2019"),
+    createData('Al Ares', "Barangay Clearance", "May 12, 2019"),
+    createData('Johnsen Daxy', "Barangay Clearance", "May 12, 2019"),
+    createData('Ricardo Dalisay', "Barangay Clearance", "May 12, 2019"),
+    createData('Juan dela Cruz', "Barangay Clearance", "May 12, 2019"),
     createData('John Doe', "Barangay Clearance", "May 12, 2019"),
     createData('John Doe', "Barangay Clearance", "May 12, 2019"),
     createData('John Doe', "Barangay Clearance", "May 12, 2019"),
@@ -103,7 +103,7 @@ const useStyles1 = makeStyles((theme) => ({
 
 
 
-export default function DTable(props) {
+export default function DTable({title}) {
 
 const classes = useStyles2();
 const [page, setPage] = React.useState(0);
@@ -123,7 +123,7 @@ const handleChangePage = (event, newPage) => {
     return (
         <div className="d-table-wrapper">
             <div className="d-table-wrapper-header">
-              <h2>Recent Requests</h2>
+              <h2>{title}</h2>
             </div>
    <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="custom pagination table">
@@ -171,6 +171,6 @@ const handleChangePage = (event, newPage) => {
         </TableFooter>
       </Table>
     </TableContainer>
-        </div>
+    </div>
     )
 }

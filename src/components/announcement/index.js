@@ -4,7 +4,7 @@ import Event from '../card/announcementCard'
 import './announcement.css';
 import PostSidebar from '../sidebar/postAnnouncementSidebar'; 
 import Sidebar from '../sidebar' 
-import SNavbar from '../navbar/snav';
+import SNavbar from '../navbar/tnav';
 import {Typography} from '@material-ui/core'
 import AddAnnouncementModal from '../modal/addAnnouncement';
 const width = window.innerWidth;

@@ -1,5 +1,7 @@
 import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
+import {Button,Typography} from '@material-ui/core';
+import {FaFileExport} from 'react-icons/fa'
 import './transaction.css';
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/tnav';
@@ -12,18 +14,16 @@ import ManualAddRequest from '../modal/manualAddRequest';
 const data=[
     {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Served'},
     {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Served'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Served'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Served'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
+    {id:3,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
+    {id:4,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
+    {id:5,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
+    {id:6,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
+    {id:7,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Served'},
+    {id:8,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
+    {id:9,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Served'},
+    {id:10,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
 ]
-
+ 
 export default function TransactionHistory(props) {
     const [sortAsc,setSortAsc] = useState(false)
     const [isOpen,setOpen] = useState(true)
@@ -86,6 +86,17 @@ export default function TransactionHistory(props) {
                             </div>
                             <div className="req-wrapper">
                                 <div className="requests">
+                                    <div className="request-header">
+                                        <Typography color="primary"><b>My Overall History</b></Typography>
+                                        <Button style={{
+                                            position:'absolute',
+                                            right:0,
+                                            margin:10
+                                        }}>
+                                            Export
+                                            <FaFileExport size={22} />
+                                        </Button>
+                                    </div>
                                     <table className="req-table">
                                         <thead className="t-head">
                                            <tr>

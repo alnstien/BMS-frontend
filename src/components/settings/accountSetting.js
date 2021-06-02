@@ -50,7 +50,33 @@ export default function AccountSetting(props) {
                             <div className="req-wrapper">
                                 {/* content goes here */}
                                     <FormGroup style={{padding:10}}>
-
+                                    <div className="user-setting-body">
+                                        <div className="user-setting-cat">
+                                            <div className="user-setting-name">
+                                            <Typography>Name</Typography>
+                                            </div>
+                                            <Typography color="textSecondary">John Doe</Typography>
+                                            <button className="user-edit-btn">Edit</button>
+                                        </div>
+                                    </div>
+                                    <div className="user-setting-body">
+                                        <div className="user-setting-cat">
+                                            <div className="user-setting-name">
+                                            <Typography>Username</Typography>
+                                            </div>
+                                            <Typography color="textSecondary">alnstienj</Typography>
+                                            <button className="user-edit-btn">Edit</button>
+                                        </div>
+                                    </div>
+                                    <div className="user-setting-body">
+                                        <div className="user-setting-cat">
+                                            <div className="user-setting-name">
+                                            <Typography>Password</Typography>
+                                            </div>
+                                            <Typography color="textSecondary">***************</Typography>
+                                            <button className="user-edit-btn">Edit</button>
+                                        </div>
+                                    </div>
                                     </FormGroup>
                                 {/* end of content*/}
                             </div>

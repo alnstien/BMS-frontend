@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import {FcSearch} from 'react-icons/fc'
 import {AiOutlineRight} from 'react-icons/ai'
 import {Button,FormControl} from '@material-ui/core'
-import { FaRProject } from 'react-icons/fa'
 
 export default function TSidebar({width,active,holdActive,historyActive,acceptedActive,setShow,reportsActive,main}) {
 
@@ -58,7 +57,7 @@ export default function TSidebar({width,active,holdActive,historyActive,accepted
         </Link>
         <Link 
             className={acceptedActive ? 'form-a-active':'form-a-default'}
-            to="/requests/accepted">Accepted Requests 
+            to="/requests/accepted">Served Requests 
             <span 
                 className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />

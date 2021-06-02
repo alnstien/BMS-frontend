@@ -1,6 +1,7 @@
 import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
-import './transaction.css';
+import {Button,Typography} from '@material-ui/core';
+import {FaFileExport} from 'react-icons/fa'
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/tnav';
 import Pagination from '@material-ui/lab/Pagination';
@@ -67,7 +68,7 @@ export default function Transaction(props) {
     return (
         <>
         <div className="con-container"> 
-            <Sidebar transactionActive={true} main={true} />
+            <Sidebar transactionActive={true}/>
             <div className="content-wrapper">
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">
@@ -89,6 +90,7 @@ export default function Transaction(props) {
                             >
                             <SimpleBar className="req-overview-holder">
                                 <TSidebar 
+                                    main={true} 
                                     active={true} 
                                     width={width}
                                     setShow={setOpenModal}
@@ -97,6 +99,17 @@ export default function Transaction(props) {
                             </div>
                             <div className="req-wrapper">
                                 <div className="requests">
+                                    <div className="request-header">
+                                        <Typography color="primary"><b>All Pending Requests</b></Typography>
+                                        <Button style={{
+                                            position:'absolute',
+                                            right:0,
+                                            margin:10
+                                        }}>
+                                            Export
+                                            <FaFileExport size={22} />
+                                        </Button>
+                                    </div>
                                     <table className="req-table">
                                         <thead className="t-head">
                                            <tr>
