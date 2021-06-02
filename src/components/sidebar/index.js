@@ -7,6 +7,7 @@ import { CgLogOut } from "react-icons/cg";
 import { RiSettings5Fill } from "react-icons/ri";
 import './sidebar.css'
 import { BiTransfer } from "react-icons/bi";
+import {FaReceipt} from 'react-icons/fa';
 
 
     const dashIcon = <MdDashboard size={22} />;
@@ -15,6 +16,7 @@ import { BiTransfer } from "react-icons/bi";
     const profileIcon = <BsPersonFill size={22} />
     const settingsIcon = <RiSettings5Fill size={22} />
     const announcementIcon = <MdAnnouncement size={22} />
+    const orIcon = <FaReceipt size={24} />
 
 function SidebarLink({name,icon,active,route}){
 
@@ -34,7 +36,7 @@ function SidebarLink({name,icon,active,route}){
 }
 
 
-export default function Sidebar({dashActive,postActive,transactionActive,recordsActive,profileActive,settingsActive}) {
+export default function Sidebar({dashActive,postActive,transactionActive,recordsActive,profileActive,settingsActive,orActive}) {
     const [isSuper,setIsSuper] = useState(false)
 
     const checkUser=async()=>{
@@ -64,13 +66,7 @@ export default function Sidebar({dashActive,postActive,transactionActive,records
             name="Dashboard"
             active={dashActive}
         />
-        <SidebarLink 
-            route={'/announcement'}
-            icon={announcementIcon}
-            name="Post"
-            active={postActive}
-        />
-        {
+         {
             isSuper ? null :
         <SidebarLink 
             route={'/requests'}
@@ -88,6 +84,18 @@ export default function Sidebar({dashActive,postActive,transactionActive,records
             active={recordsActive}
         />
         }
+        <SidebarLink 
+            route={'/or'}
+            icon={orIcon}
+            name="O.R."
+            active={orActive}
+        />
+        <SidebarLink 
+            route={'/announcement'}
+            icon={announcementIcon}
+            name="Post"
+            active={postActive}
+        />
         <SidebarLink 
             route={'/me'}
             icon={profileIcon}

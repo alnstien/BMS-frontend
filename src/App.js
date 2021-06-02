@@ -35,7 +35,7 @@ import PurokLeaderProfile from './components/purokLeader/myProfile';
 import PurokAnnouncement from './components/purokLeader/announcements';
 import PurokTransaction from './components/purokLeader/requests';
 import AcceptedTransaction from './components/transaction/accepted';
-
+import OR from './components/OR';
 
 
 function App() {
@@ -51,6 +51,11 @@ function App() {
           exact
           path="/announcement"
           component={Announcement}
+        />
+         <Route 
+          exact
+          path="/or"
+          component={OR}
         />
         <Route 
           exact
