@@ -15,12 +15,12 @@ import ListItem from './listItem';
 const width = window.innerWidth;
 
 const data=[
-    {id:1, date:'September 11, 2021', number:'001-21'},
-    {id:2, date:'September 11, 2021', number:'001-22'},
-    {id:3, date:'September 11, 2021', number:'001-23'},
-    {id:4, date:'September 11, 2021', number:'001-24'},
-    {id:5, date:'September 11, 2021', number:'001-25'},
-    {id:6, date:'September 11, 2021', number:'001-26'}
+    {id:1, date:'September 11, 2021', number:'001-21',status:"Used"},
+    {id:2, date:'September 11, 2021', number:'001-22',status:"Used"},
+    {id:3, date:'September 11, 2021', number:'001-23',status:"Available"},
+    {id:4, date:'September 11, 2021', number:'001-24',status:"Available"},
+    {id:5, date:'September 11, 2021', number:'001-25',status:"Available"},
+    {id:6, date:'September 11, 2021', number:'001-26',status:"Available"}
 ]
 
 
@@ -92,6 +92,7 @@ export default function OR(props) {
                                                 </th>
                                                 <th>Date Added</th>
                                                 <th>Number</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody className="t-body">

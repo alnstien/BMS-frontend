@@ -1,6 +1,7 @@
 import React, { useState,useEffect,useCallback } from 'react'
 import Sidebar from '../sidebar' 
 import './index.css';
+import {FaFileExport} from 'react-icons/fa'
 import {Link} from 'react-router-dom';
 import {Typography,Button} from '@material-ui/core'
 import SimpleBar from 'simplebar-react';
@@ -95,6 +96,15 @@ export default function ViewHousehold(props) {
                                             </Button>
                                         </Link>
                                         <Typography><b>Household ID:</b> HSE-15456565658</Typography>
+
+                                        <Button style={{
+                                            position:'absolute',
+                                            right:0,
+                                            margin:10
+                                        }}>
+                                            Export
+                                            <FaFileExport size={22} />
+                                        </Button>
                                     </div>
                                     <div className="request-body">
                                         <table className="req-table">

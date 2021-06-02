@@ -5,39 +5,18 @@ import {FaFileExport} from 'react-icons/fa'
 import Sidebar from '../sidebar' 
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/snav';
-import RSidebar from '../sidebar/recordSidebar'; 
-import ListItem from './purokMemberList';
+import TSidebar from '../sidebar/transactionSidebar'; 
+import ListItem from './viewReportList';
 import Pagination from '@material-ui/lab/Pagination';
 
 const width = window.innerWidth;
 
 const data=[
-    {id:1, name:'Al Ares', role:'President' },
-    {id:2, name:'Al Ares', role:'Vice-President' },
-    {id:3, name:'Al Ares', role:'Secretary' },
-    {id:4, name:'Al Ares', role:'Treasurer' },
-    {id:5, name:'Al Ares', role:'Auditor' },
-    {id:6, name:'Al Ares', role:'P.I.O' },
-    {id:7, name:'Al Ares', role:'B.H.W' },
-    {id:8, name:'Al Ares', role:'B.H.W' },
-    {id:9, name:'Al Ares', role:'Barangay Kagawad' },
-    {id:10, name:'Al Ares', role:'Member' },
-    {id:11, name:'Al Ares', role:'Member' },
-    {id:12, name:'Al Ares', role:'Member' },
-    {id:13, name:'Al Ares', role:'Member' },
-    {id:14, name:'Al Ares', role:'Member' },
-    {id:15, name:'Al Ares', role:'Member' },
-    {id:16, name:'Al Ares', role:'Member' },
-    {id:17, name:'Al Ares', role:'Member' },
-    {id:18, name:'Al Ares', role:'Member' },
-    {id:19, name:'Al Ares', role:'Member' },
-    {id:20, name:'Al Ares', role:'Member' },
-    {id:21, name:'Al Ares', role:'Member' },
-    {id:22, name:'Al Ares', role:'Member' },
-    {id:23, name:'Al Ares', role:'Member' },
+    {id:1, resident:'Al Ares',request:'Certification Of Indegency', status:'Served',Or:'001-0021'},
+
 ]
 
-export default function ViewPurok(props) {
+export default function ViewReport(props) {
     const [sortAsc,setSortAsc] = useState(false);
     const [isOpen,setOpen] = useState(true);
     const [check,setCheck] = useState(false);
@@ -60,7 +39,7 @@ export default function ViewPurok(props) {
     return (
         <>
         <div className="con-container"> 
-            <Sidebar recordsActive={true}/>
+            <Sidebar transactionActive={true}/>
             <div className="content-wrapper">
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">
@@ -81,8 +60,8 @@ export default function ViewPurok(props) {
                                 }}
                             >
                             <SimpleBar className="req-overview-holder">
-                                <RSidebar 
-                                   purokActive={true} 
+                                <TSidebar 
+                                   reportsActive={true} 
                                    width={width}
                                 />
                             </SimpleBar>
@@ -90,7 +69,7 @@ export default function ViewPurok(props) {
                             <div className="req-wrapper">
                                 <form className="requests-view">
                                     <div className="request-header">
-                                        <Link to='/records/purok'>
+                                        <Link to='/requests/reports'>
                                             <Button 
                                                 style={{marginRight:10}}
                                                 variant="contained"
@@ -119,6 +98,7 @@ export default function ViewPurok(props) {
                                                 <th>Name</th>
                                                 <th>Role</th>
                                                 <th>Action</th>
+                                                <th>O.R. Number</th>
                                             </tr>
                                         </thead>
                                         <tbody className="t-body">

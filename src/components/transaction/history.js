@@ -10,15 +10,15 @@ import ListItem from './historyListItem';
 import ManualAddRequest from '../modal/manualAddRequest';
 
 const data=[
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Accepted'},
-    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Accepted'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Served'},
+    {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Served'},
     {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
     {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
     {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
     {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Accepted'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Served'},
     {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
-    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Accepted'},
+    {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Served'},
     {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},
     {id:1,date: "September 7, 2022",name: 'Al Ares', request:'Barangay Certificate',status:'Declined'},
     {id:2,date: "September 7, 2022",name: 'Jane Doe', request:'Barangay Certificate',status:'Declined'},

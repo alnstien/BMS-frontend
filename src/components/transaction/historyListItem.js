@@ -31,7 +31,7 @@ export default function ListItem({status,request,checked,handleCheck,handleProce
                 <td>
                     <div className="request-status-cc">
                         <p
-                            style={{color: request.status==='Accepted' ? 'green' :'rgb(231, 12, 12)' }}
+                            style={{color: request.status==='Served' ? 'green' :'rgb(231, 12, 12)' }}
                         >{request.status}</p>
                     </div>
                 </td>

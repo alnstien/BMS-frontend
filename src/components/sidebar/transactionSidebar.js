@@ -5,7 +5,7 @@ import {AiOutlineRight} from 'react-icons/ai'
 import {Button,FormControl} from '@material-ui/core'
 import { FaRProject } from 'react-icons/fa'
 
-export default function TSidebar({width,active,holdActive,historyActive,acceptedActive,setShow}) {
+export default function TSidebar({width,active,holdActive,historyActive,acceptedActive,setShow,reportsActive,main}) {
 
     const handleOpenModal=(e)=>{
         e.preventDefault();
@@ -34,6 +34,8 @@ export default function TSidebar({width,active,holdActive,historyActive,accepted
                 :
             null
         }
+        {
+        main ? 
         <FormControl style={{marginBottom:10,marginTop:10}}>
             <Button 
                 color="primary" 
@@ -43,6 +45,8 @@ export default function TSidebar({width,active,holdActive,historyActive,accepted
                 Add Manually
             </Button>
         </FormControl>
+        :null
+        }
         <Link 
             className={ active ? 
                 'form-a-active': 'form-a-default'}
@@ -71,6 +75,14 @@ export default function TSidebar({width,active,holdActive,historyActive,accepted
         <Link 
             className={historyActive ? 'form-a-active':'form-a-default'}
             to="/requests/history">History 
+            <span 
+                className="icon-wrapper-mod">
+                <AiOutlineRight size={20} />
+            </span>
+        </Link>
+        <Link 
+            className={reportsActive ? 'form-a-active':'form-a-default'}
+            to="/requests/reports">Reports 
             <span 
                 className="icon-wrapper-mod">
                 <AiOutlineRight size={20} />

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/snav';
 import ProcessModal from '../modal/processModal'; 
+import {FaFileExport} from 'react-icons/fa'
 import RSidebar from '../sidebar/recordSidebar'; 
 import {Button,TextField,Typography,FormControlLabel,Radio,RadioGroup} from '@material-ui/core'
 import DfaultImg from '../../assets/avatar.jpg'
@@ -100,6 +101,14 @@ export default function ViewResident(props) {
                                             </Button>
                                         </Link>
                                         <Typography><b>Resident:</b> Al Ares</Typography>
+                                        <Button style={{
+                                            position:'absolute',
+                                            right:0,
+                                            margin:10
+                                        }}>
+                                            Export 
+                                            <FaFileExport size={22} />
+                                        </Button>
                                     </div>
                                     <div className="request-body">
                                         <div className="request-body-resident">

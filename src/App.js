@@ -17,6 +17,8 @@ import Notifications from './components/user/inbox';
 import UserProfile from './components/user/useProfile';
 import HoldTransaction from './components/transaction/onhold';
 import TransactionHistory from './components/transaction/history';
+import TransactionReports from './components/transaction/reports';
+import ViewTransactionReports from './components/transaction/viewReports'
 import Settings from './components/settings/settings';
 import AccountSetting from './components/settings/accountSetting';
 import UserSettings from './components/user/settings';
@@ -202,6 +204,16 @@ function App() {
           exact
           path="/requests/history"
           component={TransactionHistory}
+        />
+        <Route 
+          exact
+          path="/requests/reports"
+          component={TransactionReports}
+        />
+        <Route 
+          exact
+          path="/requests/reports/view"
+          component={ViewTransactionReports}
         />
         <Route 
           exact

@@ -16,6 +16,7 @@ export default function ListItem({list,checked}){
                 <td>{list.id}</td>
                 <td>{list.date}</td>
                 <td>{list.number}</td>
+                <td style={{color: list.status==='Available' ? 'green' : 'orange'}}>{list.status}</td>
             </tr>
         </>
     )

@@ -67,7 +67,7 @@ export default function Transaction(props) {
     return (
         <>
         <div className="con-container"> 
-            <Sidebar transactionActive={true}/>
+            <Sidebar transactionActive={true} main={true} />
             <div className="content-wrapper">
                 <div className="main-content-wrapper">
                     <div className="content-main-holder">

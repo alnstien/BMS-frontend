@@ -11,7 +11,28 @@
     position: relative;
     background: #fff;
 }
-
+.requests-summary{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.requests-summary-body{
+    flex:1;
+    border-top: 1px solid lightgray;
+    padding:20px;
+}
+.inline-sb{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+.requests-summary select{
+    padding: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .mynav{
     height: 10vh;
     width: 100%;
