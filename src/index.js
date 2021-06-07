@@ -5,12 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Modal from 'react-modal';
 import 'simplebar/dist/simplebar.min.css';
-
+import { CookiesProvider } from 'react-cookie';
 
 Modal.setAppElement('#root')
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CookiesProvider>
+      <App />
+    </CookiesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

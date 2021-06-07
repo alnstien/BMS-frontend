@@ -4,6 +4,7 @@ import './login.css';
 import Logo from '../../assets/logo.png'
 import axios from 'axios'
 import {TextField,Button} from '@material-ui/core'
+import { useCookies } from 'react-cookie';
 
 
 export default function Login(props){
@@ -13,8 +14,7 @@ export default function Login(props){
     const [username,setUsername] = useState('')
     const [password,setPassword] = useState('');
     const [uError,setUError] = useState('')
-    
-
+    const [cookies, setCookie, removeCookie] = useCookies(['name']);
 
     const handleChange=(fnc,e)=>{
         e.preventDefault()
@@ -36,6 +36,9 @@ export default function Login(props){
             username:username,
             password:password
         }
+        setCookie('name','e-user',{
+            httpOnly:true
+        })
         axios.post(`${server}/api/login`,data)
         .then(res=>{
             console.log(res.data)

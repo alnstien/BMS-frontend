@@ -2,7 +2,6 @@ import React,{useEffect, useRef,useState} from 'react'
 import './post.css'
 import {IoMdMore} from 'react-icons/io'
 import {BsDownload} from 'react-icons/bs'
-import qr from '../../assets/qr.png'
 import {BiTrash} from 'react-icons/bi'
 import ClickOutsideHandler from '../../config/clickOutsideHandler';
 import { Typography } from '@material-ui/core'
