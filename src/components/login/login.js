@@ -8,7 +8,7 @@ import {TextField,Button} from '@material-ui/core'
 
 export default function Login(props){
     // local states
-    const server ='http://192.168.1.62:51219';
+    const server ='http://192.168.1.3:51219';
 
     const [username,setUsername] = useState('')
     const [password,setPassword] = useState('');
@@ -26,24 +26,24 @@ export default function Login(props){
         e.preventDefault();
         // alert(username)
         // check fields
-        // if(!username ){
-        //     setUError("Username can't be empty.")
-        // }else if(username.length <= 5){
-        //     setUError("Username must be greater than 5 characters.")
-        // }
-        // console.log(uError)
-        // const data = {
-        //     username:username,
-        //     password:password
-        // }
-        // axios.post(`${server}/api/login`,data)
-        // .then(res=>{
-        //     console.log(res.data)
-        // })
-        // .catch(e=>{
-        //     console.log(e)
-        // })
-        await localStorage.setItem('user',username);
+        if(!username ){
+            setUError("Username can't be empty.")
+        }else if(username.length <= 5){
+            setUError("Username must be greater than 5 characters.")
+        }
+        console.log(uError)
+        const data = {
+            username:username,
+            password:password
+        }
+        axios.post(`${server}/api/login`,data)
+        .then(res=>{
+            console.log(res.data)
+        })
+        .catch(e=>{
+            console.log(e)
+        })
+        // await localStorage.setItem('user',username);
     }
 
     return(

@@ -50,7 +50,7 @@ export default function Post({request}) {
             <div className="post-profile-details">
                 <div className="post-logo-holder">
                     <div className="qr-code">
-                        <img src={qr} alt=""/>
+                        <img src={`http://192.168.1.3:51219/qrcodefiles/qrcode1623065027725.png`} alt=""/>
                     </div>
                     <RenderStatus status={request.status} />
                 </div>

@@ -15,6 +15,7 @@
     "chart.js": "^3.2.0",
     "clsx": "^1.1.1",
     "docx": "^6.0.3",
+    "exceljs": "^4.2.1",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.2",
     "react-chartjs-2": "^3.0.2",
@@ -28,6 +29,7 @@
     "serve": "^11.3.2",
     "simplebar": "^5.3.0",
     "simplebar-react": "^2.3.0",
+    "socket.io-client": "^4.1.2",
     "sweetalert2": "^10.16.9",
     "sweetalert2-react-content": "^4.0.1",
     "web-vitals": "^1.1.1"

@@ -3,7 +3,7 @@ import Sidebar from '../sidebar'
 import {Link} from 'react-router-dom'
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/snav';
-import ProcessModal from '../modal/processModal'; 
+import AddManually from '../modal/addRecordManually'; 
 import {FaFileExport} from 'react-icons/fa'
 import RSidebar from '../sidebar/recordSidebar'; 
 import {Button,TextField,Typography,FormControlLabel,Radio,RadioGroup} from '@material-ui/core'
@@ -19,6 +19,7 @@ export default function ViewResident(props) {
     const [show,setShow] = useState(false);
     const [page,setPage]= useState(1);
     const [value, setValue] = useState('male');
+    const [openModal,setModal] = useState(false)
     const [civilStatus,setCivilStatus] = useState('single')
 
     const handleChangeRadio = (event) => {
@@ -251,9 +252,9 @@ export default function ViewResident(props) {
                 </div>
             </div>
         </div>
-        <ProcessModal 
-            show={show}
-            setShow={setShow}
+        <AddManually 
+            show={openModal}
+            setShow={setModal}
         />
     </>
     )

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import {Typography,Button} from '@material-ui/core'
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/snav';
-import ProcessModal from '../modal/processModal'; 
+import AddManually from '../modal/addRecordManually'; 
 import RSidebar from '../sidebar/recordSidebar'; 
 import ListItem from './householdMemberList';
 import Pagination from '@material-ui/lab/Pagination';
@@ -28,7 +28,7 @@ export default function ViewHousehold(props) {
     const [checked,setChecked] = useState(false);
     const [show,setShow] = useState(false);
     const [page,setPage]= useState(1);
-
+    const [openModal,setModal] = useState(false)
 
     const limit = 5;
     const startIndex = (page-1) * limit;
@@ -156,9 +156,9 @@ export default function ViewHousehold(props) {
                 </div>
             </div>
         </div>
-        <ProcessModal 
-            show={show}
-            setShow={setShow}
+        <AddManually 
+            show={openModal}
+            setShow={setModal}
         />
     </>
     )

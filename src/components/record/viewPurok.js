@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {Button,Typography} from '@material-ui/core';
 import {FaFileExport} from 'react-icons/fa'
 import Sidebar from '../sidebar' 
+import AddManually from '../modal/addRecordManually'; 
 import SimpleBar from 'simplebar-react';
 import TNavbar from '../navbar/snav';
 import RSidebar from '../sidebar/recordSidebar'; 
@@ -41,7 +42,7 @@ export default function ViewPurok(props) {
     const [sortAsc,setSortAsc] = useState(false);
     const [isOpen,setOpen] = useState(true);
     const [check,setCheck] = useState(false);
-
+    const [openModal,setModal] = useState(false)
 
     const toggleSidebar=(e)=>{
         e.preventDefault();
@@ -159,6 +160,10 @@ export default function ViewPurok(props) {
                 </div>
             </div>
         </div>
+        <AddManually 
+            show={openModal}
+            setShow={setModal}
+        />
     </>
     )
 }
