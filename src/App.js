@@ -38,6 +38,7 @@ import PurokLeaderProfile from './components/purokLeader/myProfile';
 import PurokAnnouncement from './components/purokLeader/announcements';
 import PurokTransaction from './components/purokLeader/requests';
 import AcceptedTransaction from './components/transaction/accepted';
+import Homepage from './components/user/homepage';
 import OR from './components/OR';
 
 
@@ -87,42 +88,42 @@ function App() {
         />
         <Route 
           exact
-          path="/user/me"
+          path="/:username/me"
           component={UserProfile}
         />
         <Route 
           exact
-          path="/user/my-household"
+          path="/:username/my-household"
           component={MyHousehold}
         />
         <Route 
           exact
-          path="/user/certificates"
+          path="/:username/certificates"
           component={Certificate}
         />
         <Route 
           exact
-          path="/user/settings"
+          path="/:username/settings"
           component={UserSettings}
         />
         <Route 
           exact
-          path="/user/transactions"
+          path="/:username/transactions"
           component={MyTransaction}
         />
         <Route 
           exact
-          path="/user/transactions/view=:id"
+          path="/:username/transactions/view=:id"
           component={ViewMyTransaction}
         />
         <Route 
           exact
-          path="/user/events"
+          path="/:username/events"
           component={UserEvents}
         />
         <Route 
           exact
-          path="/user/notifications"
+          path="/:username/notifications"
           component={Notifications}
         />
         <Route 
@@ -133,6 +134,11 @@ function App() {
         <Route 
           exact
           path="/"
+          component={Homepage}
+        />
+        <Route 
+          exact
+          path="/:username"
           component={User}
         />
         <Route 
