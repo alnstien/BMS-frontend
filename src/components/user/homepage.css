@@ -1,11 +1,14 @@
 .whole{
     width: 100vw;
+    height: 100vh;
     overflow:auto;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    background: chartreuse;
+    background: #fefefe;
     position: relative;
+}
+.homapage-header{
+    height: 40vh;
+    width: 100%;
+    background: black;
 }
 .homepage-body-wrapper{
     min-height: 100vh;
@@ -16,9 +19,9 @@
     justify-content: center;
 }
 .homepage-body{
-    min-height: 100vh;
+    min-height: 200vh;
     width: 81%;
-    background: red;
+    background: lightgray;
     display: flex;
     align-items: center;
     justify-content: center;
