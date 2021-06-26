@@ -8,7 +8,47 @@
 .homapage-header{
     height: 40vh;
     width: 100%;
-    background: black;
+    background: #f3397a;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.homepage-header-content{
+    width: 81%;
+    height: 100%;
+    position: relative;
+    /* background: green; */
+    display: flex;
+    align-items: center;
+}
+.homepage-logo{
+    min-height: 220px;
+    min-width: 220px;
+    background: red;
+    background: url('../../assets/logo.png');
+    background-size: cover;
+    border-radius: 50%;
+    border: 5px solid #000;
+}
+.homepage-login-btn{
+    background: #f3397a;
+    height: 10vh;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+}
+.homepage-login-btn:hover{
+    background: rgba(255,255,255,.2);
+}
+.homepage-banner{
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    margin-right: 10px;
 }
 .homepage-body-wrapper{
     min-height: 100vh;
