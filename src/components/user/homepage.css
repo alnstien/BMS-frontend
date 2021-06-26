@@ -23,8 +23,8 @@
     align-items: center;
 }
 .homepage-logo{
-    min-height: 220px;
-    min-width: 220px;
+    min-height: 190px;
+    min-width: 190px;
     background: red;
     background: url('../../assets/logo.png');
     background-size: cover;
@@ -59,10 +59,15 @@
     justify-content: center;
 }
 .homepage-body{
-    min-height: 200vh;
+    height: 200vh;
     width: 81%;
-    background: lightgray;
+    /* background: lightgray; */
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+}
+.homepage-contents{
+    flex: 1;
+}
+.homepage-announcements{
+    padding: 10px;
 }

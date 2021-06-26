@@ -9,6 +9,9 @@
 }
 .main-footer-content{
     width: 81%;
-    background: rgb(92, 92, 92);
+    /* background: rgb(92, 92, 92); */
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

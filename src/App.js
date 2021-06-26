@@ -138,11 +138,6 @@ function App() {
         />
         <Route 
           exact
-          path="/:username"
-          component={User}
-        />
-        <Route 
-          exact
           path="/my-purok"
           component={MyPurok}
         />
@@ -225,6 +220,12 @@ function App() {
           exact
           path="/register"
           component={Registration}
+        />
+        {/* to avoid conflict this must be at the last */}
+        <Route 
+          exact
+          path="/:username"
+          component={User}
         />
       </Switch>
     </BrowserRouter>
