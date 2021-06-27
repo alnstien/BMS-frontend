@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { MdPhotoCamera } from "react-icons/md";
 import defaultProfileImg from '../../assets/default.jpg';
-import axios from 'axios'
+import axios from 'axios';
+import Swal from 'sweetalert2';
 import validateFormat from '../../config/validateFormat';
 import './register.css';
 import ENavbar from '../navbar/emptyNavbar';
@@ -9,16 +10,15 @@ import {TextField,Select,InputLabel,FormControl} from '@material-ui/core'
 import {Link} from 'react-router-dom'
 
 export default function Registration(props) {
+    const [household,setHousehold] = useState('');
+    const [bdate,setBdate] = useState('');
     const [fname,setFname]=useState("");
     const [lname,setLname] =useState("");
     const [email,setEmail]=useState("");
     const [address,setAddress]=useState("");
     const [phone,setPhone]=useState("");
     const [gender,setGender]=useState("");
-    const [day,setDay]=useState(0);
-    const [month,setMonth]=useState("");
     const [avatar,setAvatar]= useState(null);
-    const [year,setYear]=useState(0);
     const [username,setUsername] = useState("");
     const [password1,setPassword1] = useState("");
     const [password2,setPassword2] = useState("")
@@ -28,7 +28,7 @@ export default function Registration(props) {
     const [error,setError] = useState([]);
     const [show,setShow] = useState(false);
     const [valid,setValid] = useState(null);
-    const server ='http://192.168.1.62:51219';
+    const server ='http://192.168.1.3:51219';
 
 
     const handleChange =(e,fn)=>{
@@ -39,7 +39,7 @@ export default function Registration(props) {
          * submitting data code goes here
          */
         e.preventDefault();
-        if(!fname || !lname || !email || !address || !phone || !gender || !day || !month || !year || !username || !password1 || !password2){
+        if(!fname || !lname || !email || !address || !phone || !gender || !username || !password1 || !password2 || !bdate || !household){
           setError(["Some fields empty!"])
         }else if(password1 !== password2){
             setError(["Password does not match"])
@@ -48,43 +48,39 @@ export default function Registration(props) {
         }else if(password1.length < 6){
             setError(["Password must be at least 6 characters!"])
         }else{
-            axios.get(`${server}/api/check/registration/${props.match.params.role}/${username}/${email}`)
+            let fullName = fname+" "+lname;
+            const formdata = new FormData();
+            formdata.append('name',validateFormat(fullName));
+            formdata.append('email',email);
+            formdata.append('address',validateFormat(address));
+            formdata.append('phone',phone);
+            formdata.append('gender',gender);
+            formdata.append('birthdate',bdate);
+            formdata.append('username',username);
+            formdata.append('password',password1);
+            formdata.append('profilePhoto',avatar);
+            axios.post(`${server}/api/register/user`,formdata)
             .then(res=>{
-                if(res.data==="OK"){
-                    let fullName = fname+" "+lname;
-                    let bdate = month +"-"+day+"-"+year;
-                    const formdata = new FormData();
-                    formdata.append('role',props.match.params.role);
-                    formdata.append('name',validateFormat(fullName));
-                    formdata.append('email',email);
-                    formdata.append('address',validateFormat(address));
-                    formdata.append('phone',phone);
-                    formdata.append('gender',gender);
-                    formdata.append('birthdate',bdate);
-                    formdata.append('username',username);
-                    formdata.append('password',password1);
-                    formdata.append('profilePhoto',avatar);
-                    axios.post(`${server}/api/superadmin/completion/${username}`,formdata)
-                    .then(res=>{
-                    let code = res.headers.valid;
-                    if(code){
-                        setValid(code);
-                    }
-                    if(res.data==="OK"){
-                        setShow(true);
-                    }
-                    })
-                    .catch(e=>console.log(e))
-                    }else if(res.data==="taken"){
-                        setError(["Username already taken."])
-                    }else if(res.data==="email taken"){
-                        setError(["Email already taken."])
-                    }else if(res.data==="invalid"){
-                        return props.history.push('/404')
-                    }})
-                    .catch(e=>console.log(e))
+                console.log(res.data)
+                let code = res.headers.valid;
+                if(code){
+                    setValid(code);
+                }
+            if(res.data.status==="ok"){
+                Swal.fire(
+                    'Success!',
+                    'Regitered Successfully.',
+                    'success'
+                  )
+            }else if(res.data==='existed'){
+                setError(["Username is already in use!"])
+            }
+            })
+            .catch(e=>console.log(e));
         }
     }
+
+
     const handleImage=(e)=>{
         setAvatar(e.target.files[0])
         const reader = new FileReader();
@@ -132,7 +128,7 @@ export default function Registration(props) {
                                             color="secondary"
                                             variant="outlined"
                                             label="Household Number"
-                                            onChange={e=>handleChange(e,setFname)}
+                                            onChange={e=>handleChange(e,setHousehold)}
                                         />
                                     </div>
                                     <div className="form-inline-group">
@@ -202,7 +198,7 @@ export default function Registration(props) {
                                         <input 
                                             type="date"
                                             className="form-inline-input" 
-                                            onChange={e=>handleChange(e,setPhone)}
+                                            onChange={e=>handleChange(e,setBdate)}
                                         />
                                     </div>
                                     <div className="form-avatar-wrapper">

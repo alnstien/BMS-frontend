@@ -42,6 +42,7 @@ export default function Login(props){
         axios.post(`${server}/api/login`,data)
         .then(res=>{
             console.log(res.data)
+            console.log(res.headers)
         })
         .catch(e=>{
             console.log(e)
