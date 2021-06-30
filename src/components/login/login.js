@@ -4,8 +4,6 @@ import './login.css';
 import Logo from '../../assets/logo.png'
 import axios from '../../config/axios';
 import {TextField,Button} from '@material-ui/core'
-import { useCookies } from 'react-cookie';
-
 
 export default function Login(props){
     // local states
@@ -14,7 +12,7 @@ export default function Login(props){
     const [username,setUsername] = useState('')
     const [password,setPassword] = useState('');
     const [uError,setUError] = useState('')
-    const [cookies, setCookie, removeCookie] = useCookies(['name']);
+
 
     const handleChange=(fnc,e)=>{
         e.preventDefault()
@@ -31,18 +29,15 @@ export default function Login(props){
         }else if(username.length <= 5){
             setUError("Username must be greater than 5 characters.")
         }
-        console.log(uError)
         const data = {
             username:username,
             password:password
         }
-        setCookie('name','e-user',{
-            httpOnly:true
-        })
         axios.post(`/api/login`,data)
         .then(res=>{
             console.log(res.data)
             console.log(res.headers)
+            console.log(res)
         })
         .catch(e=>{
             console.log(e)
