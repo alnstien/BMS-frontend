@@ -28,7 +28,6 @@ export default function Registration(props) {
     const [error,setError] = useState([]);
     const [show,setShow] = useState(false);
     const [valid,setValid] = useState(null);
-    const server ='http://192.168.1.3:51219';
 
 
     const handleChange =(e,fn)=>{
