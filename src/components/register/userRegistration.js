@@ -59,7 +59,7 @@ export default function Registration(props) {
             formdata.append('username',username);
             formdata.append('password',password1);
             formdata.append('profilePhoto',avatar);
-            axios.post(`${server}/api/register/user`,formdata)
+            axios.post(`/api/register/user`,formdata)
             .then(res=>{
                 console.log(res.data)
                 let code = res.headers.valid;
