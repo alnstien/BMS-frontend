@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { MdPhotoCamera } from "react-icons/md";
 import defaultProfileImg from '../../assets/default.jpg';
-import axios from 'axios';
+import axios from '../../config/axios';
 import Swal from 'sweetalert2';
 import validateFormat from '../../config/validateFormat';
 import './register.css';
