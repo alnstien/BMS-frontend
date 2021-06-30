@@ -2,14 +2,14 @@ import React,{ useState,useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import './login.css';
 import Logo from '../../assets/logo.png'
-import axios from 'axios'
+import axios from '../../config/axios';
 import {TextField,Button} from '@material-ui/core'
 import { useCookies } from 'react-cookie';
 
 
 export default function Login(props){
     // local states
-    const server ='http://192.168.1.3:51219';
+    // const server ='http://192.168.1.3:51219';
 
     const [username,setUsername] = useState('')
     const [password,setPassword] = useState('');
@@ -39,7 +39,7 @@ export default function Login(props){
         setCookie('name','e-user',{
             httpOnly:true
         })
-        axios.post(`${server}/api/login`,data)
+        axios.post(`/api/login`,data)
         .then(res=>{
             console.log(res.data)
             console.log(res.headers)
